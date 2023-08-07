@@ -12,8 +12,7 @@ const count = ref(0)
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
+      团队地址<a target="_blank" href="https://github.com/daily-endeavors/npm-package-analyzer">https://github.com/daily-endeavors/npm-package-analyzer</a>
     </p>
   </div>
 

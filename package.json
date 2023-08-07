@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "homepage:build": "pnpm --filter='./packages/homepage' run build",
+    "homepage:dev": "pnpm --filter='./packages/homepage' run dev"
   },
   "keywords": [],
   "author": "",
