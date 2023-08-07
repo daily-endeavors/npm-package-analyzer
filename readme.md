@@ -38,4 +38,6 @@
         -   生成json分析结果
         -   待完善
     -   homepage
-        -   团队主页地址, push到main分支后自动发布到https://daily-endeavors.github.io/
+        -   团队主页地址, push到main分支后自动构建并发布到
+            -   https://daily-endeavors.github.io/
+            -   https://daily-endeavors.github.io/npm-package-analyzer
