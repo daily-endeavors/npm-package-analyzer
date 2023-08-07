@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cli:dev": "pnpm --filter='./packages/cli' run dev",
     "homepage:build": "pnpm --filter='./packages/homepage' run build",
     "homepage:dev": "pnpm --filter='./packages/homepage' run dev"
   },
