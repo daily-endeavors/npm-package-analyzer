@@ -15,3 +15,6 @@
 | pnpm   | monorepo管理工具, 使用最新版[8.6.12](https://www.pnpm.cn/installation) | `curl -fsSL https://get.pnpm.io/install.sh \| sh -`                             |
 | vscode | 统一编辑器                                                             |                                                                                 |
 
+#   目录说明
+
+外部目录结构参考`https://github.dev/vitejs/vite`
