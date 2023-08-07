@@ -21,7 +21,7 @@ jobs:
               args: [--frozen-lockfile, --strict-peer-dependencies]
             - args: [--global, gulp, prettier, typescript]
       - run: pnpm install
-      - run: pnpm homepage:dev
+      - run: pnpm homepage:build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
