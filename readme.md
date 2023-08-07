@@ -15,6 +15,17 @@
 | pnpm   | monorepo管理工具, 使用最新版[8.6.12](https://www.pnpm.cn/installation) | `curl -fsSL https://get.pnpm.io/install.sh \| sh -`                             |
 | vscode | 统一编辑器                                                             |                                                                                 |
 
+启动命令
+
+| 命令           | 说明                |
+| :------------- | :------------------ |
+| gui:dev        | 分析结果:开发模式   |
+| gui:build      | 分析结果:构建       |
+| homepage:dev   | 项目主页:开发模式   |
+| homepage:build | 项目主页:构建       |
+| cli:dev        | 命令行工具:开发模式 |
+
+
 #   目录说明
 
 外部目录结构参考`https://github.dev/vitejs/vite`
