@@ -35,6 +35,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install
+      - name: Build
         run: pnpm homepage:build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
