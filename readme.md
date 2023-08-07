@@ -29,3 +29,13 @@
 #   目录说明
 
 外部目录结构参考`https://github.dev/vitejs/vite`
+
+-   packages
+    -   gui
+        -   展示json分析结果
+        -   待完善
+    -   cli 
+        -   生成json分析结果
+        -   待完善
+    -   homepage
+        -   团队主页地址, push到main分支后自动发布到https://daily-endeavors.github.io/
