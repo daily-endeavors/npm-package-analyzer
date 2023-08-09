@@ -66,6 +66,9 @@ importers:
       prettier-plugin-packagejson:
         specifier: ^2.4.3
         version: 2.4.3(prettier@2.8.8)
+      typescript:
+        specifier: ^5.0.2
+        version: 5.1.6
 
   packages/homepage:
     dependencies:

@@ -5,3 +5,4 @@
 /config/config.local.js
 /src/.umi
 /.umi
+/.umi-production
