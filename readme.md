@@ -2,6 +2,8 @@
 
 [npm-package-analyzer任务分析](https://hi85012z1e8.feishu.cn/docx/YlL4dPM0wo9CN1xXLaoc5mu4nFh?from=from_copylink)
 
+[第六届青训营前端大项目1 - NPM Package 分析工具](https://bytedance.feishu.cn/docx/MQHgdP03Ko8oUpxRnTnchUH7nEg)
+
 #   开发说明
 
 默认为Linux/Mac开发环境, windows用户请先安装WSL配置为Linux开发环境
