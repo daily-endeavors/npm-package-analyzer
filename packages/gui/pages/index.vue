@@ -1,46 +1,38 @@
 <template>
   <div>
-    <div class="logo">
-      <img src="@/assets/vue.png" style="padding-right: 10px" />
-      <img src="@/assets/heart.svg" style="padding-right: 10px; width: 30px" />
-      <img src="@/assets/umi.png" style="padding-left: 10px" />
-    </div>
-    <HelloWorld msg="Hello Vue + UmiJs" />
-    <div>
-      <h4>mock api res:</h4>
-      <pre>
-        {{ JSON.stringify(res) }}
-      </pre>
+    <h2>UmiJS x Vue Pinia</h2>
+    <div class="count">{{ counter.count }}</div>
+    <div class="buttons">
+      <button @click="onAdd">+</button>
+      <button @click="counter.decrease">-</button>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
-import { terminal } from 'umi';
-import HelloWorld from '@/components/HelloWorld.vue';
+import { ref, inject } from 'vue';
+import { useCounterStore } from '@/stores/counter';
 
-terminal.log(`Some info from the app`);
-terminal.log({
-  json: { foo: 'bar' },
-});
-terminal.info(`Hey terminal, A message from the browser`);
-terminal.warn(`Watch out, warning from the browser`);
-terminal.error(`Ups, testing an error message from the browser`);
+const counter = useCounterStore();
 
-const res = ref();
-
-onMounted(async () => {
-  res.value = await fetch('/api/a').then((res) => res.json());
-});
+const onAdd = () => {
+  counter.increment();
+};
 </script>
 <style lang="less" scoped>
-.logo {
-  margin-top: 10px;
-  display: flex;
+.count {
+  text-align: center;
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
 }
 
-img {
-  width: 64px;
-  height: 64px;
+.buttons {
+  display: flex;
+
+  button {
+    & + button {
+      margin-left: 15px;
+    }
+  }
 }
 </style>
