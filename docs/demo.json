@@ -1,0 +1,92 @@
+{
+  "node": [
+    {
+      "id": "0",
+      "package": "@types/node",
+      "require_version": "^18.17.3",
+      "real_version": "^18.17.3",
+      "deep": 0,
+      "dependencies": []
+    },
+    {
+      "id": "1",
+      "package": "eslint",
+      "require_version": "^8.46.0",
+      "real_version": "^18.17.3",
+      "deep": 0,
+      "dependencies": [
+        {
+          "id": "11",
+          "package": "@eslint-community/regexpp",
+          "require_version": "^4.6.1",
+          "real_version": "^18.17.3",
+          "deep": 1,
+          "dependencies": []
+        },
+        {
+          "id": "12",
+          "package": "@eslint-community/eslint-utils",
+          "require_version": "^4.2.0",
+          "real_version": "^18.17.3",
+          "deep": 1,
+          "dependencies": [
+            {
+              "id": "22",
+              "package": "@eslint-community/eslint-plugin-mysticatea",
+              "require_version": "^15.2.0",
+              "real_version": "^18.17.3",
+              "deep": 2,
+              "dependencies": []
+            }
+          ]
+        },
+        {
+          "id": "13",
+          "package": "@eslint/eslintrc",
+          "require_version": "^2.1.1",
+          "real_version": "^18.17.3",
+          "deep": 1,
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "package": "package name",
+      "require_version": "package version",
+      "real_version": "^18.17.3",
+      "deep": 0,
+      "dependencies": []
+    },
+    {
+      "id": "3",
+      "package": "package name",
+      "require_version": "package version",
+      "real_version": "^18.17.3",
+      "deep": 0,
+      "dependencies": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "0",
+      "target": "1"
+    },
+    {
+      "source": "0",
+      "target": "2"
+    },
+    {
+      "source": "0",
+      "target": "3"
+    },
+    {
+      "source": "1",
+      "target": "3"
+    },
+    {
+      "source": "2",
+      "target": "3"
+    }
+  ]
+}
