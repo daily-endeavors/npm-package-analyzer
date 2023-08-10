@@ -5,7 +5,7 @@ export default {
   presets: [require.resolve('@umijs/preset-vue')],
   polyfill: false,
   manifest: {
-    basePath: ".",
-    publicPath: '.',
+    basePath: "./",
+    publicPath: './',
   }
 };
