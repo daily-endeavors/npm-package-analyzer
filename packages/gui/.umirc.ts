@@ -5,4 +5,5 @@ export default {
   presets: [require.resolve('@umijs/preset-vue')],
   polyfill: false,
   base: "/npm-package-analyzer",
+  publicPath:"./"
 };
