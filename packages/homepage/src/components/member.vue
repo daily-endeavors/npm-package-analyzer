@@ -30,10 +30,10 @@
           </td>
         </tr>
         <tr>
-          <td class="border border-slate-300">FionaYuliang</td>
+          <td class="border border-slate-300">雪舟寺</td>
           <td class="border border-slate-300">
             <a href="https://github.com/FionaYuliang" target="_blank"
-              >https://github.com/FionaYuliang_github</a
+              >FionaYuliang_github</a
             >
           </td>
           <td
