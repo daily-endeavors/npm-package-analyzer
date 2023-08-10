@@ -4,8 +4,5 @@ export default {
   crossorigin: {},
   presets: [require.resolve('@umijs/preset-vue')],
   polyfill: false,
-  manifest: {
-    basePath: "./",
-    publicPath: './',
-  }
+  base: "./",
 };
