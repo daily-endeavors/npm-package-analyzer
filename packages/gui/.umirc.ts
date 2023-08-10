@@ -4,5 +4,5 @@ export default {
   crossorigin: {},
   presets: [require.resolve('@umijs/preset-vue')],
   polyfill: false,
-  base: "./",
+  base: "/npm-package-analyzer",
 };
