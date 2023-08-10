@@ -1,0 +1,6 @@
+{
+  "./umi.css": "./umi.css",
+  "./umi.js": "./umi.js",
+  "./p__index.css": "./p__index.chunk.css",
+  "./p__index.js": "./p__index.async.js"
+}
