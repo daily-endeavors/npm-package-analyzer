@@ -12,7 +12,7 @@
       </thead>
       <tbody>
         <tr>
-          <td class="border border-slate-300">yaogeyou</td>
+          <td class="border border-slate-300">尧歌游</td>
           <td class="border border-slate-300">
             <a href="https://github.com/yaogeyou-github" target="_blank"
               >yaogeyou_github</a
