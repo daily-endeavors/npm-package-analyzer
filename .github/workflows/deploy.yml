@@ -35,15 +35,17 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install
-      - name: Build
+      - name: Build:gui
+        run: pnpm gui:build
+      - name: Build:homepage
         run: pnpm homepage:build
-      - name: Deploy
+      - name: Deploy-Gui
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./packages/homepage/dist
-      - name: Deploy-2-External
+          publish_dir: ./packages/gui/dist
+      - name: Deploy-Homepage
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
