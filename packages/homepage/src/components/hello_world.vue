@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import Member from './member.vue'
 
 defineProps<{ msg: string }>()
 
@@ -12,9 +13,14 @@ const count = ref(0)
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
-      团队地址<a target="_blank" href="https://github.com/daily-endeavors/npm-package-analyzer">https://github.com/daily-endeavors/npm-package-analyzer</a>
+      项目地址<a
+        target="_blank"
+        href="https://github.com/daily-endeavors/npm-package-analyzer"
+        >https://github.com/daily-endeavors/npm-package-analyzer</a
+      >
     </p>
   </div>
+  <Member />
 
   <p>
     Check out
