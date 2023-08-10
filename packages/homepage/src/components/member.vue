@@ -1,6 +1,4 @@
-<script setup lang="ts">
-defineProps<{}>()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="card flex justify-center content-center">
