@@ -47,6 +47,24 @@
             </a>
           </td>
         </tr>
+        <tr>
+          <td class="border border-slate-300">戴戴戴yc</td>
+          <td class="border border-slate-300">
+            <a href="https://github.com/2003dyc" target="_blank"
+              >DaiDaiDaiyc_github</a
+            >
+          </td>
+          <td
+            class="border border-slate-300 w-24 hover:animate-pulse flex justify-center content-center"
+          >
+            <a href="https://github.com/2003dyc" target="_blank">
+              <img
+                class="rounded-full w-16"
+                src="https://avatars.githubusercontent.com/u/141700623?v=4"
+              />
+            </a>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
