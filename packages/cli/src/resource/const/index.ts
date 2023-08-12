@@ -11,7 +11,7 @@ export const defaultRecord: RecordType.item = {
   /**
    * npm包唯一id
    */
-  uuid: 212313,
+  uuid: '212313',
   /**
    * npm包名
    */
