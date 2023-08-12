@@ -109,7 +109,15 @@ async function collect() {
     },
   }
 
-  
+  for(let packageName of Object.keys(record.packageInfo.dependencies)){
+    record.detectInfo.dependencyInstallStatus[packageName] = ''
+  }
+
+  for(let packageName of Object.keys(record.packageInfo.devDependencies)){
+    record.detectInfo.dependencyInstallStatus[packageName] = ''
+  }
+
+
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(
     '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
