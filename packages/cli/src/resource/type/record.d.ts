@@ -1,7 +1,7 @@
 /**
  * 自增id
  */
-type packageId = number
+export type packageId = number
 
 // 依赖解析算法, 基于Node.js模块解析机制实现
 // 1. 首先从package.json所在的node_modules文件夹中查找依赖->查找到则终止流程
@@ -24,11 +24,11 @@ type packageId = number
 /**
  * 基础分析单元
  */
-type item = {
+export type item = {
   /**
    * npm包唯一id
    */
-  uuid: `${packageId}`
+  uuid: packageId
   /**
    * npm包名
    */
@@ -113,7 +113,7 @@ type item = {
 /**
  * 最终输出数据
  */
-type record = {
+export type record = {
   /**
    * 根package
    */
