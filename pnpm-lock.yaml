@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -26,6 +26,9 @@ importers:
       eslint-plugin-regexp:
         specifier: ^1.15.0
         version: 1.15.0(eslint@8.46.0)
+      prettier:
+        specifier: ^2.8.8
+        version: 2.8.8
       typescript:
         specifier: ^5.0.2
         version: 5.0.2
