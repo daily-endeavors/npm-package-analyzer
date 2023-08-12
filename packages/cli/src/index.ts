@@ -5,23 +5,45 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 async function asyncRunner() {
-  console.log(Const.rootPath)
-  let a: RecordType.item = {
-    /**
-     * npm包唯一id
-     */
-    uuid: 212313,
-    /**
-     * npm包名
-     */
-    packageName: 'string',
+  await collect()
+}
+
+let counter = 0
+function getUuid() {
+  counter++
+  return `${counter}`
+}
+
+async function collect() {
+  //   const rootPath = path.resolve(__dirname, '../../../')
+  //   const desfile = path.join(rootPath, './packages/gui/package.json')
+  //   const readContent = fs.readFileSync(desfile).toString()
+  //   const jsonObj = JSON.parse(readContent)
+
+  //   const directoryPath = path.resolve(__dirname, '../dist/')
+  //   const fileName = 'example.json' // 新建文件名
+  //   const writeContent = JSON.stringify({ name: jsonObj.name }, null, 2) // 文件内容
+  //   fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
+
+  //读取指定目录下的package.json
+
+  const targetDir = '/Users/yang/Desktop/npm-package-analyzer/packages/homepage'
+  const targetFile = path.resolve(targetDir, './package.json')
+  //收集基本信息
+  const readContent = fs.readFileSync(targetFile).toString()
+  const jsonObj = JSON.parse(readContent)
+  //存放到record对象中
+  let record: RecordType.item = {
+    uuid: getUuid(),
+
+    packageName: jsonObj.name,
     /**
      * npm包版本
      * case1: 正常版本号
      * case2: alpha发版 1.1.0-alpha.1
      * case3: monorepo项目: workspace:*
      */
-    version: `string`,
+    version: jsonObj.version,
     /**
      * package.json所在路径的文件夹列表, 用于后续检测依赖关系
      */
@@ -29,7 +51,7 @@ async function asyncRunner() {
     /**
      * 字符串格式的package.json所在路径
      */
-    installPath: 'string',
+    installPath: targetDir,
     /**
      * 以根路径为0, 记录相对根路径的递归查询深度
      */
@@ -41,11 +63,11 @@ async function asyncRunner() {
       /**
        * 正式依赖
        */
-      dependencies: {},
+      dependencies: jsonObj.dependencies,
       /**
        * dev依赖
        */
-      devDependencies: {},
+      devDependencies: jsonObj.devDependencies,
     },
     /**
      * 完成数据收集, 进行版本检测时生成的信息
@@ -58,7 +80,7 @@ async function asyncRunner() {
         /**
          * 是否有多实例情况
          */
-        hasMuiltInstance: true,
+        hasMuiltInstance: false,
         uuidList: [],
       },
       /**
@@ -68,7 +90,7 @@ async function asyncRunner() {
         /**
          * 是否有循环依赖情况
          */
-        hasCircularDependency: true,
+        hasCircularDependency: false,
         /**
          * 记录循环链路上的所有项目uuid
          */
@@ -81,19 +103,21 @@ async function asyncRunner() {
       /**
        * 实际依赖安装情况
        * 检查到依赖记录uuid, 检查不到则记录空字符串
+       * [packageName: string]: item['uuid'] | ''
        */
       dependencyInstallStatus: {},
     },
   }
-  //   const rootPath = path.resolve(__dirname, '../../../')
-  //   const desfile = path.join(rootPath, './packages/gui/package.json')
-  //   const readContent = fs.readFileSync(desfile).toString()
-  //   const jsonObj = JSON.parse(readContent)
 
-  //   const directoryPath = path.join(__dirname, '../dist/')
-  //   const fileName = 'example.json' // 新建文件名
-  //   const writeContent = JSON.stringify({ name: jsonObj.name }, null, 2) // 文件内容
-  //   fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
+  
+  //输出到最终文件里面infodb.json
+  const directoryPath = path.resolve(
+    '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
+    './dist/'
+  )
+  const fileName = 'infodb.json' // 新建文件名
+  const writeContent = JSON.stringify(record, null, 2) // 文件内容
+  fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
 
   console.log('done')
 }

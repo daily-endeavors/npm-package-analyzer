@@ -1,7 +1,7 @@
 /**
  * 自增id
  */
-export type packageId = number
+export type packageId = string
 
 // 依赖解析算法, 基于Node.js模块解析机制实现
 // 1. 首先从package.json所在的node_modules文件夹中查找依赖->查找到则终止流程
