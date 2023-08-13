@@ -4,12 +4,17 @@ import * as RecordType from './resource/type/record'
 import * as fs from 'fs'
 import * as path from 'path'
 
-
 let counter = 0
 function getUuid() {
   counter++
   return `${counter}`
 }
+
+/**
+ * 收集targetPath路径下面的package.json的信息
+ * @param targetPath
+ * @returns
+ */
 
 export async function collect(targetPath: string) {
   //   const rootPath = path.resolve(__dirname, '../../../')
@@ -141,14 +146,86 @@ export async function collect(targetPath: string) {
     record.detectInfo.dependencyInstallStatus[packageName] = ''
   }
 
-  //输出到最终文件里面infodb.json
-  const directoryPath = path.resolve(
-    '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
-    './dist/'
-  )
-  const fileName = 'infodb.json' // 新建文件名
-  const writeContent = JSON.stringify(record, null, 2) // 文件内容
-  fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
+  return record
+}
 
-  console.log('done')
+/**
+ * 判断路径是否合法
+ * @param targetDir
+ * @returns
+ */
+export async function isLegalDir(targetDir: string) {
+  const filepath = path.resolve(targetDir, 'package.json')
+  if (!fs.existsSync(filepath)) {
+    return false
+  }
+
+  const readContent = fs.readFileSync(filepath).toString()
+  try {
+    const jsonObj = JSON.parse(readContent)
+    if (jsonObj.name === undefined || jsonObj.version === undefined) {
+      return false
+    }
+  } catch (error) {
+    return false
+  }
+
+  return true
+}
+
+export async function generateAllLegalDir(
+  targetDir: string
+): Promise<string[]> {
+  // 收集所有合法的目录, 汇总成列表
+  let legalDirList: string[] = []
+
+  const checkresult = await isLegalDir(targetDir)
+  if (checkresult === false) {
+    return []
+  }
+  // targetDir验证通过
+  legalDirList.push(targetDir)
+
+  // 验证node_modules
+
+  // 1.  检查node_modules文件夹是否存在 => 不存在返回legalDirList
+  const check1 = fs.existsSync(path.resolve(targetDir, 'node_modules'))
+  if (check1 === false) {
+    return legalDirList
+  }
+
+  // 2.  获取node_modules下的所有子文件夹列表subDirnameList
+  const raw_DirnameList = fs.readdirSync(
+    path.resolve(targetDir, 'node_modules')
+  )
+
+  // 4.  若目录以@开头, 需要接着向下搜集一层
+  let clearDirnamelist: string[] = []
+
+  for (let subdirname of raw_DirnameList) {
+    if (subdirname.startsWith('.')) {
+      continue
+    }
+    if (subdirname.startsWith('@')) {
+      const child_dirnameList = fs.readdirSync(
+        path.resolve(targetDir, 'node_modules', subdirname)
+      )
+      // 5.  合成所有子目录列表
+      child_dirnameList.forEach((child_dirname) => {
+        clearDirnamelist.push(path.join(subdirname, child_dirname))
+      })
+      continue
+    }
+    clearDirnamelist.push(subdirname)
+  }
+
+  // 6.  针对每一个子目录, 调用generateAllLegalDir方法, 将返回值收集到legalDirList内
+  for (let subDirName of clearDirnamelist) {
+    let subLegalDirList = await generateAllLegalDir(
+      path.resolve(targetDir, 'node_modules', subDirName)
+    )
+    legalDirList = [...legalDirList, ...subLegalDirList]
+  }
+
+  return legalDirList
 }
