@@ -123,7 +123,10 @@ export async function collect(targetPath: string) {
   const basename = path.basename(rootPath)
   const relative = path.relative(rootPath, targetPath)
   record.installPath = path.join(basename, relative)
-  record.installDirList = record.installPath.split(path.sep)
+  record.installDirList = record.installPath.split(path.sep).filter((item) => {
+    // 不需要记录带node_modules的情况
+    return item !== 'node_modules'
+  })
   // 额外考虑包名中带分隔符的情况
   if (record.packageName.includes('/')) {
     // 根package.json中带/的情况不需要处理
