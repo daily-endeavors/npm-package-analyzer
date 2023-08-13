@@ -13,9 +13,37 @@ async function asyncRunner() {
   // 2.1 向collect函数, 传入每一个合法的文件夹路径, 得到node_modules下的数据
   // 1. 读取根路径下的package.json
   const targetDir =
-    '/Users/yang/Desktop/npm-package-analyzer/node_modules/@types/eslint-scope'
-  const parseResult = await Util.collect(targetDir)
-  console.log('parseResult => ', parseResult)
+    '/Users/yang/Desktop/npm-package-analyzer/node_modules/@types'
+
+    const checkresult = await isLegalDir(targetDir)
+    console.log(checkresult)
+    
+    
+}
+
+/**
+ * 判断路径是否合法
+ * @param targetDir 
+ * @returns 
+ */
+async function isLegalDir(targetDir:string){
+  const filepath = path.resolve(targetDir,'package.json')
+  if(!fs.existsSync(filepath)){
+    return false
+  }
+  
+  const readContent = fs.readFileSync(filepath).toString()
+  try {
+    const jsonObj = JSON.parse(readContent)
+    if(jsonObj.name === undefined || jsonObj.version === undefined){
+      return false
+    }
+  } catch (error) {
+    return false
+  }
+
+  return true
+
 }
 
 
