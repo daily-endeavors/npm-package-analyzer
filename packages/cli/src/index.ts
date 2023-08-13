@@ -37,4 +37,39 @@ async function asyncRunner() {
   console.log('done')
 }
 
+// detectInfo解析步骤
+// 分三轮, 分别计算
+// 一: muiltInstance
+// 1. 创建packageNameMap, 格式为 [packageName]: recordItemList[]
+// 2. 遍历recordList. 对每一项记录,
+// 2.1 若packageName不存在, 则在packageNameMap中创建新记录, value为[record]
+// 2.2 若packageName已存在, 则将record添加到packageNameMap[packageName]下的列表中
+// 3. 遍历packageNameMap的每一个key
+// 3.1 若value只有一项, 直接添加到新记录列表
+// 3.2 若value中有多项, 更新每一项的detectInfo.muiltInstance信息后, 再将数据更新到新记录列表中
+//
+// 二: 依赖关系 dependencyInstallStatus
+// 关键点是明确npm的包查找规则:
+// 按照 官方文档 描述：如果传递给 require() 的模块标识符不是 core 模块，并且不是以 '/'、'../' 或 './' 开头，则 Node.js 从当前模块的目录开始，并添加 /node_modules，并尝试从中加载模块。如果在那里找不到它，则它移动到父目录，依此类推，直到到达文件系统的根目录。
+// https://juejin.cn/post/7235274652728213565
+//
+// 由于包查找规则只会从当前package.json所在目录的node_modules下查找, 然后逐级向上查找node_modules, 所以首先需要构建npm包的目录层级关系
+// 0. 构建目录层级关系
+// 创建对象 FS = {}
+// 循环recordList, 对于每一个record, 读取其installDirList列表
+// 按installDirList顺序创建对象, 例如如果值为 "npm-package-analyzer",  "@eslint-community/eslint-utils", 则实际构建出的数据为
+// {
+//   "npm-package-analyzer": {
+//      "@eslint-community/eslint-utils": uuid
+//   }
+// }
+// 而@eslint-community/eslint-utils的依赖项, 只能先查"npm-package-analyzer->@eslint-community/eslint-utils"下的项, 再查"npm-package-analyzer"下的项. 查到返回版本uuid, 未查到返回空字符串""
+// 1.  添加依赖查找方法, 根据FS依赖树对象, 和指定的依赖包名, 以及指定的installDirList, 查找依赖项对应的uuid, 未查找到返回""
+// 2.  遍历recordList, 针对每一个record中dependencyInstallStatus的值, 调用1中的方法查找依赖项uuid, 更新对象数据后添加到新纪录列表中
+// 3.  将新记录列表写入文件
+//
+// 三: 循环依赖检测 circularDependency
+// 暂时略过, 这个属于环检测算法类问题: https://labuladong.github.io/algo/di-yi-zhan-da78c/shou-ba-sh-03a72/huan-jian--e36de/
+
+
 asyncRunner()
