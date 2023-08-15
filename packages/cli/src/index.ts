@@ -64,7 +64,7 @@ async function muiltInstance(recordList: RecordType.item[]) {
       packageNameMap[recordObj.packageName].push(recordObj)
     }
   }
-
+  
   const newRecordList: RecordType.item[] = []
   // 3. 遍历packageNameMap的每一个key
   for (let packageName of Object.keys(packageNameMap)) {
