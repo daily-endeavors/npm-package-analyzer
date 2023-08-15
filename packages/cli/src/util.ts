@@ -176,6 +176,42 @@ export async function isLegalDir(targetDir: string) {
   return true
 }
 
+/**
+ * 一直向下探测到底
+ * @param targetDir
+ * @returns
+ */
+export async function detectLegalDir(targetDir: string): Promise<string[]> {
+  let subLegalDirList: string[] = []
+
+  const isCurrentDirLegal = await isLegalDir(targetDir)
+  if (isCurrentDirLegal === true) {
+    subLegalDirList.push(targetDir)
+  }
+  // 接着探索子文件夹
+  let subNameList = fs.readdirSync(path.resolve(targetDir))
+  // 过滤出所有的文件夹
+  subNameList = subNameList.filter((filename) => {
+    // 不考虑.开头的隐藏文件 => .pnpm 下的文件为有效依赖文件
+    // if (filename.startsWith('.')) {
+    //   return false
+    // }
+    // 只看文件夹
+    if (
+      fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
+    ) {
+      return false
+    }
+    return true
+  })
+  for (let subName of subNameList) {
+    const legalList = await detectLegalDir(path.resolve(targetDir, subName))
+    subLegalDirList = [...subLegalDirList, ...legalList]
+  }
+
+  return subLegalDirList
+}
+
 export async function generateAllLegalDir(
   targetDir: string
 ): Promise<string[]> {
@@ -194,8 +230,32 @@ export async function generateAllLegalDir(
   // 1.  检查node_modules文件夹是否存在 => 不存在返回legalDirList
   const check1 = fs.existsSync(path.resolve(targetDir, 'node_modules'))
   if (check1 === false) {
+    // 处理当前路径中不含 node_modules 的文件夹
+    let subNameList = fs.readdirSync(path.resolve(targetDir))
+    // 过滤出所有的文件夹
+    subNameList = subNameList.filter((filename) => {
+      // 不考虑.开头的隐藏文件
+      if (filename.startsWith('.')) {
+        return false
+      }
+      if (
+        fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
+      ) {
+        return false
+      }
+      return true
+    })
+    for (let subName of subNameList) {
+      const subLegalDirList = await detectLegalDir(
+        path.resolve(targetDir, subName)
+      )
+      legalDirList = [...legalDirList, ...subLegalDirList]
+    }
+
     return legalDirList
   }
+
+  // 处理 node_modules 下的文件夹
 
   // 2.  获取node_modules下的所有子文件夹列表subDirnameList
   const raw_DirnameList = fs.readdirSync(
