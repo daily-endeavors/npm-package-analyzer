@@ -28,20 +28,21 @@ async function asyncRunner() {
     recordList.push(record)
   }
 
+  const newRecordList = await muiltInstance(recordList)
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(
     '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
     './dist/'
   )
   const fileName = 'infodb.json' // 新建文件名
-  const writeContent = JSON.stringify(recordList, null, 2) // 文件内容
+  const writeContent = JSON.stringify(newRecordList, null, 2) // 文件内容
   fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
 
   console.log('done')
 }
 
 // 一: muiltInstance，检测同一个 package 是否包含多个版本实例；
-async function muiltInstance(recordList: string) {
+async function muiltInstance(recordList: RecordType.item[]) {
   // 1. 创建packageNameMap, 格式为 [packageName]: recordItemList[]
 
   type packageNameMap = {
@@ -51,8 +52,7 @@ async function muiltInstance(recordList: string) {
   const packageNameMap: packageNameMap = {}
 
   // 2. 遍历recordList,对每一项记录
-  for (let record of recordList) {
-    const recordObj = JSON.parse(record)
+  for (let recordObj of recordList) {
     // 2.1 若packageName不存在, 则在packageNameMap中创建新记录, value为[record]
     if (packageNameMap[recordObj.packageName] === undefined) {
       packageNameMap[recordObj.packageName] = [recordObj]
@@ -84,6 +84,8 @@ async function muiltInstance(recordList: string) {
       newRecordList.push(samePackageNameItem)
     }
   }
+
+  return newRecordList
 }
 // detectInfo解析步骤
 // 分三轮, 分别计算
@@ -91,7 +93,7 @@ async function muiltInstance(recordList: string) {
 //
 // 二: 依赖关系 dependencyInstallStatus
 
-async function dependencyInstallStatus(params: type) {}
+// async function dependencyInstallStatus(params: type) {}
 // 关键点是明确npm的包查找规则:
 // 按照 官方文档 描述：如果传递给 require() 的模块标识符不是 core 模块，并且不是以 '/'、'../' 或 './' 开头，则 Node.js 从当前模块的目录开始，并添加 /node_modules，并尝试从中加载模块。如果在那里找不到它，则它移动到父目录，依此类推，直到到达文件系统的根目录。
 // https://juejin.cn/post/7235274652728213565

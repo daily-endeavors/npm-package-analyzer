@@ -39,5 +39,8 @@
     "playground/**/__tests__/**/*.ts": [
       "eslint --cache --fix"
     ]
+  },
+  "dependencies": {
+    "antd": "^5.8.3"
   }
 }
