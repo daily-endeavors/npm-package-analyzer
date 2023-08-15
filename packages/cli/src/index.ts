@@ -19,11 +19,14 @@ async function asyncRunner() {
   // 2.1 向collect函数, 传入每一个合法的文件夹路径, 得到node_modules下的数据
   // 1. 读取根路径下的package.json
   const targetDir = '/Users/yang/Desktop/npm-package-analyzer/'
-
   const allIegalDirList = await Util.generateAllLegalDir(targetDir)
+
+  const targetDirV2 = '/Users/yang/Desktop/npm-package-analyzer/packages/cli'
+  const allIegalDirListV2 = await Util.generateAllLegalDir(targetDirV2)
+
   const recordList: RecordType.item[] = []
 
-  for (let legalDir of allIegalDirList) {
+  for (let legalDir of [...allIegalDirList, ...allIegalDirListV2]) {
     const record = await Util.collect(legalDir)
     recordList.push(record)
   }
