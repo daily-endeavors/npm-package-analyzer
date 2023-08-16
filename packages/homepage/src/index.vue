@@ -18,8 +18,8 @@ import HelloWorld from './components/hello_world.vue'
       <div class="wrapper">
         <!-- logo -->
         <div class="logo">
-          <img class="avatar" src="https://avatars.githubusercontent.com/u/141724265?v=4" />
-          <h1><a href="#">日常努力</a></h1>
+          <img src="../src/images/日拱一卒logo.jpg" alt="">
+          <h1><a href="https://github.com/daily-endeavors/npm-package-analyzer ">日常努力</a></h1>
         </div>
         <!-- nav -->
         <div class="nav">
@@ -58,7 +58,7 @@ import HelloWorld from './components/hello_world.vue'
           <p>33333</p>
         </div>
         <div class="center">
-          <img src="" alt="">
+          <img src="../src/images/日拱一卒logo.jpg" alt="">
         </div>
         <div class="right">
           <p>11111</p>
@@ -75,7 +75,7 @@ import HelloWorld from './components/hello_world.vue'
       <div class="author-item">
         <div class="author-item-left">
           <p>你好很高兴认识你</p>
-          <h1>我们是 日常努力 团队</h1>
+          <h1>我们是 <a href="https://daily-endeavors.github.io/blog/">日常努力</a> 团队</h1>
           <p>由六人组成，是齐心协力、不断上进的小组</p>
         </div>
         <div class="author-item-right">
@@ -89,14 +89,110 @@ import HelloWorld from './components/hello_world.vue'
       <!-- content第2块 -->
       <div class="author-item">
           <div class="author-left-skill">
-            <p>技能</p>
+            <!-- <p>团队列表</p> -->
+            <div class="content-center">
+              <table class="border-collapse border border-slate-400">
+                <thead>
+                  <tr>
+                    <th class="border border-slate-300">团队成员(Q群用户名)</th>
+                    <th class="border border-slate-300">github账号</th>
+                    <th class="border border-slate-300">头像</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border border-slate-300">尧歌游</td>
+                    <td class="border border-slate-300">
+                      <a href="https://github.com/yaogeyou-github" target="_blank">yaogeyou_github</a>
+                    </td>
+                    <td class="border border-slate-300 w-24 hover:animate-pulse flex justify-center content-center">
+                      <a href="https://github.com/yaogeyou-github" target="_blank">
+                        <img class="rounded-full w-16"
+                          src="https://avatars.githubusercontent.com/u/141559074?s=400&u=839e2d7981c945b832d857d982996d314199eaee&v=4" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-slate-300">雪舟寺</td>
+                    <td class="border border-slate-300">
+                      <a href="https://github.com/FionaYuliang" target="_blank">FionaYuliang_github</a>
+                    </td>
+                    <td class="border border-slate-300 w-24 hover:animate-pulse flex justify-center content-center">
+                      <a href="https://github.com/FionaYuliang" target="_blank">
+                        <img class="rounded-full w-16" src="https://avatars.githubusercontent.com/u/20492174?v=4" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-slate-300">戴戴戴yc</td>
+                    <td class="border border-slate-300">
+                      <a href="https://github.com/2003dyc" target="_blank">DaiDaiDaiyc_github</a>
+                    </td>
+                    <td class="border border-slate-300 w-24 hover:animate-pulse flex justify-center content-center">
+                      <a href="https://github.com/2003dyc" target="_blank">
+                        <img class="rounded-full w-16" src="https://avatars.githubusercontent.com/u/141700623?v=4" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-slate-300">Dynamite</td>
+                    <td class="border border-slate-300">
+                      <a href="https://github.com/jjiuen" target="_blank">jjiuen_github</a>
+                    </td>
+                    <td class="border border-slate-300 w-24 hover:animate-pulse flex justify-center content-center">
+                      <a href="https://github.com/jjiuen" target="_blank">
+                        <img class="rounded-full w-16" src="https://avatars.githubusercontent.com/u/122665661?v=4" />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border border-slate-300">叶钰茹</td>
+                    <td class="border border-slate-300">
+                      <a href="https://github.com/yuruYe" target="_blank">yuruYe_github</a>
+                    </td>
+                    <td class="border border-slate-300 w-24 hover:animate-pulse flex justify-center content-center">
+                      <a href="https://github.com/yuruYe" target="_blank">
+                        <img class="rounded-full w-16" src="https://avatars.githubusercontent.com/u/141724265?v=4" />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
+
           <div class="author-right-carrer">
-            <p>生涯</p>
+            <p>任务完成进度和情况</p>
           </div>
       </div>
       <!-- content第3块 -->
-      <div class="author-item">
+      <div class="member">
+        <div class="bottom">
+          成员列表
+        </div>
+        <div class="section">
+          <a href="#">成员1</a>
+        </div>
+        <div class="section">
+          <a href="#">成员2</a>
+        </div>
+        <div class="section">
+          <a href="#">成员3</a>
+        </div>
+        <div class="section">
+          <a href="#">成员4</a>
+        </div>
+        <div class="section">
+          <a href="#">成员5</a>
+        </div>
+        <div class="section">
+          <a href="#">成员6</a>
+        </div>
+        <div class="section">
+          <a href="#">成员7</a>
+        </div>
+      </div>
+      <!-- <div class="author-item">
         <div class="author-left-personality">
           <p>人格</p>
           <img src="./images/INFP-T.svg" alt="">
@@ -105,36 +201,36 @@ import HelloWorld from './components/hello_world.vue'
           <p>photo</p>
           <img src="" alt="">
         </div>
-      </div>
+      </div> -->
       <!-- content第4块 -->
-      <div class="author-item">
+      <!-- <div class="author-item">
         <div class="author-left-motto">
           <p>座右铭</p>
         </div>
         <div class="author-right-specialty">
           <p>特长</p>
         </div>
-      </div>
+      </div> -->
       <!-- content第5块 -->
-      <div class="author-item">
+      <!-- <div class="author-item">
         <div class="author-left-hobby1">
           <p>爱好</p>
         </div>
         <div class="author-right-hobby2">
           <p>爱好</p>
         </div>
-      </div>
+      </div> -->
       <!-- content第6块 -->
-      <div class="author-item">
+      <!-- <div class="author-item">
         <div class="author-left-concern">
           <p>关注偏好</p>
         </div>
         <div class="author-right-music">
           <p>音乐偏好</p>
         </div>
-      </div>
+      </div> -->
       <!-- content第7块 -->
-      <div class="author-item">
+      <!-- <div class="author-item">
         <div class="author-left-figures">
           <p>访问统计</p>
         </div>
@@ -147,7 +243,7 @@ import HelloWorld from './components/hello_world.vue'
           </div>
         </div>
         
-      </div>
+      </div> -->
       
     </div>
   </div>
@@ -194,15 +290,7 @@ import HelloWorld from './components/hello_world.vue'
   display: flex;
   align-items: center;
 }
-.banner  .wrapper .left {
-  animation:mymove 2s infinite alternate;
-  position: relative;
-}
-@keyframes mymove
-{
-0%{top:0px;}
-100%{top:20px;}
-}
+
 /* logo */
 .logo {
   white-space: nowrap;
@@ -217,7 +305,7 @@ import HelloWorld from './components/hello_world.vue'
   font-size: 16px;
 }
 
-.logo .avatar {
+.logo img {
   width: 20px;
   height: 20px;
 }
@@ -253,13 +341,27 @@ import HelloWorld from './components/hello_world.vue'
 }
 .banner .wrapper{
   display: flex;
+}.banner  .wrapper .left {
+  animation:mymove 5s infinite alternate;
+  position: relative;
 }
+@keyframes mymove
+{
+0%{top:0px;}
+100%{top:20px;}
+}
+
 .banner .center {
   background-color: #fff;
   border-radius: 50%;
   width: 180px;
   height: 180px;
   margin: auto;
+}
+.banner .center img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
 }
 .banner .left {
   margin-left:50px ;
@@ -283,10 +385,19 @@ import HelloWorld from './components/hello_world.vue'
   border-radius: 40px;
   margin: 20px 8px;
 }
+.banner  .wrapper .right {
+  animation:mymove 5s infinite alternate;
+  position: relative;
+}
+@keyframes mymove
+{
+0%{top:0px;}
+100%{top:20px;}
+}
 .banner h1 {
-  height: 40px;
+  height: 80px;
   font-weight: 700;
-  line-height: 80px;
+  line-height: 90px;
   text-align: center;
 }
 
@@ -322,6 +433,97 @@ import HelloWorld from './components/hello_world.vue'
   border-radius: 40px;
   border: 1px solid #E8ECF8;
 }
+.content .author-left-skill  {
+   
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color:black;
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  
+}
+.content .author-left-skill table,th,td {
+  border-collapse: collapse;
+  border:solid 1px black;
+}
+.content .author-left-skill .rounded-full {
+  width: 50px;
+  height: 50px;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} 
+
 .content .author-right-carrer {
   width: 54%;
   height: 450px;
@@ -331,7 +533,25 @@ import HelloWorld from './components/hello_world.vue'
   border: 1px solid #E8ECF8;
 }
 /* content-3 */
-.content .author-left-personality {
+.member {
+  height: 450px;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-radius: 40px;
+  border: 1px solid #E8ECF8;
+}
+.member .section {
+  justify-content: space-evenly;
+  height: 400px;
+  width: 145px;
+  margin: 19px;
+  display: flex;
+  border-radius: 20px;
+  border: 1px solid #E8ECF8;
+  float: left;
+
+}
+/* .content .author-left-personality {
   width: 54%;
   height: 206px;
   padding: 20px 40px;
@@ -357,9 +577,9 @@ import HelloWorld from './components/hello_world.vue'
   background-color: #fff;
   border-radius: 40px;
   border: 1px solid #E8ECF8;
-}
+} */
 /* content-4 */
-.content .author-left-motto {
+/* .content .author-left-motto {
   width: 39%;
   height: 206px;
   padding: 20px 40px;
@@ -374,9 +594,9 @@ import HelloWorld from './components/hello_world.vue'
   background-color: #a11010;
   border-radius: 40px;
   border: 1px solid #E8ECF8;
-}
+} */
 /* content-5 */
-.content .author-left-hobby1 {
+/* .content .author-left-hobby1 {
   width: 54%;
   height: 206px;
   padding: 20px 40px;
@@ -391,7 +611,7 @@ import HelloWorld from './components/hello_world.vue'
   background-color: #fff;
   border-radius: 40px;
   border: 1px solid #E8ECF8;
-}
+} */
 /* content-6
 .content .author-left-hobby1 {
   width: 39%;
@@ -410,7 +630,7 @@ import HelloWorld from './components/hello_world.vue'
   border: 1px solid #E8ECF8;
 } */
 /* content-6*/
-.content .author-left-concern {
+/* .content .author-left-concern {
   width: 45%;
   height: 450px;
   padding: 20px 40px;
@@ -425,9 +645,9 @@ import HelloWorld from './components/hello_world.vue'
   background-color: #fff;
   border-radius: 40px;
   border: 1px solid #E8ECF8;
-}
+} */
 /* content-7 */
-.content .author-left-figures{
+/* .content .author-left-figures{
   width: 39%;
   height: 206px;
   padding: 20px 40px;
@@ -456,5 +676,5 @@ import HelloWorld from './components/hello_world.vue'
   background-color: #fff;
   border-radius: 40px;
   border: 1px solid #E8ECF8;
-}
+} */
 </style>
