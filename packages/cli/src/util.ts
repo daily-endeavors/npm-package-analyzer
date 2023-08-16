@@ -4,11 +4,7 @@ import * as RecordType from './resource/type/record'
 import * as fs from 'fs'
 import * as path from 'path'
 
-let counter = 0
-function getUuid() {
-  counter++
-  return `${counter}`
-}
+const itemMap: RecordType.itemMap = new Map()
 
 /**
  * 收集targetPath路径下面的package.json的信息
@@ -32,7 +28,23 @@ export async function collect(targetPath: string) {
   // const rootPath = '/Users/yang/Desktop/npm-package-analyzer'
   // installPatj = npm-package-analyzer/packages/homepage
   // installList = [npm-package-analyzer, packages, homepage]
-  const rootPath = Const.rootPath
+
+  const realpath = fs.realpathSync(targetPath)
+  const isSymbolicLink = realpath !== targetPath
+
+  if (isSymbolicLink) {
+    // 如果是硬链接形成的路径,
+    if (itemMap.has(realpath)) {
+      // 若之前已经解析过, 则将硬链接内容更新到 installPathSet 内即可
+      const item = itemMap.get(realpath) as RecordType.item
+      item.installPathObj[targetPath] = true
+      itemMap.set(realpath, item)
+      return item
+    } else {
+      // 未解析过, 将 targetPath 更新到 installPathSet 中
+      // 由于后续实际已进行该工作, 因此此处无需处理
+    }
+  }
 
   const targetFile = path.resolve(targetPath, './package.json')
   //收集基本信息
@@ -40,7 +52,7 @@ export async function collect(targetPath: string) {
   const jsonObj = JSON.parse(readContent)
   //存放到record对象中
   let record: RecordType.item = {
-    uuid: getUuid(),
+    uuid: realpath,
 
     packageName: jsonObj.name ?? '',
     /**
@@ -53,11 +65,11 @@ export async function collect(targetPath: string) {
     /**
      * package.json所在路径的文件夹列表, 用于后续检测依赖关系
      */
-    installDirList: [],
+    installPathObj: { [realpath]: true, [targetPath]: true },
     /**
      * 字符串格式的package.json所在路径
      */
-    installPath: '',
+    reslovePath: realpath,
     /**
      * 以根路径为0, 记录相对根路径的递归查询深度
      */
@@ -120,26 +132,6 @@ export async function collect(targetPath: string) {
   // const rootPath = '/Users/yang/Desktop/npm-package-analyzer'
   // const c = "npm-package-analyzer/packages/homepage"
 
-  const basename = path.basename(rootPath)
-  const relative = path.relative(rootPath, targetPath)
-  record.installPath = path.join(basename, relative)
-  record.installDirList = record.installPath.split(path.sep).filter((item) => {
-    // 不需要记录带node_modules的情况
-    return item !== 'node_modules'
-  })
-  // 额外考虑包名中带分隔符的情况
-  if (record.packageName.includes('/')) {
-    // 根package.json中带/的情况不需要处理
-    if (record.installDirList.length > 1) {
-      // 扔掉最后两层
-      record.installDirList.pop()
-      record.installDirList.pop()
-      // 再把packageName装进去
-      record.installDirList.push(record.packageName)
-    }
-  }
-  record.deepLevel = record.installDirList.length
-
   //初始化依赖对象
   for (let packageName of Object.keys(record.packageInfo.dependencies)) {
     record.detectInfo.dependencyInstallStatus[packageName] = ''
@@ -148,6 +140,9 @@ export async function collect(targetPath: string) {
   for (let packageName of Object.keys(record.packageInfo.devDependencies)) {
     record.detectInfo.dependencyInstallStatus[packageName] = ''
   }
+
+  // 更新到总依赖表中
+  itemMap.set(realpath, record)
 
   return record
 }
@@ -184,6 +179,8 @@ export async function isLegalDir(targetDir: string) {
 export async function detectCommonLegalDir(
   targetDir: string
 ): Promise<string[]> {
+  // 规范化路径格式
+  targetDir = path.resolve(targetDir)
   let subLegalDirList: string[] = []
 
   const isCurrentDirLegal = await isLegalDir(targetDir)
@@ -222,6 +219,8 @@ export async function detectCommonLegalDir(
  * @param targetDir
  */
 export async function detectLegalRootDirList(targetDir: string) {
+  // 规范化路径格式
+  targetDir = path.resolve(targetDir)
   let subLegalDirList: string[] = []
 
   const isCurrentDirLegal = await isLegalDir(targetDir)

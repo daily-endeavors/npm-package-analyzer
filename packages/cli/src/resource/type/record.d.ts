@@ -1,5 +1,5 @@
 /**
- * 自增id
+ * 使用字符串格式的package.json实际所在路径作为npm包的唯一id
  */
 export type packageId = string
 
@@ -26,7 +26,7 @@ export type packageId = string
  */
 export type item = {
   /**
-   * npm包唯一id
+   * 使用字符串格式的package.json实际所在路径作为npm包的唯一id
    */
   uuid: packageId
   /**
@@ -41,13 +41,17 @@ export type item = {
    */
   version: `${string}`
   /**
-   * package.json所在路径的文件夹列表, 用于后续检测依赖关系
+   * 字符串格式的package.json所在路径, 用于后续检测依赖关系
+   * 由于 pnpm 使用硬链接进行安装, 因此该路径中既有硬链接生成的路径, 也有实际所在的路径
+   * 但路径间不会重复
    */
-  installDirList: string[]
+  installPathObj: {
+    [key: string]: true
+  }
   /**
-   * 字符串格式的package.json所在路径
+   * 字符串格式的package.json实际所在路径
    */
-  installPath: string
+  reslovePath: string
   /**
    * 以根路径为0, 记录相对根路径的递归查询深度
    */
@@ -109,6 +113,11 @@ export type item = {
     }
   }
 }
+
+/**
+ * 存储已分析完毕的包记录, 使用真实路径作为 key 值, 避免重复
+ */
+export type itemMap = Map<packageId, item>
 
 export type packageAnaylzeResult = item & {
   /**
