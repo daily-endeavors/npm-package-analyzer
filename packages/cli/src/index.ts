@@ -14,7 +14,7 @@ async function asyncRunner() {
   // 1. 读取根路径下的package.json
   const targetDir = '/Users/yang/Desktop/npm-package-analyzer/'
   const allIegalRootDirList = await Util.detectLegalRootDirList(targetDir)
-  const recordList: RecordType.packageAnaylzeResult[] = []
+  const packageAnaylzeResultList: RecordType.packageAnaylzeResult[] = []
   for (let legalRootDir of allIegalRootDirList) {
     const allIegalDirList = await Util.detectCommonLegalDir(legalRootDir)
 
@@ -30,17 +30,18 @@ async function asyncRunner() {
       const record = await Util.collect(legalDir)
       packageAnaylzeResult.packageList.push(record)
     }
-    recordList.push(packageAnaylzeResult)
+    packageAnaylzeResultList.push(packageAnaylzeResult)
   }
 
   // const newRecordList = await muiltInstanceChecker(recordList)
+  await dependencyInstallChecker(packageAnaylzeResultList)
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(
     '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
     './dist/'
   )
   const fileName = 'infodb.json' // 新建文件名
-  const writeContent = JSON.stringify(recordList, null, 2) // 文件内容
+  const writeContent = JSON.stringify(packageAnaylzeResultList, null, 2) // 文件内容
   fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
 
   console.log('done')
@@ -124,7 +125,53 @@ async function dependencyInstallChecker(
   packageAnaylzeResultList: RecordType.packageAnaylzeResult[]
 ) {
   // 依赖查找方法
-  // 从
+  // 从当前实际所在目录所在的 node_modules 目录 + 包名开始查找, 一直向上, 看能否找到对应的版本
+
+  // 初始化所有包的安装地址
+  const packageMapByInstallPath: Map<string, RecordType.item> = new Map()
+  for (let packageAnaylzeResult of packageAnaylzeResultList) {
+    for (let packageItem of packageAnaylzeResult.packageList) {
+      for (let installPath of Object.keys(packageItem.installPathObj)) {
+        packageMapByInstallPath.set(installPath, packageItem)
+      }
+    }
+  }
+
+  // 开始遍历查找每个包的依赖
+  for (let packageAnaylzeResult of packageAnaylzeResultList) {
+    for (let packageItem of packageAnaylzeResult.packageList) {
+      const realReslovePath = packageItem.reslovePath
+      // 按'dependencies', 'devDependencies'顺序查找
+      for (let dependencyType of ['dependencies', 'devDependencies'] as const) {
+        for (let dependencyName of Object.keys(
+          packageItem.detectInfo.dependencyInstallStatus[dependencyType]
+        )) {
+          const checkPathItemList = realReslovePath.split('/')
+          let hasFindDependency = false
+          while (checkPathItemList.length > 0 && hasFindDependency === false) {
+            const checkPath = path.resolve(
+              checkPathItemList.join('/'),
+              'node_modules',
+              dependencyName
+            )
+            const dependencyItem = packageMapByInstallPath.get(checkPath)
+            if (dependencyItem !== undefined) {
+              // 找到了依赖, 更新到记录里
+              packageItem.detectInfo.dependencyInstallStatus[dependencyType][
+                dependencyItem.packageName
+              ] = dependencyItem.uuid
+              // 更新依赖结果, 流程完毕
+              hasFindDependency = true
+            } else {
+              // 向上一级
+              checkPathItemList.pop()
+            }
+          }
+        }
+      }
+    }
+  }
+  return packageAnaylzeResultList
 }
 
 // 三: 循环依赖检测 circularDependency
