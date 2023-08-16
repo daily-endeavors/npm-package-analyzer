@@ -4,12 +4,6 @@ import * as RecordType from './resource/type/record'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as Util from './util'
-import { dir } from 'console'
-import { syncBuiltinESMExports } from 'module'
-import { GridItem } from 'vant'
-import { stringify } from 'querystring'
-import { json } from 'stream/consumers'
-import { KeyObject } from 'crypto'
 
 async function asyncRunner() {
   // 1. 在路径下, 执行npx cli
@@ -19,26 +13,34 @@ async function asyncRunner() {
   // 2.1 向collect函数, 传入每一个合法的文件夹路径, 得到node_modules下的数据
   // 1. 读取根路径下的package.json
   const targetDir = '/Users/yang/Desktop/npm-package-analyzer/'
-  const allIegalDirList = await Util.detectLegalDir(targetDir)
+  const allIegalRootDirList = await Util.detectLegalRootDirList(targetDir)
+  const recordList: RecordType.packageAnaylzeResult[] = []
+  for (let legalRootDir of allIegalRootDirList) {
+    const allIegalDirList = await Util.detectCommonLegalDir(legalRootDir)
 
-  // const targetDirV2 = '/Users/yang/Desktop/npm-package-analyzer/packages/cli'
-  // const allIegalDirListV2 = await Util.generateAllLegalDir(targetDirV2)
+    const rootRecord = await Util.collect(legalRootDir)
 
-  const recordList: RecordType.item[] = []
+    const packageAnaylzeResult: RecordType.packageAnaylzeResult = {
+      rootDir: legalRootDir,
+      packageList: [],
+      ...rootRecord,
+    }
 
-  for (let legalDir of [...allIegalDirList]) {
-    const record = await Util.collect(legalDir)
-    recordList.push(record)
+    for (let legalDir of allIegalDirList) {
+      const record = await Util.collect(legalDir)
+      packageAnaylzeResult.packageList.push(record)
+    }
+    recordList.push(packageAnaylzeResult)
   }
 
-  const newRecordList = await muiltInstance(recordList)
+  // const newRecordList = await muiltInstance(recordList)
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(
     '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
     './dist/'
   )
   const fileName = 'infodb.json' // 新建文件名
-  const writeContent = JSON.stringify(newRecordList, null, 2) // 文件内容
+  const writeContent = JSON.stringify(recordList, null, 2) // 文件内容
   fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
 
   console.log('done')

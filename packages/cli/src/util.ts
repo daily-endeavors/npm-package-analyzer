@@ -177,11 +177,13 @@ export async function isLegalDir(targetDir: string) {
 }
 
 /**
- * 一直向下探测到底
+ * 一直向下探测到底, 只要有 package.json 就视为合法路径
  * @param targetDir
  * @returns
  */
-export async function detectLegalDir(targetDir: string): Promise<string[]> {
+export async function detectCommonLegalDir(
+  targetDir: string
+): Promise<string[]> {
   let subLegalDirList: string[] = []
 
   const isCurrentDirLegal = await isLegalDir(targetDir)
@@ -205,10 +207,54 @@ export async function detectLegalDir(targetDir: string): Promise<string[]> {
     return true
   })
   for (let subName of subNameList) {
-    const legalList = await detectLegalDir(path.resolve(targetDir, subName))
+    const legalList = await detectCommonLegalDir(
+      path.resolve(targetDir, subName)
+    )
     subLegalDirList = [...subLegalDirList, ...legalList]
   }
 
+  return subLegalDirList
+}
+
+/**
+ * 一直向下探测到底, 查找项目下所有的合法项目根路径地址(根路径, 适用于 monorepo 情况)
+ * 跳过所有 node_modules 目录下的内容
+ * @param targetDir
+ */
+export async function detectLegalRootDirList(targetDir: string) {
+  let subLegalDirList: string[] = []
+
+  const isCurrentDirLegal = await isLegalDir(targetDir)
+  if (isCurrentDirLegal === true) {
+    subLegalDirList.push(targetDir)
+  }
+
+  // 接着探索子文件夹
+  let subNameList = fs.readdirSync(path.resolve(targetDir))
+  // 过滤出所有的文件夹
+  subNameList = subNameList.filter((filename) => {
+    // 不考虑.开头的隐藏文件
+    if (filename.startsWith('.')) {
+      return false
+    }
+    // 不考虑 node_modules 目录
+    if (filename === 'node_modules') {
+      return false
+    }
+    // 只看文件夹
+    if (
+      fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
+    ) {
+      return false
+    }
+    return true
+  })
+  for (let subName of subNameList) {
+    const legalList = await detectLegalRootDirList(
+      path.resolve(targetDir, subName)
+    )
+    subLegalDirList = [...subLegalDirList, ...legalList]
+  }
   return subLegalDirList
 }
 
@@ -246,7 +292,7 @@ export async function generateAllLegalDir(
       return true
     })
     for (let subName of subNameList) {
-      const subLegalDirList = await detectLegalDir(
+      const subLegalDirList = await detectCommonLegalDir(
         path.resolve(targetDir, subName)
       )
       legalDirList = [...legalDirList, ...subLegalDirList]

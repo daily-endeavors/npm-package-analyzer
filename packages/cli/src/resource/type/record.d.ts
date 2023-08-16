@@ -110,6 +110,14 @@ export type item = {
   }
 }
 
+export type packageAnaylzeResult = item & {
+  /**
+   * 根路径
+   */
+  rootDir: string
+  packageList: item[]
+}
+
 /**
  * 最终输出数据
  */
