@@ -33,7 +33,7 @@ async function asyncRunner() {
     recordList.push(packageAnaylzeResult)
   }
 
-  // const newRecordList = await muiltInstance(recordList)
+  // const newRecordList = await muiltInstanceChecker(recordList)
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(
     '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
@@ -47,7 +47,9 @@ async function asyncRunner() {
 }
 
 // 一: muiltInstance，检测同一个 package 是否包含多个版本实例；
-async function muiltInstance(recordList: RecordType.item[]) {
+async function muiltInstanceChecker(
+  recordList: RecordType.packageAnaylzeResult[]
+) {
   // 1. 创建packageNameMap, 格式为 [packageName]: recordItemList[]
 
   type packageNameMap = {
@@ -117,6 +119,13 @@ async function muiltInstance(recordList: RecordType.item[]) {
 // 1.  添加依赖查找方法, 根据FS依赖树对象, 和指定的依赖包名, 以及指定的installDirList, 查找依赖项对应的uuid, 未查找到返回""
 // 2.  遍历recordList, 针对每一个record中dependencyInstallStatus的值, 调用1中的方法查找依赖项uuid, 更新对象数据后添加到新纪录列表中
 // 3.  将新记录列表写入文件
+
+async function dependencyInstallChecker(
+  packageAnaylzeResultList: RecordType.packageAnaylzeResult[]
+) {
+  // 依赖查找方法
+  // 从
+}
 
 // 三: 循环依赖检测 circularDependency
 // 暂时略过, 这个属于环检测算法类问题: https://labuladong.github.io/algo/di-yi-zhan-da78c/shou-ba-sh-03a72/huan-jian--e36de/

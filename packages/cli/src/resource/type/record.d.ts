@@ -109,7 +109,12 @@ export type item = {
      * 检查到依赖记录uuid, 检查不到则记录空字符串
      */
     dependencyInstallStatus: {
-      [packageName: string]: item['uuid'] | ''
+      dependencies: {
+        [packageName: string]: item['uuid'] | ''
+      }
+      devDependencies: {
+        [packageName: string]: item['uuid'] | ''
+      }
     }
   }
 }

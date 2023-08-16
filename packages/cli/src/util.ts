@@ -123,7 +123,10 @@ export async function collect(targetPath: string) {
        * 检查到依赖记录uuid, 检查不到则记录空字符串
        * [packageName: string]: item['uuid'] | ''
        */
-      dependencyInstallStatus: {},
+      dependencyInstallStatus: {
+        dependencies: {},
+        devDependencies: {},
+      },
     },
   }
 
@@ -134,11 +137,11 @@ export async function collect(targetPath: string) {
 
   //初始化依赖对象
   for (let packageName of Object.keys(record.packageInfo.dependencies)) {
-    record.detectInfo.dependencyInstallStatus[packageName] = ''
+    record.detectInfo.dependencyInstallStatus.dependencies[packageName] = ''
   }
 
   for (let packageName of Object.keys(record.packageInfo.devDependencies)) {
-    record.detectInfo.dependencyInstallStatus[packageName] = ''
+    record.detectInfo.dependencyInstallStatus.devDependencies[packageName] = ''
   }
 
   // 更新到总依赖表中
