@@ -256,7 +256,7 @@ async function circularDependenceChecker(
         const ringStartPosAt = loopStack.indexOf(packageUuid)
         if (ringStartPosAt !== -1) {
           // 找到了循坏依赖
-          const ringList = [...loopStack.slice(ringStartPosAt), packageUuid]
+          const ringList = [...loopStack.slice(ringStartPosAt)]
           // 先解构再排序, 避免影响到 ringList 本身的顺序
           const ringListKey = [...ringList].sort().join('-')
           if (ringListMap[ringListKey] === undefined) {
