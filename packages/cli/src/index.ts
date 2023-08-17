@@ -174,7 +174,76 @@ async function dependencyInstallChecker(
   return packageAnaylzeResultList
 }
 
-// 三: 循环依赖检测 circularDependency
+// 三: 循环依赖检测 circularDependence
 // 暂时略过, 这个属于环检测算法类问题: https://labuladong.github.io/algo/di-yi-zhan-da78c/shou-ba-sh-03a72/huan-jian--e36de/
+
+async function circularDependenceChecker(
+  packageAnaylzeResultList: RecordType.packageAnaylzeResult[]
+) {
+  // 循环依赖查找方法
+  // 本质上是在有向图中寻找所有简单回路 => https://www.cnblogs.com/zhaodongge/p/10680313.html
+  // 只标记dependence中的环依赖, 暂不考虑 devDependence
+
+  // 以包的 uuid 视为点, 包的依赖关系视为边, 整体流程为从package 构成的有向图中寻找所有环的过程
+  // 整体流程为:
+  // 初始化 uuid:Item 映射, 方便查找
+  // 初始化 edgeSet, 记录所有遍历过的边(边只遍历一次)
+  // 初始化 ringListMap, 记录遍历过程中出现的环, 以排序后的ringList作为 key, 避免重复
+  // 每一个根 package 视为全新 case
+  // 从根 package 的 dependence 出发, 深度优先向下查找依赖
+  // 每次向下查找时, 传入待查询 uuid 以及路上的 loopStack
+  // 若边已经在edgeSet中, 跳过查找, 否则就将边存入edgeSet中(确保每条边只会经过一次)
+  //
+  // 若新的依赖位于loopStack中, 说明出现环, 将该环加入ringListMap 中, 跳过本轮循环
+  // 若新的依赖不在loopStack中, 则将 uuid 加入loopStack后, 递归进行查找
+  // 循环完成后返回
+  // 最终得到全部ringListMap, 注入 package 根节点中
+
+  const ConstCheckStatus: { [key: string]: TypeCheckStatus } = {
+    pending: 'pending' as const,
+    reslove: 'reslove' as const,
+  }
+  type TypeCheckStatus = 'pending' | 'reslove'
+  const ConstDependencyArror = '--dependency-->' as const
+  const ConstDevDependencyArror = '--dev-dependency-->' as const
+
+  type TypeDependencyArror = `${string}${typeof ConstDependencyArror}${string}`
+  type TypeDevDependencyArror =
+    `${string}${typeof ConstDevDependencyArror}${string}`
+
+  // uuid => item
+  const packageMapByUuid: Map<string, RecordType.item> = new Map()
+
+  for (let packageAnaylzeResult of packageAnaylzeResultList) {
+    for (let packageItem of packageAnaylzeResult.packageList) {
+      packageMapByUuid.set(packageItem.uuid, packageItem)
+    }
+  }
+
+  // 初始化节点状态表
+  const circularDependencyCacheMap: {
+    [packageUuid: string]: {
+      checkStatus: TypeCheckStatus
+      circularSideList: (TypeDependencyArror | TypeDevDependencyArror)[]
+    }
+  } = {}
+  // 初始化边状态表, 边只能被使用一次
+  const packageDependencyStatusMap: {
+    [key: TypeDependencyArror | TypeDevDependencyArror]: boolean
+  } = {}
+
+  // 具体的依赖检测函数
+  function circularChecker(
+    item: RecordType.item,
+    parentDependencyArrorList: (TypeDependencyArror | TypeDevDependencyArror)[]
+  ) {
+    if (circularDependencyCacheMap[item.uuid]) {
+      // 已经在检测中或检测完成, 则直接返回即可
+      return circularDependencyCacheMap[item.uuid]
+    }
+  }
+
+  // 开始从第一个 package 进行检测
+}
 
 asyncRunner()

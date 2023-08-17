@@ -88,23 +88,6 @@ export type item = {
       uuidList: item['uuid'][]
     }
     /**
-     * 循环依赖检测. 若依赖中形成环路, 则记录环路上的所有信息
-     */
-    circularDependency: {
-      /**
-       * 是否有循环依赖情况
-       */
-      hasCircularDependency: boolean
-      /**
-       * 记录循环链路上的所有项目uuid
-       */
-      circularChainList: item['uuid'][]
-      /**
-       * 标记循环依赖链路的颜色
-       */
-      color: `rgb(${number},${number},${number})`
-    }
-    /**
      * 实际依赖安装情况
      * 检查到依赖记录uuid, 检查不到则记录空字符串
      */
@@ -130,6 +113,24 @@ export type packageAnaylzeResult = item & {
    */
   rootDir: string
   packageList: item[]
+  /**
+   * 完成数据收集后, 进行后处理时生成的信息
+   */
+  detectInfo: {
+    /**
+     * 循环依赖检测. 若依赖中形成环路, 则记录环路上的所有信息
+     */
+    circularDependency: {
+      /**
+       * 是否有循环依赖情况
+       */
+      hasCircularDependency: boolean
+      /**
+       * 按顺序记录循环链路上的所有项目uuid, 并最终产生列表
+       */
+      circularChainListList: item['uuid'][][]
+    }
+  }
 }
 
 /**
