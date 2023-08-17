@@ -238,6 +238,10 @@ async function circularDependenceChecker(
       loopStack: RecordType.item['uuid'][]
     ) {
       const item = itemMap[itemUuid]
+      if (item === undefined) {
+        // 不需要检测不存在的依赖
+        return
+      }
       for (let dependencePackageName of Object.keys(
         item.detectInfo.dependencyInstallStatus.dependencies
       )) {
