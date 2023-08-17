@@ -107,7 +107,7 @@ export type item = {
  */
 export type itemMap = Map<packageId, item>
 
-export type packageAnaylzeResult = item & {
+export type packageAnaylzeResult = Omit<item, 'detectInfo'> & {
   /**
    * 根路径
    */

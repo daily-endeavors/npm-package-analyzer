@@ -24,6 +24,13 @@ async function asyncRunner() {
       rootDir: legalRootDir,
       packageList: [],
       ...rootRecord,
+      // 手工初始化属性
+      detectInfo: {
+        circularDependency: {
+          circularChainListList: [],
+          hasCircularDependency: false,
+        },
+      },
     }
 
     for (let legalDir of allIegalDirList) {
@@ -35,6 +42,10 @@ async function asyncRunner() {
 
   // const newRecordList = await muiltInstanceChecker(recordList)
   await dependencyInstallChecker(packageAnaylzeResultList)
+
+  // 更新循环依赖检测
+  await circularDependenceChecker(packageAnaylzeResultList)
+
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(
     '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
@@ -63,8 +74,10 @@ async function muiltInstanceChecker(
   for (let recordObj of recordList) {
     // 2.1 若packageName不存在, 则在packageNameMap中创建新记录, value为[record]
     if (packageNameMap[recordObj.packageName] === undefined) {
+      // @ts-ignore
       packageNameMap[recordObj.packageName] = [recordObj]
     } else {
+      // @ts-ignore
       // 2.2 若packageName已存在, 则将record添加到packageNameMap[packageName]下的列表中
       packageNameMap[recordObj.packageName].push(recordObj)
     }
@@ -199,51 +212,87 @@ async function circularDependenceChecker(
   // 循环完成后返回
   // 最终得到全部ringListMap, 注入 package 根节点中
 
-  const ConstCheckStatus: { [key: string]: TypeCheckStatus } = {
-    pending: 'pending' as const,
-    reslove: 'reslove' as const,
-  }
-  type TypeCheckStatus = 'pending' | 'reslove'
-  const ConstDependencyArror = '--dependency-->' as const
-  const ConstDevDependencyArror = '--dev-dependency-->' as const
-
-  type TypeDependencyArror = `${string}${typeof ConstDependencyArror}${string}`
-  type TypeDevDependencyArror =
-    `${string}${typeof ConstDevDependencyArror}${string}`
-
-  // uuid => item
-  const packageMapByUuid: Map<string, RecordType.item> = new Map()
-
+  // 全量元素列表, 记录 uuid 和 item 的对应关系, 方便查找
+  const itemMap: {
+    [uuid: RecordType.item['uuid']]: RecordType.item
+  } = {}
   for (let packageAnaylzeResult of packageAnaylzeResultList) {
-    for (let packageItem of packageAnaylzeResult.packageList) {
-      packageMapByUuid.set(packageItem.uuid, packageItem)
+    // @ts-ignore
+    itemMap[packageAnaylzeResult['uuid']] = packageAnaylzeResult
+    for (let subItem of packageAnaylzeResult.packageList) {
+      itemMap[subItem['uuid']] = subItem
     }
   }
 
-  // 初始化节点状态表
-  const circularDependencyCacheMap: {
-    [packageUuid: string]: {
-      checkStatus: TypeCheckStatus
-      circularSideList: (TypeDependencyArror | TypeDevDependencyArror)[]
-    }
-  } = {}
-  // 初始化边状态表, 边只能被使用一次
-  const packageDependencyStatusMap: {
-    [key: TypeDependencyArror | TypeDevDependencyArror]: boolean
-  } = {}
+  const ConstDependencyArror = '--dependency-->' as const
 
-  // 具体的依赖检测函数
-  function circularChecker(
-    item: RecordType.item,
-    parentDependencyArrorList: (TypeDependencyArror | TypeDevDependencyArror)[]
+  // 具体的子包依赖检测函数
+  function packageCircularChecker(
+    packageItem: RecordType.packageAnaylzeResult
   ) {
-    if (circularDependencyCacheMap[item.uuid]) {
-      // 已经在检测中或检测完成, 则直接返回即可
-      return circularDependencyCacheMap[item.uuid]
+    const edgeSet: Set<string> = new Set()
+    const ringListMap: { [key: string]: RecordType.item['uuid'][] } = {}
+
+    function itemChecker(
+      itemUuid: RecordType.item['uuid'],
+      loopStack: RecordType.item['uuid'][]
+    ) {
+      const item = itemMap[itemUuid]
+      for (let dependencePackageName of Object.keys(
+        item.detectInfo.dependencyInstallStatus.dependencies
+      )) {
+        const packageUuid =
+          item.detectInfo.dependencyInstallStatus.dependencies[
+            dependencePackageName
+          ]
+        const edge = `${itemUuid}${ConstDependencyArror}${packageUuid}`
+        if (edgeSet.has(edge)) {
+          // 不重复遍历已经经过的边
+          continue
+        }
+        // 把边添加到已检查 Set 中
+        edgeSet.add(edge)
+
+        const ringStartPosAt = loopStack.indexOf(packageUuid)
+        if (ringStartPosAt !== -1) {
+          // 找到了循坏依赖
+          const ringList = [...loopStack.slice(ringStartPosAt), packageUuid]
+          // 先解构再排序, 避免影响到 ringList 本身的顺序
+          const ringListKey = [...ringList].sort().join('-')
+          if (ringListMap[ringListKey] === undefined) {
+            // 若循坏依赖路径未注册过, 则更新到该 package 的循环依赖列表中
+            ringListMap[ringListKey] = ringList
+          }
+          continue
+        }
+
+        // ringStartPosAt === -1, 说明当前路径中没有循环依赖, 继续向下排查
+        itemChecker(packageUuid, [...loopStack, packageUuid])
+      }
+      return
     }
+
+    // 直接执行即可
+    itemChecker(packageItem.uuid, [packageItem.uuid])
+
+    // 执行完成后检查ringListMap
+    if (Object.keys(ringListMap).length > 0) {
+      // 匹配到循环依赖
+      packageItem.detectInfo.circularDependency.hasCircularDependency = true
+      packageItem.detectInfo.circularDependency.circularChainListList =
+        Object.values(ringListMap)
+    } else {
+      // 没有匹配到
+      packageItem.detectInfo.circularDependency.hasCircularDependency = false
+      packageItem.detectInfo.circularDependency.circularChainListList = []
+    }
+    return
   }
 
-  // 开始从第一个 package 进行检测
+  // 对每一个 package 进行检测
+  for (let packageResult of packageAnaylzeResultList) {
+    packageCircularChecker(packageResult)
+  }
 }
 
 asyncRunner()
