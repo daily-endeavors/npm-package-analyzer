@@ -3,7 +3,16 @@
     <div id="g6Container"></div>
     <div>
       <div>
-        {{ JSON.stringify(data, null, 2) }}
+        {{
+          JSON.stringify(
+            {
+              nodes: data.nodes.length,
+              edges: data.edges.length,
+            },
+            null,
+            2,
+          )
+        }}
       </div>
     </div>
   </div>
@@ -13,7 +22,7 @@ import G6 from '@antv/g6';
 import demoData from './resource/data/demo.json';
 import * as Util from './util/index';
 import { onMounted } from 'vue';
-const data = Util.infoDb2G6(demoData[0] as any);
+const data = Util.infoDb2G6(demoData as any);
 // const data = {
 //   id: 'Modeling Methods',
 //   children: [
@@ -71,15 +80,18 @@ const data = Util.infoDb2G6(demoData[0] as any);
 // };
 
 onMounted(() => {
-  const rate = 0.8;
-  const width = Math.round(screen.availWidth * rate ?? 500);
-  const height = Math.round(screen.availHeight * rate ?? 500);
+  const width = document.querySelector('#g6Container')?.clientWidth ?? 500;
+  const height = document.querySelector('#g6Container')?.clientHeight ?? 500;
   // const width = 500;
   // const height = 500;
   const graph = new G6.Graph({
     container: 'g6Container',
     width,
     height,
+    fitView: true,
+    fitViewPadding: [20, 40, 50, 20],
+    // 启用动画
+    animate: true,
     modes: {
       default: [
         // {
@@ -94,21 +106,44 @@ onMounted(() => {
         // 'zoom-canvas',
       ],
     },
+    // 节点在默认状态下的样式配置（style）和其他配置
     defaultNode: {
-      size: 26,
-      anchorPoints: [
-        [0, 0.5],
-        [1, 0.5],
-      ],
+      size: 30, // 节点大小
+      // ...                 // 节点的其他配置
+      // 节点样式配置
+      style: {
+        fill: 'steelblue', // 节点填充色
+        stroke: '#666', // 节点描边色
+        lineWidth: 1, // 节点描边粗细
+      },
+      // 节点上的标签文本配置
+      labelCfg: {
+        // 节点上的标签文本样式配置
+        style: {
+          fill: '#000000', // 节点标签文字颜色
+        },
+      },
+    },
+    // 边在默认状态下的样式配置（style）和其他配置
+    defaultEdge: {
+      // ...                 // 边的其他配置
+      // 边样式配置
+      style: {
+        opacity: 0.6, // 边透明度
+        stroke: 'grey', // 边描边颜色
+      },
+      // 边上的标签文本配置
+      labelCfg: {
+        autoRotate: true, // 边上的标签文本根据边的方向旋转
+      },
     },
     // defaultEdge: {
     //   type: 'cubic-horizontal',
     // },
-    // layout: {
-    //   type: 'radial',
-    //   unitRadius: 50,
-    //   center: [500, 300],
-    // },
+    layout: {
+      type: 'force', // 指定为力导向布局
+      preventOverlap: true, // 防止节点重叠
+    },
     // layout: {
     //   type: 'compactBox',
     //   direction: 'LR',
@@ -142,7 +177,7 @@ onMounted(() => {
 
   graph.data(data);
   graph.render();
-  // graph.fitView();
+  graph.fitView();
 });
 </script>
 <style scoped>
@@ -152,6 +187,8 @@ onMounted(() => {
 }
 #g6Container {
   display: flex;
+  width: 50vw;
+  height: 50vh;
   border: 1px solid #f0f0f0;
   border-radius: 8px;
 
