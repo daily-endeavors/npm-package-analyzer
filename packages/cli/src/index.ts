@@ -32,6 +32,14 @@ export async function asyncRunner() {
           circularChainListList: [],
           hasCircularDependency: false,
         },
+        "muiltInstance": {
+          "hasMuiltInstance": false,
+          "uuidList": []
+        },
+        "dependencyInstallStatus": {
+          "dependencies": {},
+          "devDependencies": {}
+        }
       },
     }
 
@@ -156,8 +164,8 @@ async function dependencyInstallChecker(
   for (let packageAnaylzeResult of packageAnaylzeResultList) {
     for (let packageItem of packageAnaylzeResult.packageList) {
       const realReslovePath = packageItem.reslovePath
-      // 按'dependencies', 'devDependencies'顺序查找
-      for (let dependencyType of ['dependencies', 'devDependencies'] as const) {
+      // 只检查'dependencies'下的依赖
+      for (let dependencyType of ['dependencies'] as const) {
         for (let dependencyName of Object.keys(
           packageItem.detectInfo.dependencyInstallStatus[dependencyType]
         )) {
@@ -249,7 +257,7 @@ async function circularDependenceChecker(
       )) {
         const packageUuid =
           item.detectInfo.dependencyInstallStatus.dependencies[
-            dependencePackageName
+          dependencePackageName
           ]
         const edge = `${itemUuid}${ConstDependencyArror}${packageUuid}`
         if (edgeSet.has(edge)) {

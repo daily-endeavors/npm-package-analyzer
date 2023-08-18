@@ -1,3 +1,5 @@
+import routes from './routes'
+
 export default {
   deadCode: {},
   npmClient: 'pnpm',
@@ -5,5 +7,6 @@ export default {
   presets: [require.resolve('@umijs/preset-vue')],
   polyfill: false,
   base: "/npm-package-analyzer/",
-  publicPath:"./"
+  publicPath: process.env.NODE_ENV === 'production' ? "./" : "/",
+  routes
 };

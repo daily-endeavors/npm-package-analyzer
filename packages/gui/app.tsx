@@ -1,5 +1,6 @@
 // @ts-ignore
 import { createPinia } from 'pinia';
+// @ts-ignore
 import { RouterConfig } from 'umi';
 
 export function onAppCreated({ app }: any) {
