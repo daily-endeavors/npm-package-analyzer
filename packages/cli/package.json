@@ -9,7 +9,8 @@
   "homepage": "https://daily-endeavors.github.io",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "build": "tsc  --project ./ "
+    "build": "tsc  --project ./ ",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "build"
