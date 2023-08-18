@@ -1,5 +1,6 @@
 {
-  "name": "@example/with-vue-pinia",
+  "name": "gui",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "umi build",
