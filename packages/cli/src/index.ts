@@ -300,3 +300,7 @@ async function circularDependenceChecker(
     packageCircularChecker(packageResult)
   }
 }
+if (process.argv?.[1]?.includes('packages/cli/src/index.ts')) {
+  // 本地启动
+  asyncRunner()
+}
