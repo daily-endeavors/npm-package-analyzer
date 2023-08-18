@@ -72,5 +72,3 @@ export const defaultRecord: RecordType.item = {
     },
   },
 }
-
-export const rootPath = path.resolve(__dirname, '../../../../..')

@@ -11,24 +11,7 @@ const itemMap: RecordType.itemMap = new Map()
  * @param targetPath
  * @returns
  */
-
 export async function collect(targetPath: string) {
-  //   const rootPath = path.resolve(__dirname, '../../../')
-  //   const desfile = path.join(rootPath, './packages/gui/package.json')
-  //   const readContent = fs.readFileSync(desfile).toString()
-  //   const jsonObj = JSON.parse(readContent)
-
-  //   const directoryPath = path.resolve(__dirname, '../dist/')
-  //   const fileName = 'example.json' // 新建文件名
-  //   const writeContent = JSON.stringify({ name: jsonObj.name }, null, 2) // 文件内容
-  //   fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
-
-  //读取指定目录下的package.json
-  // const targetDir = '/Users/yang/Desktop/npm-package-analyzer/packages/homepage'
-  // const rootPath = '/Users/yang/Desktop/npm-package-analyzer'
-  // installPatj = npm-package-analyzer/packages/homepage
-  // installList = [npm-package-analyzer, packages, homepage]
-
   const realpath = fs.realpathSync(targetPath)
   const isSymbolicLink = realpath !== targetPath
 
