@@ -24,13 +24,13 @@ export const defaultRecord: RecordType.item = {
    */
   version: `string`,
   /**
-   * package.json所在路径的文件夹列表, 用于后续检测依赖关系
+   * package.json实际所在位置, 用于检测依赖关系
    */
-  installDirList: [],
+  reslovePath: '',
   /**
-   * 字符串格式的package.json所在路径
+   * 包所在位置
    */
-  installPath: 'string',
+  installPathObj: {},
   /**
    * 以根路径为0, 记录相对根路径的递归查询深度
    */
@@ -63,27 +63,13 @@ export const defaultRecord: RecordType.item = {
       uuidList: [],
     },
     /**
-     * 循环依赖检测. 若依赖中形成环路, 则记录环路上的所有信息
-     */
-    circularDependency: {
-      /**
-       * 是否有循环依赖情况
-       */
-      hasCircularDependency: true,
-      /**
-       * 记录循环链路上的所有项目uuid
-       */
-      circularChainList: [],
-      /**
-       * 标记循环依赖链路的颜色
-       */
-      color: `rgb(255,255,255)`,
-    },
-    /**
      * 实际依赖安装情况
      * 检查到依赖记录uuid, 检查不到则记录空字符串
      */
-    dependencyInstallStatus: {},
+    dependencyInstallStatus: {
+      devDependencies: {},
+      dependencies: {},
+    },
   },
 }
 
