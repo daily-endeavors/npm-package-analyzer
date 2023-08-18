@@ -12,7 +12,9 @@ export function infoDb2G6(packageRecord: TypePackageRecord.packageAnaylzeResult)
     const g6NodeList: TypeG6.G6Node[] = []
     const g6EdgeList: TypeG6.G6Edge[] = []
 
-    for (let record of [packageRecord, ...packageRecord.packageList]) {
+    const existUuidSet = new Set([...packageRecord.packageList].map(item => item.uuid))
+
+    for (let record of [...packageRecord.packageList]) {
         const node: TypeG6.G6Node = {
             "id": record.uuid,
             "label": `${record.packageName}@${record.version}`
@@ -24,6 +26,10 @@ export function infoDb2G6(packageRecord: TypePackageRecord.packageAnaylzeResult)
                 // 未检测到依赖, 自动跳过
                 continue
             }
+            if (existUuidSet.has(dependencyPackageUuid) === false) {
+                // 数据表中无此id, 自动跳过
+                continue
+            }
             g6EdgeList.push({
                 "source": record.uuid,
                 target: dependencyPackageUuid
@@ -33,7 +39,7 @@ export function infoDb2G6(packageRecord: TypePackageRecord.packageAnaylzeResult)
 
 
     return {
+        nodes: g6NodeList,
         edges: g6EdgeList,
-        nodes: g6NodeList
     }
 }
