@@ -6,7 +6,7 @@ import * as path from 'path'
 import * as Util from './util'
 import * as os from 'os'
 
-async function asyncRunner() {
+export async function asyncRunner() {
   // 1. 在路径下, 执行npx cli
   // ----
   // 1. 执行第一层解析, 向collect函数, 传入根路径, 由collect函数解析该路径下的package.json, 得到结果
@@ -300,5 +300,3 @@ async function circularDependenceChecker(
     packageCircularChecker(packageResult)
   }
 }
-
-asyncRunner()
