@@ -129,6 +129,28 @@ export type packageAnaylzeResult = Omit<item, 'detectInfo'> & {
        * 按顺序记录循环链路上的所有项目uuid, 并最终产生列表
        */
       circularChainListList: item['uuid'][][]
+    },
+    /**
+     * 多实例检测. 若项目中存在多个同名且版本号不同的依赖, 记录在这里
+     */
+    muiltInstance: {
+      /**
+       * 是否有多实例情况
+       */
+      hasMuiltInstance: false
+      uuidList: []
+    }
+    /**
+     * 实际依赖安装情况
+     * 检查到依赖记录uuid, 检查不到则记录空字符串
+     */
+    dependencyInstallStatus: {
+      dependencies: {
+        [packageName: string]: item['uuid'] | ''
+      }
+      devDependencies: {
+        [packageName: string]: item['uuid'] | ''
+      }
     }
   }
 }
