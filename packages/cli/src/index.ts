@@ -4,6 +4,7 @@ import * as RecordType from './resource/type/record'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as Util from './util'
+import * as os from 'os'
 
 async function asyncRunner() {
   // 1. 在路径下, 执行npx cli
@@ -12,7 +13,8 @@ async function asyncRunner() {
   // 2. 执行第二层解析, 获取node_modules下的所有文件夹列表
   // 2.1 向collect函数, 传入每一个合法的文件夹路径, 得到node_modules下的数据
   // 1. 读取根路径下的package.json
-  const targetDir = '/Users/yang/Desktop/npm-package-analyzer/'
+  const targetDir = process.cwd()
+  console.log('待读取目录 => ', targetDir)
   const allIegalRootDirList = await Util.detectLegalRootDirList(targetDir)
   const packageAnaylzeResultList: RecordType.packageAnaylzeResult[] = []
   for (let legalRootDir of allIegalRootDirList) {
@@ -47,15 +49,15 @@ async function asyncRunner() {
   await circularDependenceChecker(packageAnaylzeResultList)
 
   //输出到最终文件里面infodb.json
-  const directoryPath = path.resolve(
-    '/Users/yang/Desktop/npm-package-analyzer/packages/cli',
-    './dist/'
-  )
+  const directoryPath = path.resolve(targetDir, './dist/')
+  fs.mkdirSync(directoryPath, {
+    recursive: true,
+  })
   const fileName = 'infodb.json' // 新建文件名
   const writeContent = JSON.stringify(packageAnaylzeResultList, null, 2) // 文件内容
   fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
 
-  console.log('done')
+  console.log('解析完毕')
 }
 
 // 一: muiltInstance，检测同一个 package 是否包含多个版本实例；
