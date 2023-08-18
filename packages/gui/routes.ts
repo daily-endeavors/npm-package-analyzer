@@ -4,7 +4,7 @@ const routes = [
         component: "index"
     },
     {
-        path: "/dependency",
+        path: "/dependency-map",
         component: "dependency-map"
     }
 ]

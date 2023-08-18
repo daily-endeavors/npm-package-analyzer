@@ -2,6 +2,9 @@
   <div>
     <h2>UmiJS x Vue Pinia</h2>
     <div class="count">{{ counter.count }}</div>
+    <div>
+      <a href="./dependency-map">点击查看依赖图</a>
+    </div>
     <div class="buttons">
       <button @click="onAdd">+</button>
       <button @click="counter.decrease">-</button>
