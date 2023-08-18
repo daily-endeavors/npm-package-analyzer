@@ -1,11 +1,11 @@
 const routes = [
     {
         path: "/",
-        component: "index"
+        component: "dependency-map"
     },
     {
         path: "/dependency-map",
-        component: "dependency-map"
+        component: "index"
     }
 ]
 
