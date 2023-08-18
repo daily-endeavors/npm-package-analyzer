@@ -1,339 +1,5 @@
 [
   {
-    "rootDir": "/home/yao/www/npm-package-analyzer/packages/cli",
-    "packageList": [
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/packages/cli",
-        "packageName": "daily-endeavors-npm-package-analyzer",
-        "version": "0.1.8",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/packages/cli": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/packages/cli",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {},
-          "devDependencies": {
-            "dotenv": "^16.3.1",
-            "ts-node": "^10.8.0",
-            "typescript": "^5.1.6"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {},
-            "devDependencies": {
-              "dotenv": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/dotenv@16.3.1/node_modules/dotenv",
-              "ts-node": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ts-node@10.8.0_@types+node@18.17.3_typescript@5.0.2/node_modules/ts-node",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript"
-            }
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/dotenv@16.3.1/node_modules/dotenv",
-        "packageName": "dotenv",
-        "version": "16.3.1",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/dotenv@16.3.1/node_modules/dotenv": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node_modules/dotenv": true,
-          "/home/yao/www/npm-package-analyzer/packages/cli/node_modules/dotenv": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/dotenv@16.3.1/node_modules/dotenv",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {},
-          "devDependencies": {
-            "@definitelytyped/dtslint": "^0.0.133",
-            "@types/node": "^18.11.3",
-            "decache": "^4.6.1",
-            "sinon": "^14.0.1",
-            "standard": "^17.0.0",
-            "standard-markdown": "^7.1.0",
-            "standard-version": "^9.5.0",
-            "tap": "^16.3.0",
-            "tar": "^6.1.11",
-            "typescript": "^4.8.4"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {},
-            "devDependencies": {
-              "@definitelytyped/dtslint": "",
-              "@types/node": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+node@18.17.3/node_modules/@types/node",
-              "decache": "",
-              "sinon": "",
-              "standard": "",
-              "standard-markdown": "",
-              "standard-version": "",
-              "tap": "",
-              "tar": "",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript"
-            }
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ts-node@10.8.0_@types+node@18.17.3_typescript@5.0.2/node_modules/ts-node",
-        "packageName": "ts-node",
-        "version": "10.8.0",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ts-node@10.8.0_@types+node@18.17.3_typescript@5.0.2/node_modules/ts-node": true,
-          "/home/yao/www/npm-package-analyzer/packages/cli/node_modules/ts-node": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ts-node@10.8.0_@types+node@18.17.3_typescript@5.0.2/node_modules/ts-node",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {
-            "@cspotcode/source-map-support": "^0.8.0",
-            "@tsconfig/node10": "^1.0.7",
-            "@tsconfig/node12": "^1.0.7",
-            "@tsconfig/node14": "^1.0.0",
-            "@tsconfig/node16": "^1.0.2",
-            "acorn": "^8.4.1",
-            "acorn-walk": "^8.1.1",
-            "arg": "^4.1.0",
-            "create-require": "^1.1.0",
-            "diff": "^4.0.1",
-            "make-error": "^1.1.1",
-            "v8-compile-cache-lib": "^3.0.1",
-            "yn": "3.1.1"
-          },
-          "devDependencies": {
-            "@microsoft/api-extractor": "^7.19.4",
-            "@swc/core": ">=1.2.50",
-            "@swc/wasm": ">=1.2.50",
-            "@types/diff": "^4.0.2",
-            "@types/lodash": "^4.14.151",
-            "@types/node": "13.13.5",
-            "@types/proper-lockfile": "^4.1.2",
-            "@types/proxyquire": "^1.3.28",
-            "@types/react": "^16.14.19",
-            "@types/rimraf": "^3.0.0",
-            "@types/semver": "^7.1.0",
-            "@yarnpkg/fslib": "^2.4.0",
-            "ava": "^3.15.0",
-            "axios": "^0.21.1",
-            "dprint": "^0.25.0",
-            "expect": "^27.0.2",
-            "get-stream": "^6.0.0",
-            "lodash": "^4.17.15",
-            "ntypescript": "^1.201507091536.1",
-            "nyc": "^15.0.1",
-            "proper-lockfile": "^4.1.2",
-            "proxyquire": "^2.0.0",
-            "react": "^16.14.0",
-            "rimraf": "^3.0.0",
-            "semver": "^7.1.3",
-            "throat": "^6.0.1",
-            "typedoc": "^0.22.10",
-            "typescript": "4.6.4",
-            "typescript-json-schema": "^0.53.0",
-            "util.promisify": "^1.0.1"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {
-              "@cspotcode/source-map-support": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@cspotcode+source-map-support@0.8.1/node_modules/@cspotcode/source-map-support",
-              "@tsconfig/node10": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@tsconfig+node10@1.0.9/node_modules/@tsconfig/node10",
-              "@tsconfig/node12": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@tsconfig+node12@1.0.11/node_modules/@tsconfig/node12",
-              "@tsconfig/node14": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@tsconfig+node14@1.0.3/node_modules/@tsconfig/node14",
-              "@tsconfig/node16": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@tsconfig+node16@1.0.4/node_modules/@tsconfig/node16",
-              "acorn": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/acorn@8.10.0/node_modules/acorn",
-              "acorn-walk": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/acorn-walk@8.2.0/node_modules/acorn-walk",
-              "arg": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/arg@4.1.3/node_modules/arg",
-              "create-require": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/create-require@1.1.1/node_modules/create-require",
-              "diff": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/diff@4.0.2/node_modules/diff",
-              "make-error": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/make-error@1.3.6/node_modules/make-error",
-              "v8-compile-cache-lib": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/v8-compile-cache-lib@3.0.1/node_modules/v8-compile-cache-lib",
-              "yn": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/yn@3.1.1/node_modules/yn"
-            },
-            "devDependencies": {
-              "@microsoft/api-extractor": "",
-              "@swc/core": "",
-              "@swc/wasm": "",
-              "@types/diff": "",
-              "@types/lodash": "",
-              "@types/node": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+node@18.17.3/node_modules/@types/node",
-              "@types/proper-lockfile": "",
-              "@types/proxyquire": "",
-              "@types/react": "",
-              "@types/rimraf": "",
-              "@types/semver": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+semver@7.5.0/node_modules/@types/semver",
-              "@yarnpkg/fslib": "",
-              "ava": "",
-              "axios": "",
-              "dprint": "",
-              "expect": "",
-              "get-stream": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/get-stream@6.0.1/node_modules/get-stream",
-              "lodash": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash",
-              "ntypescript": "",
-              "nyc": "",
-              "proper-lockfile": "",
-              "proxyquire": "",
-              "react": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react@18.1.0/node_modules/react",
-              "rimraf": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/rimraf@3.0.2/node_modules/rimraf",
-              "semver": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/semver@6.3.1/node_modules/semver",
-              "throat": "",
-              "typedoc": "",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript",
-              "typescript-json-schema": "",
-              "util.promisify": ""
-            }
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript",
-        "packageName": "typescript",
-        "version": "5.0.2",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-tsc@1.8.5_typescript@5.0.2/node_modules/typescript": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/typescript": true,
-          "/home/yao/www/npm-package-analyzer/packages/cli/node_modules/typescript": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/typescript": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {},
-          "devDependencies": {
-            "@esfx/canceltoken": "^1.0.0",
-            "@octokit/rest": "latest",
-            "@types/chai": "^4.3.4",
-            "@types/fs-extra": "^9.0.13",
-            "@types/glob": "^8.1.0",
-            "@types/microsoft__typescript-etw": "^0.1.1",
-            "@types/minimist": "^1.2.2",
-            "@types/mocha": "^10.0.1",
-            "@types/ms": "^0.7.31",
-            "@types/node": "latest",
-            "@types/source-map-support": "^0.5.6",
-            "@types/which": "^2.0.1",
-            "@typescript-eslint/eslint-plugin": "^5.33.1",
-            "@typescript-eslint/parser": "^5.33.1",
-            "@typescript-eslint/utils": "^5.33.1",
-            "azure-devops-node-api": "^11.2.0",
-            "chai": "^4.3.7",
-            "chalk": "^4.1.2",
-            "chokidar": "^3.5.3",
-            "del": "^6.1.1",
-            "diff": "^5.1.0",
-            "esbuild": "^0.17.2",
-            "eslint": "^8.22.0",
-            "eslint-formatter-autolinkable-stylish": "^1.2.0",
-            "eslint-plugin-import": "^2.26.0",
-            "eslint-plugin-local": "^1.0.0",
-            "eslint-plugin-no-null": "^1.0.2",
-            "eslint-plugin-simple-import-sort": "^10.0.0",
-            "fast-xml-parser": "^4.0.11",
-            "fs-extra": "^9.1.0",
-            "glob": "^8.1.0",
-            "hereby": "^1.6.4",
-            "jsonc-parser": "^3.2.0",
-            "minimist": "^1.2.8",
-            "mocha": "^10.2.0",
-            "mocha-fivemat-progress-reporter": "^0.1.0",
-            "ms": "^2.1.3",
-            "node-fetch": "^3.2.10",
-            "source-map-support": "^0.5.21",
-            "typescript": "5.0.0-dev.20230112",
-            "which": "^2.0.2"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {},
-            "devDependencies": {
-              "@esfx/canceltoken": "",
-              "@octokit/rest": "",
-              "@types/chai": "",
-              "@types/fs-extra": "",
-              "@types/glob": "",
-              "@types/microsoft__typescript-etw": "",
-              "@types/minimist": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+minimist@1.2.2/node_modules/@types/minimist",
-              "@types/mocha": "",
-              "@types/ms": "",
-              "@types/node": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+node@18.17.3/node_modules/@types/node",
-              "@types/source-map-support": "",
-              "@types/which": "",
-              "@typescript-eslint/eslint-plugin": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+eslint-plugin@5.48.1_@typescript-eslint+parser@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/eslint-plugin",
-              "@typescript-eslint/parser": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+parser@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/parser",
-              "@typescript-eslint/utils": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+utils@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/utils",
-              "azure-devops-node-api": "",
-              "chai": "",
-              "chalk": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chalk@4.1.2/node_modules/chalk",
-              "chokidar": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chokidar@3.5.3/node_modules/chokidar",
-              "del": "",
-              "diff": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/diff@4.0.2/node_modules/diff",
-              "esbuild": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/esbuild@0.18.19/node_modules/esbuild",
-              "eslint": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint@8.46.0/node_modules/eslint",
-              "eslint-formatter-autolinkable-stylish": "",
-              "eslint-plugin-import": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint-plugin-import@2.28.0_eslint@8.46.0/node_modules/eslint-plugin-import",
-              "eslint-plugin-local": "",
-              "eslint-plugin-no-null": "",
-              "eslint-plugin-simple-import-sort": "",
-              "fast-xml-parser": "",
-              "fs-extra": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fs-extra@10.1.0/node_modules/fs-extra",
-              "glob": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/glob@7.1.6/node_modules/glob",
-              "hereby": "",
-              "jsonc-parser": "",
-              "minimist": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/minimist@1.2.8/node_modules/minimist",
-              "mocha": "",
-              "mocha-fivemat-progress-reporter": "",
-              "ms": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ms@2.1.3/node_modules/ms",
-              "node-fetch": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node-fetch@3.3.2/node_modules/node-fetch",
-              "source-map-support": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map-support@0.5.21/node_modules/source-map-support",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript",
-              "which": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/which@2.0.2/node_modules/which"
-            }
-          }
-        }
-      }
-    ],
-    "uuid": "/home/yao/www/npm-package-analyzer/packages/cli",
-    "packageName": "daily-endeavors-npm-package-analyzer",
-    "version": "0.1.8",
-    "installPathObj": {
-      "/home/yao/www/npm-package-analyzer/packages/cli": true
-    },
-    "reslovePath": "/home/yao/www/npm-package-analyzer/packages/cli",
-    "deepLevel": 0,
-    "packageInfo": {
-      "dependencies": {},
-      "devDependencies": {
-        "dotenv": "^16.3.1",
-        "ts-node": "^10.8.0",
-        "typescript": "^5.1.6"
-      }
-    },
-    "detectInfo": {
-      "circularDependency": {
-        "circularChainListList": [],
-        "hasCircularDependency": false
-      }
-    }
-  },
-  {
     "rootDir": "/home/yao/www/npm-package-analyzer/packages/gui",
     "packageList": [
       {
@@ -347,6 +13,7 @@
         "deepLevel": 0,
         "packageInfo": {
           "dependencies": {
+            "@antv/g6": "^4.8.21",
             "@umijs/preset-vue": "^4.0.74",
             "pinia": "^2.0.28",
             "umi": "^4.0.74",
@@ -366,16 +33,89 @@
           },
           "dependencyInstallStatus": {
             "dependencies": {
+              "@antv/g6": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6@4.8.21/node_modules/@antv/g6",
               "@umijs/preset-vue": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+preset-vue@4.0.74_@babel+core@7.22.10_vite@4.4.9_webpack@5.88.2/node_modules/@umijs/preset-vue",
               "pinia": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/pinia@2.0.28_typescript@5.1.6_vue@3.3.4/node_modules/pinia",
               "umi": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/umi@4.0.74_@babel+core@7.22.10_@types+node@18.17.3_eslint@8.46.0_postcss@8.4.27_prettier@2.8._ohcxflwrs7gacjcozvpqtgrwbe/node_modules/umi",
               "vue": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue@3.3.4/node_modules/vue"
             },
             "devDependencies": {
-              "prettier": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier@2.8.8/node_modules/prettier",
-              "prettier-plugin-organize-imports": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier-plugin-organize-imports@3.2.3_prettier@2.8.8_typescript@5.1.6/node_modules/prettier-plugin-organize-imports",
-              "prettier-plugin-packagejson": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier-plugin-packagejson@2.4.3_prettier@2.8.8/node_modules/prettier-plugin-packagejson",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.1.6/node_modules/typescript"
+              "prettier": "",
+              "prettier-plugin-organize-imports": "",
+              "prettier-plugin-packagejson": "",
+              "typescript": ""
+            }
+          }
+        }
+      },
+      {
+        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6@4.8.21/node_modules/@antv/g6",
+        "packageName": "@antv/g6",
+        "version": "4.8.21",
+        "installPathObj": {
+          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6@4.8.21/node_modules/@antv/g6": true,
+          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node_modules/@antv/g6": true,
+          "/home/yao/www/npm-package-analyzer/packages/gui/node_modules/@antv/g6": true
+        },
+        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6@4.8.21/node_modules/@antv/g6",
+        "deepLevel": 0,
+        "packageInfo": {
+          "dependencies": {
+            "@antv/g6-pc": "0.8.21"
+          },
+          "devDependencies": {
+            "@babel/core": "^7.7.7",
+            "@babel/plugin-proposal-class-properties": "^7.1.0",
+            "@turf/turf": "^5.1.6",
+            "@types/jest": "^25.2.1",
+            "@types/node": "13.11.1",
+            "@typescript-eslint/eslint-plugin": "^4.11.1",
+            "@umijs/fabric": "^2.0.0",
+            "babel-loader": "^8.0.6",
+            "eslint": "^7.7.0",
+            "event-simulate": "~1.0.0",
+            "father": "^2.29.1",
+            "husky": "^4.2.5",
+            "lint-staged": "^10.2.11",
+            "pre-commit": "^1.2.2",
+            "prettier": "^2.0.5",
+            "rimraf": "^3.0.0",
+            "ts-loader": "^7.0.3",
+            "typescript": "^4.6.3",
+            "webpack": "^4.41.4",
+            "webpack-cli": "^3.3.10"
+          }
+        },
+        "detectInfo": {
+          "muiltInstance": {
+            "hasMuiltInstance": false,
+            "uuidList": []
+          },
+          "dependencyInstallStatus": {
+            "dependencies": {
+              "@antv/g6-pc": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6-pc@0.8.21/node_modules/@antv/g6-pc"
+            },
+            "devDependencies": {
+              "@babel/core": "",
+              "@babel/plugin-proposal-class-properties": "",
+              "@turf/turf": "",
+              "@types/jest": "",
+              "@types/node": "",
+              "@typescript-eslint/eslint-plugin": "",
+              "@umijs/fabric": "",
+              "babel-loader": "",
+              "eslint": "",
+              "event-simulate": "",
+              "father": "",
+              "husky": "",
+              "lint-staged": "",
+              "pre-commit": "",
+              "prettier": "",
+              "rimraf": "",
+              "ts-loader": "",
+              "typescript": "",
+              "webpack": "",
+              "webpack-cli": ""
             }
           }
         }
@@ -416,12 +156,12 @@
               "@vue/babel-plugin-jsx": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+babel-plugin-jsx@1.1.1_@babel+core@7.22.10/node_modules/@vue/babel-plugin-jsx",
               "vue": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue@3.2.45/node_modules/vue",
               "vue-loader": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-loader@17.0.1_vue@3.2.45_webpack@5.88.2/node_modules/vue-loader",
-              "vue-router": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-router@4.1.6_vue@3.3.4/node_modules/vue-router",
+              "vue-router": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-router@4.1.6_vue@3.2.45/node_modules/vue-router",
               "@umijs/renderer-vue": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+renderer-vue@4.0.74_vue-router@4.1.6_vue@3.2.45/node_modules/@umijs/renderer-vue"
             },
             "devDependencies": {
-              "@vitejs/plugin-vue": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vitejs+plugin-vue@4.2.3_vite@4.4.5_vue@3.3.4/node_modules/@vitejs/plugin-vue",
-              "umi": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/umi@4.0.74_@babel+core@7.22.10_@types+node@18.17.3_eslint@8.46.0_postcss@8.4.27_prettier@2.8._ohcxflwrs7gacjcozvpqtgrwbe/node_modules/umi"
+              "@vitejs/plugin-vue": "",
+              "umi": ""
             }
           }
         }
@@ -546,12 +286,12 @@
           "dependencyInstallStatus": {
             "dependencies": {},
             "devDependencies": {
-              "@types/node": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+node@18.17.3/node_modules/@types/node",
+              "@types/node": "",
               "@volar/vue-language-plugin-pug": "",
               "@volar/vue-typescript": "",
               "ava": "",
-              "prettier": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier@2.8.8/node_modules/prettier",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.1.6/node_modules/typescript"
+              "prettier": "",
+              "typescript": ""
             }
           }
         }
@@ -562,7 +302,6 @@
         "version": "2.4.3",
         "installPathObj": {
           "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier-plugin-packagejson@2.4.3_prettier@2.8.8/node_modules/prettier-plugin-packagejson": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/umi@4.0.74_@babel+core@7.22.10_@types+node@18.17.3_eslint@8.46.0_postcss@8.4.27_prettier@2.8._elippf7dc5eobuaiwrryas4tcu/node_modules/prettier-plugin-packagejson": true,
           "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/umi@4.0.74_@babel+core@7.22.10_@types+node@18.17.3_eslint@8.46.0_postcss@8.4.27_prettier@2.8._ohcxflwrs7gacjcozvpqtgrwbe/node_modules/prettier-plugin-packagejson": true,
           "/home/yao/www/npm-package-analyzer/node_modules/prettier-plugin-packagejson": true,
           "/home/yao/www/npm-package-analyzer/packages/gui/node_modules/prettier-plugin-packagejson": true
@@ -593,7 +332,7 @@
             "devDependencies": {
               "jest": "",
               "npm-run-all": "",
-              "prettier": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier@2.8.8/node_modules/prettier"
+              "prettier": ""
             }
           }
         }
@@ -604,6 +343,7 @@
         "version": "5.1.6",
         "installPathObj": {
           "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.1.6/node_modules/typescript": true,
+          "/home/yao/www/npm-package-analyzer/packages/cli/node_modules/typescript": true,
           "/home/yao/www/npm-package-analyzer/packages/gui/node_modules/typescript": true
         },
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.1.6/node_modules/typescript",
@@ -669,42 +409,42 @@
               "@types/fs-extra": "",
               "@types/glob": "",
               "@types/microsoft__typescript-etw": "",
-              "@types/minimist": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+minimist@1.2.2/node_modules/@types/minimist",
+              "@types/minimist": "",
               "@types/mocha": "",
               "@types/ms": "",
-              "@types/node": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+node@18.17.3/node_modules/@types/node",
+              "@types/node": "",
               "@types/source-map-support": "",
               "@types/which": "",
-              "@typescript-eslint/eslint-plugin": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+eslint-plugin@5.48.1_@typescript-eslint+parser@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/eslint-plugin",
-              "@typescript-eslint/parser": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+parser@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/parser",
-              "@typescript-eslint/utils": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+utils@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/utils",
+              "@typescript-eslint/eslint-plugin": "",
+              "@typescript-eslint/parser": "",
+              "@typescript-eslint/utils": "",
               "azure-devops-node-api": "",
               "chai": "",
-              "chalk": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chalk@4.1.2/node_modules/chalk",
-              "chokidar": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chokidar@3.5.3/node_modules/chokidar",
+              "chalk": "",
+              "chokidar": "",
               "del": "",
-              "diff": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/diff@4.0.2/node_modules/diff",
-              "esbuild": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/esbuild@0.18.19/node_modules/esbuild",
-              "eslint": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint@8.46.0/node_modules/eslint",
+              "diff": "",
+              "esbuild": "",
+              "eslint": "",
               "eslint-formatter-autolinkable-stylish": "",
-              "eslint-plugin-import": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint-plugin-import@2.28.0_eslint@8.46.0/node_modules/eslint-plugin-import",
+              "eslint-plugin-import": "",
               "eslint-plugin-local": "",
               "eslint-plugin-no-null": "",
               "eslint-plugin-simple-import-sort": "",
               "fast-xml-parser": "",
-              "fs-extra": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fs-extra@10.1.0/node_modules/fs-extra",
-              "glob": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/glob@7.1.6/node_modules/glob",
+              "fs-extra": "",
+              "glob": "",
               "hereby": "",
               "jsonc-parser": "",
-              "minimist": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/minimist@1.2.8/node_modules/minimist",
+              "minimist": "",
               "mocha": "",
               "mocha-fivemat-progress-reporter": "",
-              "ms": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ms@2.1.3/node_modules/ms",
-              "node-fetch": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node-fetch@3.3.2/node_modules/node-fetch",
-              "source-map-support": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map-support@0.5.21/node_modules/source-map-support",
-              "tslib": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tslib@2.6.1/node_modules/tslib",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.1.6/node_modules/typescript",
-              "which": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/which@2.0.2/node_modules/which"
+              "ms": "",
+              "node-fetch": "",
+              "source-map-support": "",
+              "tslib": "",
+              "typescript": "",
+              "which": ""
             }
           }
         }
@@ -797,6 +537,105 @@
             "devDependencies": {}
           }
         }
+      },
+      {
+        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-router@4.2.4_vue@3.3.4/node_modules/vue-router",
+        "packageName": "vue-router",
+        "version": "4.2.4",
+        "installPathObj": {
+          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-router@4.2.4_vue@3.3.4/node_modules/vue-router": true,
+          "/home/yao/www/npm-package-analyzer/packages/gui/node_modules/vue-router": true
+        },
+        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-router@4.2.4_vue@3.3.4/node_modules/vue-router",
+        "deepLevel": 0,
+        "packageInfo": {
+          "dependencies": {
+            "@vue/devtools-api": "^6.5.0"
+          },
+          "devDependencies": {
+            "@microsoft/api-extractor": "^7.36.0",
+            "@rollup/plugin-alias": "^5.0.0",
+            "@rollup/plugin-commonjs": "^25.0.0",
+            "@rollup/plugin-node-resolve": "^15.0.2",
+            "@rollup/plugin-replace": "^5.0.2",
+            "@rollup/plugin-terser": "^0.4.3",
+            "@sucrase/jest-plugin": "^3.0.0",
+            "@types/jest": "^29.5.1",
+            "@types/jsdom": "^21.1.1",
+            "@types/nightwatch": "^2.3.23",
+            "@vitejs/plugin-vue": "^4.2.3",
+            "@vue/compiler-sfc": "^3.3.4",
+            "@vue/server-renderer": "^3.3.4",
+            "@vue/test-utils": "^2.3.2",
+            "browserstack-local": "^1.5.2",
+            "chromedriver": "^113.0.0",
+            "connect-history-api-fallback": "^1.6.0",
+            "conventional-changelog-cli": "^2.1.1",
+            "dotenv": "^16.0.3",
+            "faked-promise": "^2.2.2",
+            "geckodriver": "^3.2.0",
+            "jest": "^29.5.0",
+            "jest-environment-jsdom": "^29.5.0",
+            "jest-mock-warn": "^1.1.0",
+            "nightwatch": "^2.6.21",
+            "nightwatch-helpers": "^1.2.0",
+            "rimraf": "^5.0.1",
+            "rollup": "^3.26.1",
+            "rollup-plugin-analyzer": "^4.0.0",
+            "rollup-plugin-typescript2": "^0.35.0",
+            "sucrase": "^3.32.0",
+            "typescript": "~5.1.6",
+            "vite": "^4.3.8",
+            "vue": "^3.3.4"
+          }
+        },
+        "detectInfo": {
+          "muiltInstance": {
+            "hasMuiltInstance": false,
+            "uuidList": []
+          },
+          "dependencyInstallStatus": {
+            "dependencies": {
+              "@vue/devtools-api": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api"
+            },
+            "devDependencies": {
+              "@microsoft/api-extractor": "",
+              "@rollup/plugin-alias": "",
+              "@rollup/plugin-commonjs": "",
+              "@rollup/plugin-node-resolve": "",
+              "@rollup/plugin-replace": "",
+              "@rollup/plugin-terser": "",
+              "@sucrase/jest-plugin": "",
+              "@types/jest": "",
+              "@types/jsdom": "",
+              "@types/nightwatch": "",
+              "@vitejs/plugin-vue": "",
+              "@vue/compiler-sfc": "",
+              "@vue/server-renderer": "",
+              "@vue/test-utils": "",
+              "browserstack-local": "",
+              "chromedriver": "",
+              "connect-history-api-fallback": "",
+              "conventional-changelog-cli": "",
+              "dotenv": "",
+              "faked-promise": "",
+              "geckodriver": "",
+              "jest": "",
+              "jest-environment-jsdom": "",
+              "jest-mock-warn": "",
+              "nightwatch": "",
+              "nightwatch-helpers": "",
+              "rimraf": "",
+              "rollup": "",
+              "rollup-plugin-analyzer": "",
+              "rollup-plugin-typescript2": "",
+              "sucrase": "",
+              "typescript": "",
+              "vite": "",
+              "vue": ""
+            }
+          }
+        }
       }
     ],
     "uuid": "/home/yao/www/npm-package-analyzer/packages/gui",
@@ -809,6 +648,7 @@
     "deepLevel": 0,
     "packageInfo": {
       "dependencies": {
+        "@antv/g6": "^4.8.21",
         "@umijs/preset-vue": "^4.0.74",
         "pinia": "^2.0.28",
         "umi": "^4.0.74",
@@ -842,654 +682,14 @@
           ]
         ],
         "hasCircularDependency": true
-      }
-    }
-  },
-  {
-    "rootDir": "/home/yao/www/npm-package-analyzer/packages/homepage",
-    "packageList": [
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/packages/homepage",
-        "packageName": "homepage",
-        "version": "0.0.0",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/packages/homepage": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/packages/homepage",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {
-            "vue": "^3.3.4"
-          },
-          "devDependencies": {
-            "@vitejs/plugin-vue": "^4.2.3",
-            "autoprefixer": "^10.4.14",
-            "postcss": "^8.4.27",
-            "tailwindcss": "^3.3.3",
-            "typescript": "^5.0.2",
-            "vite": "^4.4.5",
-            "vue-tsc": "^1.8.5"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {
-              "vue": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue@3.3.4/node_modules/vue"
-            },
-            "devDependencies": {
-              "@vitejs/plugin-vue": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vitejs+plugin-vue@4.2.3_vite@4.4.5_vue@3.3.4/node_modules/@vitejs/plugin-vue",
-              "autoprefixer": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/autoprefixer@10.4.14_postcss@8.4.27/node_modules/autoprefixer",
-              "postcss": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss@8.4.27/node_modules/postcss",
-              "tailwindcss": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tailwindcss@3.3.3/node_modules/tailwindcss",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript",
-              "vite": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.4.5_@types+node@18.17.3/node_modules/vite",
-              "vue-tsc": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-tsc@1.8.5_typescript@5.0.2/node_modules/vue-tsc"
-            }
-          }
-        }
       },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vitejs+plugin-vue@4.2.3_vite@4.4.5_vue@3.3.4/node_modules/@vitejs/plugin-vue",
-        "packageName": "@vitejs/plugin-vue",
-        "version": "4.2.3",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vitejs+plugin-vue@4.2.3_vite@4.4.5_vue@3.3.4/node_modules/@vitejs/plugin-vue": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node_modules/@vitejs/plugin-vue": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/@vitejs/plugin-vue": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vitejs+plugin-vue@4.2.3_vite@4.4.5_vue@3.3.4/node_modules/@vitejs/plugin-vue",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {},
-          "devDependencies": {
-            "@jridgewell/gen-mapping": "^0.3.2",
-            "@jridgewell/trace-mapping": "^0.3.17",
-            "debug": "^4.3.4",
-            "rollup": "^3.17.2",
-            "slash": "^5.0.0",
-            "source-map": "^0.6.1",
-            "vite": "^4.3.5",
-            "vue": "^3.3.0-beta.5"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {},
-            "devDependencies": {
-              "@jridgewell/gen-mapping": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@jridgewell+gen-mapping@0.3.3/node_modules/@jridgewell/gen-mapping",
-              "@jridgewell/trace-mapping": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@jridgewell+trace-mapping@0.3.9/node_modules/@jridgewell/trace-mapping",
-              "debug": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/debug@3.2.7/node_modules/debug",
-              "rollup": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/rollup@3.27.2/node_modules/rollup",
-              "slash": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/slash@3.0.0/node_modules/slash",
-              "source-map": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map@0.7.4/node_modules/source-map",
-              "vite": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.4.5_@types+node@18.17.3/node_modules/vite",
-              "vue": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue@3.3.4/node_modules/vue"
-            }
-          }
-        }
+      "muiltInstance": {
+        "hasMuiltInstance": false,
+        "uuidList": []
       },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/autoprefixer@10.4.14_postcss@8.4.27/node_modules/autoprefixer",
-        "packageName": "autoprefixer",
-        "version": "10.4.14",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/autoprefixer@10.4.14_postcss@8.4.27/node_modules/autoprefixer": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node_modules/autoprefixer": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-preset-env@7.5.0_postcss@8.4.27/node_modules/autoprefixer": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/autoprefixer": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/autoprefixer@10.4.14_postcss@8.4.27/node_modules/autoprefixer",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {
-            "browserslist": "^4.21.5",
-            "caniuse-lite": "^1.0.30001464",
-            "fraction.js": "^4.2.0",
-            "normalize-range": "^0.1.2",
-            "picocolors": "^1.0.0",
-            "postcss-value-parser": "^4.2.0"
-          },
-          "devDependencies": {}
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {
-              "browserslist": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/browserslist@4.21.10/node_modules/browserslist",
-              "caniuse-lite": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/caniuse-lite@1.0.30001519/node_modules/caniuse-lite",
-              "fraction.js": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fraction.js@4.2.0/node_modules/fraction.js",
-              "normalize-range": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/normalize-range@0.1.2/node_modules/normalize-range",
-              "picocolors": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/picocolors@1.0.0/node_modules/picocolors",
-              "postcss-value-parser": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-value-parser@4.2.0/node_modules/postcss-value-parser"
-            },
-            "devDependencies": {}
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss@8.4.27/node_modules/postcss",
-        "packageName": "postcss",
-        "version": "8.4.27",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss@8.4.27/node_modules/postcss": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/styled-components@6.0.7_react-dom@18.2.0_react@18.2.0/node_modules/postcss": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/stylelint@14.16.1/node_modules/postcss": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tailwindcss@3.3.3/node_modules/postcss": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.3.1_@types+node@18.17.3_less@4.1.3/node_modules/postcss": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.4.5_@types+node@18.17.3/node_modules/postcss": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.4.9_@types+node@18.17.3/node_modules/postcss": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/postcss": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss@8.4.27/node_modules/postcss",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {
-            "nanoid": "^3.3.6",
-            "picocolors": "^1.0.0",
-            "source-map-js": "^1.0.2"
-          },
-          "devDependencies": {}
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {
-              "nanoid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/nanoid@3.3.6/node_modules/nanoid",
-              "picocolors": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/picocolors@1.0.0/node_modules/picocolors",
-              "source-map-js": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map-js@1.0.2/node_modules/source-map-js"
-            },
-            "devDependencies": {}
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tailwindcss@3.3.3/node_modules/tailwindcss",
-        "packageName": "tailwindcss",
-        "version": "3.3.3",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tailwindcss@3.3.3/node_modules/tailwindcss": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/tailwindcss": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tailwindcss@3.3.3/node_modules/tailwindcss",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {
-            "@alloc/quick-lru": "^5.2.0",
-            "arg": "^5.0.2",
-            "chokidar": "^3.5.3",
-            "didyoumean": "^1.2.2",
-            "dlv": "^1.1.3",
-            "fast-glob": "^3.2.12",
-            "glob-parent": "^6.0.2",
-            "is-glob": "^4.0.3",
-            "jiti": "^1.18.2",
-            "lilconfig": "^2.1.0",
-            "micromatch": "^4.0.5",
-            "normalize-path": "^3.0.0",
-            "object-hash": "^3.0.0",
-            "picocolors": "^1.0.0",
-            "postcss": "^8.4.23",
-            "postcss-import": "^15.1.0",
-            "postcss-js": "^4.0.1",
-            "postcss-load-config": "^4.0.1",
-            "postcss-nested": "^6.0.1",
-            "postcss-selector-parser": "^6.0.11",
-            "resolve": "^1.22.2",
-            "sucrase": "^3.32.0"
-          },
-          "devDependencies": {
-            "@swc/cli": "^0.1.62",
-            "@swc/core": "^1.3.55",
-            "@swc/jest": "^0.2.26",
-            "@swc/register": "^0.1.10",
-            "autoprefixer": "^10.4.14",
-            "browserslist": "^4.21.5",
-            "concurrently": "^8.0.1",
-            "cssnano": "^6.0.0",
-            "esbuild": "^0.17.18",
-            "eslint": "^8.39.0",
-            "eslint-config-prettier": "^8.8.0",
-            "eslint-plugin-prettier": "^4.2.1",
-            "jest": "^29.5.0",
-            "jest-diff": "^29.5.0",
-            "lightningcss": "1.18.0",
-            "prettier": "^2.8.8",
-            "rimraf": "^5.0.0",
-            "source-map-js": "^1.0.2",
-            "turbo": "^1.9.3"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {
-              "@alloc/quick-lru": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@alloc+quick-lru@5.2.0/node_modules/@alloc/quick-lru",
-              "arg": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/arg@5.0.2/node_modules/arg",
-              "chokidar": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chokidar@3.5.3/node_modules/chokidar",
-              "didyoumean": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/didyoumean@1.2.2/node_modules/didyoumean",
-              "dlv": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/dlv@1.1.3/node_modules/dlv",
-              "fast-glob": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fast-glob@3.3.1/node_modules/fast-glob",
-              "glob-parent": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/glob-parent@6.0.2/node_modules/glob-parent",
-              "is-glob": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/is-glob@4.0.3/node_modules/is-glob",
-              "jiti": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/jiti@1.19.1/node_modules/jiti",
-              "lilconfig": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/lilconfig@2.1.0/node_modules/lilconfig",
-              "micromatch": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/micromatch@4.0.5/node_modules/micromatch",
-              "normalize-path": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/normalize-path@3.0.0/node_modules/normalize-path",
-              "object-hash": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/object-hash@3.0.0/node_modules/object-hash",
-              "picocolors": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/picocolors@1.0.0/node_modules/picocolors",
-              "postcss": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss@8.4.27/node_modules/postcss",
-              "postcss-import": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-import@15.1.0_postcss@8.4.27/node_modules/postcss-import",
-              "postcss-js": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-js@4.0.1_postcss@8.4.27/node_modules/postcss-js",
-              "postcss-load-config": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-load-config@4.0.1_postcss@8.4.27/node_modules/postcss-load-config",
-              "postcss-nested": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-nested@6.0.1_postcss@8.4.27/node_modules/postcss-nested",
-              "postcss-selector-parser": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-selector-parser@6.0.13/node_modules/postcss-selector-parser",
-              "resolve": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/resolve@1.22.4/node_modules/resolve",
-              "sucrase": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/sucrase@3.34.0/node_modules/sucrase"
-            },
-            "devDependencies": {
-              "@swc/cli": "",
-              "@swc/core": "",
-              "@swc/jest": "",
-              "@swc/register": "",
-              "autoprefixer": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/autoprefixer@10.4.14_postcss@8.4.27/node_modules/autoprefixer",
-              "browserslist": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/browserslist@4.21.10/node_modules/browserslist",
-              "concurrently": "",
-              "cssnano": "",
-              "esbuild": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/esbuild@0.18.19/node_modules/esbuild",
-              "eslint": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint@8.46.0/node_modules/eslint",
-              "eslint-config-prettier": "",
-              "eslint-plugin-prettier": "",
-              "jest": "",
-              "jest-diff": "",
-              "lightningcss": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/lightningcss@1.19.0/node_modules/lightningcss",
-              "prettier": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier@2.8.8/node_modules/prettier",
-              "rimraf": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/rimraf@3.0.2/node_modules/rimraf",
-              "source-map-js": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map-js@1.0.2/node_modules/source-map-js",
-              "turbo": ""
-            }
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript",
-        "packageName": "typescript",
-        "version": "5.0.2",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-tsc@1.8.5_typescript@5.0.2/node_modules/typescript": true,
-          "/home/yao/www/npm-package-analyzer/node_modules/typescript": true,
-          "/home/yao/www/npm-package-analyzer/packages/cli/node_modules/typescript": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/typescript": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {},
-          "devDependencies": {
-            "@esfx/canceltoken": "^1.0.0",
-            "@octokit/rest": "latest",
-            "@types/chai": "^4.3.4",
-            "@types/fs-extra": "^9.0.13",
-            "@types/glob": "^8.1.0",
-            "@types/microsoft__typescript-etw": "^0.1.1",
-            "@types/minimist": "^1.2.2",
-            "@types/mocha": "^10.0.1",
-            "@types/ms": "^0.7.31",
-            "@types/node": "latest",
-            "@types/source-map-support": "^0.5.6",
-            "@types/which": "^2.0.1",
-            "@typescript-eslint/eslint-plugin": "^5.33.1",
-            "@typescript-eslint/parser": "^5.33.1",
-            "@typescript-eslint/utils": "^5.33.1",
-            "azure-devops-node-api": "^11.2.0",
-            "chai": "^4.3.7",
-            "chalk": "^4.1.2",
-            "chokidar": "^3.5.3",
-            "del": "^6.1.1",
-            "diff": "^5.1.0",
-            "esbuild": "^0.17.2",
-            "eslint": "^8.22.0",
-            "eslint-formatter-autolinkable-stylish": "^1.2.0",
-            "eslint-plugin-import": "^2.26.0",
-            "eslint-plugin-local": "^1.0.0",
-            "eslint-plugin-no-null": "^1.0.2",
-            "eslint-plugin-simple-import-sort": "^10.0.0",
-            "fast-xml-parser": "^4.0.11",
-            "fs-extra": "^9.1.0",
-            "glob": "^8.1.0",
-            "hereby": "^1.6.4",
-            "jsonc-parser": "^3.2.0",
-            "minimist": "^1.2.8",
-            "mocha": "^10.2.0",
-            "mocha-fivemat-progress-reporter": "^0.1.0",
-            "ms": "^2.1.3",
-            "node-fetch": "^3.2.10",
-            "source-map-support": "^0.5.21",
-            "typescript": "5.0.0-dev.20230112",
-            "which": "^2.0.2"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {},
-            "devDependencies": {
-              "@esfx/canceltoken": "",
-              "@octokit/rest": "",
-              "@types/chai": "",
-              "@types/fs-extra": "",
-              "@types/glob": "",
-              "@types/microsoft__typescript-etw": "",
-              "@types/minimist": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+minimist@1.2.2/node_modules/@types/minimist",
-              "@types/mocha": "",
-              "@types/ms": "",
-              "@types/node": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+node@18.17.3/node_modules/@types/node",
-              "@types/source-map-support": "",
-              "@types/which": "",
-              "@typescript-eslint/eslint-plugin": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+eslint-plugin@5.48.1_@typescript-eslint+parser@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/eslint-plugin",
-              "@typescript-eslint/parser": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+parser@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/parser",
-              "@typescript-eslint/utils": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+utils@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/utils",
-              "azure-devops-node-api": "",
-              "chai": "",
-              "chalk": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chalk@4.1.2/node_modules/chalk",
-              "chokidar": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chokidar@3.5.3/node_modules/chokidar",
-              "del": "",
-              "diff": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/diff@4.0.2/node_modules/diff",
-              "esbuild": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/esbuild@0.18.19/node_modules/esbuild",
-              "eslint": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint@8.46.0/node_modules/eslint",
-              "eslint-formatter-autolinkable-stylish": "",
-              "eslint-plugin-import": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint-plugin-import@2.28.0_eslint@8.46.0/node_modules/eslint-plugin-import",
-              "eslint-plugin-local": "",
-              "eslint-plugin-no-null": "",
-              "eslint-plugin-simple-import-sort": "",
-              "fast-xml-parser": "",
-              "fs-extra": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fs-extra@10.1.0/node_modules/fs-extra",
-              "glob": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/glob@7.1.6/node_modules/glob",
-              "hereby": "",
-              "jsonc-parser": "",
-              "minimist": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/minimist@1.2.8/node_modules/minimist",
-              "mocha": "",
-              "mocha-fivemat-progress-reporter": "",
-              "ms": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ms@2.1.3/node_modules/ms",
-              "node-fetch": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node-fetch@3.3.2/node_modules/node-fetch",
-              "source-map-support": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map-support@0.5.21/node_modules/source-map-support",
-              "typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/typescript@5.0.2/node_modules/typescript",
-              "which": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/which@2.0.2/node_modules/which"
-            }
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.4.5_@types+node@18.17.3/node_modules/vite",
-        "packageName": "vite",
-        "version": "4.4.5",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.4.5_@types+node@18.17.3/node_modules/vite": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/vite": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.4.5_@types+node@18.17.3/node_modules/vite",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {
-            "esbuild": "^0.18.10",
-            "postcss": "^8.4.26",
-            "rollup": "^3.25.2"
-          },
-          "devDependencies": {
-            "@ampproject/remapping": "^2.2.1",
-            "@babel/parser": "^7.22.7",
-            "@babel/types": "^7.22.5",
-            "@jridgewell/trace-mapping": "^0.3.18",
-            "@rollup/plugin-alias": "^4.0.4",
-            "@rollup/plugin-commonjs": "^25.0.3",
-            "@rollup/plugin-dynamic-import-vars": "^2.0.4",
-            "@rollup/plugin-json": "^6.0.0",
-            "@rollup/plugin-node-resolve": "15.1.0",
-            "@rollup/plugin-typescript": "^11.1.2",
-            "@rollup/pluginutils": "^5.0.2",
-            "@types/pnpapi": "^0.0.2",
-            "@types/escape-html": "^1.0.2",
-            "acorn": "^8.10.0",
-            "acorn-walk": "^8.2.0",
-            "cac": "^6.7.14",
-            "chokidar": "^3.5.3",
-            "connect": "^3.7.0",
-            "connect-history-api-fallback": "^2.0.0",
-            "convert-source-map": "^2.0.0",
-            "cors": "^2.8.5",
-            "cross-spawn": "^7.0.3",
-            "debug": "^4.3.4",
-            "dep-types": "link:./src/types",
-            "dotenv": "^16.3.1",
-            "dotenv-expand": "^9.0.0",
-            "es-module-lexer": "^1.3.0",
-            "escape-html": "^1.0.3",
-            "estree-walker": "^3.0.3",
-            "etag": "^1.8.1",
-            "fast-glob": "^3.3.0",
-            "http-proxy": "^1.18.1",
-            "json-stable-stringify": "^1.0.2",
-            "launch-editor-middleware": "^2.6.0",
-            "lightningcss": "^1.21.5",
-            "magic-string": "^0.30.1",
-            "micromatch": "^4.0.5",
-            "mlly": "^1.4.0",
-            "mrmime": "^1.0.1",
-            "okie": "^1.0.1",
-            "open": "^8.4.2",
-            "parse5": "^7.1.2",
-            "periscopic": "^3.1.0",
-            "picocolors": "^1.0.0",
-            "picomatch": "^2.3.1",
-            "postcss-import": "^15.1.0",
-            "postcss-load-config": "^4.0.1",
-            "postcss-modules": "^6.0.0",
-            "resolve.exports": "^2.0.2",
-            "rollup-plugin-license": "^3.0.1",
-            "sirv": "^2.0.3",
-            "source-map-support": "^0.5.21",
-            "strip-ansi": "^7.1.0",
-            "strip-literal": "^1.0.1",
-            "tsconfck": "^2.1.2",
-            "tslib": "^2.6.0",
-            "types": "link:./types",
-            "ufo": "^1.1.2",
-            "ws": "^8.13.0"
-          }
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {
-              "esbuild": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/esbuild@0.18.19/node_modules/esbuild",
-              "postcss": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss@8.4.27/node_modules/postcss",
-              "rollup": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/rollup@3.27.2/node_modules/rollup"
-            },
-            "devDependencies": {
-              "@ampproject/remapping": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@ampproject+remapping@2.2.1/node_modules/@ampproject/remapping",
-              "@babel/parser": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+parser@7.22.10/node_modules/@babel/parser",
-              "@babel/types": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+types@7.22.10/node_modules/@babel/types",
-              "@jridgewell/trace-mapping": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@jridgewell+trace-mapping@0.3.9/node_modules/@jridgewell/trace-mapping",
-              "@rollup/plugin-alias": "",
-              "@rollup/plugin-commonjs": "",
-              "@rollup/plugin-dynamic-import-vars": "",
-              "@rollup/plugin-json": "",
-              "@rollup/plugin-node-resolve": "",
-              "@rollup/plugin-typescript": "",
-              "@rollup/pluginutils": "",
-              "@types/pnpapi": "",
-              "@types/escape-html": "",
-              "acorn": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/acorn@8.10.0/node_modules/acorn",
-              "acorn-walk": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/acorn-walk@8.2.0/node_modules/acorn-walk",
-              "cac": "",
-              "chokidar": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chokidar@3.5.3/node_modules/chokidar",
-              "connect": "",
-              "connect-history-api-fallback": "",
-              "convert-source-map": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/convert-source-map@1.9.0/node_modules/convert-source-map",
-              "cors": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/cors@2.8.5/node_modules/cors",
-              "cross-spawn": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/cross-spawn@7.0.3/node_modules/cross-spawn",
-              "debug": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/debug@3.2.7/node_modules/debug",
-              "dep-types": "",
-              "dotenv": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/dotenv@16.3.1/node_modules/dotenv",
-              "dotenv-expand": "",
-              "es-module-lexer": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/es-module-lexer@1.3.0/node_modules/es-module-lexer",
-              "escape-html": "",
-              "estree-walker": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/estree-walker@2.0.2/node_modules/estree-walker",
-              "etag": "",
-              "fast-glob": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fast-glob@3.3.1/node_modules/fast-glob",
-              "http-proxy": "",
-              "json-stable-stringify": "",
-              "launch-editor-middleware": "",
-              "lightningcss": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/lightningcss@1.19.0/node_modules/lightningcss",
-              "magic-string": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/magic-string@0.30.2/node_modules/magic-string",
-              "micromatch": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/micromatch@4.0.5/node_modules/micromatch",
-              "mlly": "",
-              "mrmime": "",
-              "okie": "",
-              "open": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/open@9.1.0/node_modules/open",
-              "parse5": "",
-              "periscopic": "",
-              "picocolors": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/picocolors@1.0.0/node_modules/picocolors",
-              "picomatch": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/picomatch@2.3.1/node_modules/picomatch",
-              "postcss-import": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-import@15.1.0_postcss@8.4.27/node_modules/postcss-import",
-              "postcss-load-config": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-load-config@4.0.1_postcss@8.4.27/node_modules/postcss-load-config",
-              "postcss-modules": "",
-              "resolve.exports": "",
-              "rollup-plugin-license": "",
-              "sirv": "",
-              "source-map-support": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map-support@0.5.21/node_modules/source-map-support",
-              "strip-ansi": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/strip-ansi@6.0.1/node_modules/strip-ansi",
-              "strip-literal": "",
-              "tsconfck": "",
-              "tslib": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tslib@2.6.1/node_modules/tslib",
-              "types": "",
-              "ufo": "",
-              "ws": ""
-            }
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue@3.3.4/node_modules/vue",
-        "packageName": "vue",
-        "version": "3.3.4",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue@3.3.4/node_modules/vue": true,
-          "/home/yao/www/npm-package-analyzer/packages/gui/node_modules/vue": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/vue": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue@3.3.4/node_modules/vue",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {
-            "@vue/shared": "3.3.4",
-            "@vue/compiler-dom": "3.3.4",
-            "@vue/runtime-dom": "3.3.4",
-            "@vue/compiler-sfc": "3.3.4",
-            "@vue/server-renderer": "3.3.4"
-          },
-          "devDependencies": {}
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {
-              "@vue/shared": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+shared@3.3.4/node_modules/@vue/shared",
-              "@vue/compiler-dom": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-dom@3.3.4/node_modules/@vue/compiler-dom",
-              "@vue/runtime-dom": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+runtime-dom@3.3.4/node_modules/@vue/runtime-dom",
-              "@vue/compiler-sfc": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-sfc@3.3.4/node_modules/@vue/compiler-sfc",
-              "@vue/server-renderer": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+server-renderer@3.3.4_vue@3.3.4/node_modules/@vue/server-renderer"
-            },
-            "devDependencies": {}
-          }
-        }
-      },
-      {
-        "uuid": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-tsc@1.8.5_typescript@5.0.2/node_modules/vue-tsc",
-        "packageName": "vue-tsc",
-        "version": "1.8.5",
-        "installPathObj": {
-          "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-tsc@1.8.5_typescript@5.0.2/node_modules/vue-tsc": true,
-          "/home/yao/www/npm-package-analyzer/packages/homepage/node_modules/vue-tsc": true
-        },
-        "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-tsc@1.8.5_typescript@5.0.2/node_modules/vue-tsc",
-        "deepLevel": 0,
-        "packageInfo": {
-          "dependencies": {
-            "@vue/language-core": "1.8.5",
-            "@vue/typescript": "1.8.5",
-            "semver": "^7.3.8"
-          },
-          "devDependencies": {}
-        },
-        "detectInfo": {
-          "muiltInstance": {
-            "hasMuiltInstance": false,
-            "uuidList": []
-          },
-          "dependencyInstallStatus": {
-            "dependencies": {
-              "@vue/language-core": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+language-core@1.8.5_typescript@5.0.2/node_modules/@vue/language-core",
-              "@vue/typescript": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+typescript@1.8.5_typescript@5.0.2/node_modules/@vue/typescript",
-              "semver": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/semver@7.5.4/node_modules/semver"
-            },
-            "devDependencies": {}
-          }
-        }
-      }
-    ],
-    "uuid": "/home/yao/www/npm-package-analyzer/packages/homepage",
-    "packageName": "homepage",
-    "version": "0.0.0",
-    "installPathObj": {
-      "/home/yao/www/npm-package-analyzer/packages/homepage": true
-    },
-    "reslovePath": "/home/yao/www/npm-package-analyzer/packages/homepage",
-    "deepLevel": 0,
-    "packageInfo": {
-      "dependencies": {
-        "vue": "^3.3.4"
-      },
-      "devDependencies": {
-        "@vitejs/plugin-vue": "^4.2.3",
-        "autoprefixer": "^10.4.14",
-        "postcss": "^8.4.27",
-        "tailwindcss": "^3.3.3",
-        "typescript": "^5.0.2",
-        "vite": "^4.4.5",
-        "vue-tsc": "^1.8.5"
-      }
-    },
-    "detectInfo": {
-      "circularDependency": {
-        "circularChainListList": [],
-        "hasCircularDependency": false
+      "dependencyInstallStatus": {
+        "dependencies": {},
+        "devDependencies": {}
       }
     }
   }
