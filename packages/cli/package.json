@@ -1,11 +1,14 @@
 {
   "name": "daily-endeavors-npm-package-analyzer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "分析本地 npm 包依赖关系",
   "author": "yangmingming",
   "license": "MIT",
   "private": false,
   "main": "build/src/index.js",
+  "bin": {
+    "daily-endeavors-npm-package-analyzer": "build/src/index.js"
+  },
   "homepage": "https://daily-endeavors.github.io",
   "scripts": {
     "dev": "ts-node src/index.ts",
