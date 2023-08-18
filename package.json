@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cli:dev": "pnpm --filter='./packages/cli' run dev",
+    "cli:build": "pnpm --filter='./packages/cli' run build",
     "gui:build": "pnpm --filter='./packages/gui' run build",
     "gui:dev": "pnpm --filter='./packages/gui' run dev",
     "homepage:build": "pnpm --filter='./packages/homepage' run build",

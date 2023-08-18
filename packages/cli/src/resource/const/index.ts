@@ -1,6 +1,5 @@
 import * as Type from '../type'
 import * as RecordType from '../type/record'
-import path from 'node:path'
 
 export const json: Type.json = {
   package_name: 'test',

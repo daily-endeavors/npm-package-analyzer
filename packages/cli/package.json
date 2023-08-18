@@ -1,17 +1,21 @@
 {
-  "name": "cli",
-  "version": "1.0.0",
-  "description": "",
+  "name": "daily-endeavors-npm-package-analyzer",
+  "version": "0.0.1",
+  "description": "分析本地 npm 包依赖关系",
+  "author": "yangmingming",
+  "license": "MIT",
+  "private": false,
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "build": "tsc src/index.ts"
   },
   "devDependencies": {
     "dotenv": "^16.3.1",
     "ts-node": "^10.8.0",
     "typescript": "^5.1.6"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "npm-package-analyzer"
+  ]
 }
