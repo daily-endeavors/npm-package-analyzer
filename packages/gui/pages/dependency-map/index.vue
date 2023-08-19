@@ -2,12 +2,13 @@
   <div class="container">
     <div id="g6Container"></div>
     <div>
+      <div>数据分布</div>
       <div>
         {{
           JSON.stringify(
             {
-              nodes: echartData.nodes.length,
-              edges: echartData.edges.length,
+              nodes节点数: echartData.nodes.length,
+              edges边数: echartData.edges.length,
             },
             null,
             2,
@@ -18,7 +19,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import G6 from '@antv/g6';
 import * as echarts from 'echarts';
 
 import demoData from './resource/data/demo.json';
@@ -28,60 +28,58 @@ import { onMounted } from 'vue';
 type EChartsOption = echarts.EChartsOption;
 
 const echartData = Util.infoDb2Echarts(demoData as any);
-
+const option: EChartsOption = {
+  title: {
+    text: 'NPM 依赖分析',
+  },
+  animationDurationUpdate: 1500,
+  animationEasingUpdate: 'quinticInOut',
+  series: [
+    {
+      type: 'graph',
+      layout: 'force',
+      animation: false,
+      // progressiveThreshold: 700,
+      data: echartData.nodes.map(function (node) {
+        return {
+          // x: node.x,
+          // y: node.y,
+          id: node.id,
+          name: node.label,
+          symbolSize: node.size,
+          itemStyle: {
+            color: node.color,
+          },
+        };
+      }),
+      edges: echartData.edges.map(function (edge) {
+        return {
+          source: edge.sourceID,
+          target: edge.targetID,
+        };
+      }),
+      emphasis: {
+        focus: 'adjacency',
+        label: {
+          position: 'right',
+          show: true,
+        },
+      },
+      roam: true,
+      lineStyle: {
+        width: 0.5,
+        curveness: 0.3,
+        opacity: 0.7,
+      },
+    },
+  ],
+};
 onMounted(() => {
   const chartDom = document.getElementById('g6Container')!;
-  console.log('chartDom =>', chartDom);
   const myEchart = echarts.init(chartDom);
 
   const width = document.querySelector('#g6Container')?.clientWidth ?? 500;
   const height = document.querySelector('#g6Container')?.clientHeight ?? 500;
-
-  const option: EChartsOption = {
-    title: {
-      text: 'NPM Dependencies',
-    },
-    animationDurationUpdate: 1500,
-    animationEasingUpdate: 'quinticInOut',
-    series: [
-      {
-        type: 'graph',
-        layout: 'none',
-        // progressiveThreshold: 700,
-        data: echartData.nodes.map(function (node) {
-          return {
-            x: node.x,
-            y: node.y,
-            id: node.id,
-            name: node.label,
-            symbolSize: node.size,
-            itemStyle: {
-              color: node.color,
-            },
-          };
-        }),
-        edges: echartData.edges.map(function (edge) {
-          return {
-            source: edge.sourceID,
-            target: edge.targetID,
-          };
-        }),
-        emphasis: {
-          focus: 'adjacency',
-          label: {
-            position: 'right',
-            show: true,
-          },
-        },
-        roam: true,
-        lineStyle: {
-          width: 0.5,
-          curveness: 0.3,
-          opacity: 0.7,
-        },
-      },
-    ],
-  };
 
   myEchart.setOption(option, true);
 });
