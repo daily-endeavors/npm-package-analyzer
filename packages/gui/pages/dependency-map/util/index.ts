@@ -79,7 +79,8 @@ let colorCounter = 0
  */
 export function getRgbColor(): `#${string}` {
     colorCounter = colorCounter + 1
-    const colorRgb = ConstColor.colorList[colorCounter % ConstColor.colorList.length]
+    const colorList = ConstColor.materialColorList
+    const colorRgb = colorList[colorCounter % colorList.length]
     return `#${colorRgb}`
 }
 
@@ -94,7 +95,7 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
     const echartsEdgeList: TypeG6.EchartsEdge[] = []
 
     // 数据量太大, 先只展示第一个
-    packageRecordList = [packageRecordList[0]]
+    // packageRecordList = [packageRecordList[0]]
 
     // 先初始化uuid => item 映射表
     const uuidMap = new Map()
@@ -112,21 +113,23 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
     // 然后再绘制依赖图
     for (let packageRecord of packageRecordList) {
         let recordCounter = 0
+        // 每个模块的颜色不一样
+        const packageColor = getRgbColor()
         for (let record of [...packageRecord.packageList]) {
             recordCounter = recordCounter + 1
             const node: TypeG6.EchartsNode = {
                 id: record.uuid,
                 label: `${record.packageName}@${record.version}`,
-                color: getRgbColor(),
+                color: packageColor,
                 // 保底为1
-                size: 1,//Math.max(Object.keys(record.packageInfo.dependencies).length, 1),
+                size: Math.max(Object.keys(record.packageInfo.dependencies).length, 1),
                 y: 0,
                 x: 0,
                 attributes: {},
             }
             if (recordCounter === 1) {
                 // 每个循环的第一个是根节点, 需要给与特殊标记
-                node.color = "#007bff"
+                // node.color = "#007bff"
                 node.size = 100
             }
 
