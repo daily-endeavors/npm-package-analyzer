@@ -12,6 +12,7 @@
   "dependencies": {
     "@antv/g6": "^4.8.21",
     "@umijs/preset-vue": "^4.0.74",
+    "echarts": "^5.4.3",
     "pinia": "^2.0.28",
     "umi": "^4.0.74",
     "vue": "^3.2.45"
