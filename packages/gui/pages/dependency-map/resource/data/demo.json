@@ -158,7 +158,7 @@
         "version": "0.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/charenc@0.0.2/node_modules/charenc",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -180,7 +180,7 @@
         "version": "0.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/crypt@0.0.2/node_modules/crypt",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -202,7 +202,7 @@
         "version": "1.1.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/is-buffer@1.1.6/node_modules/is-buffer",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -382,7 +382,7 @@
         "version": "0.8.21",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6-pc@0.8.21/node_modules/@antv/g6-pc",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@ant-design/colors": "^4.0.5",
@@ -516,7 +516,7 @@
         "version": "4.0.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@ant-design+colors@4.0.5/node_modules/@ant-design/colors",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "tinycolor2": "^1.4.1"
@@ -572,7 +572,7 @@
         "version": "1.6.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tinycolor2@1.6.0/node_modules/tinycolor2",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -598,7 +598,7 @@
         "version": "0.1.26",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+algorithm@0.1.26/node_modules/@antv/algorithm",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/util": "^2.0.13",
@@ -664,7 +664,7 @@
         "version": "2.0.17",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+util@2.0.17/node_modules/@antv/util",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "tslib": "^2.0.3",
@@ -705,7 +705,7 @@
         "version": "2.6.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tslib@2.6.1/node_modules/tslib",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -730,7 +730,7 @@
         "version": "2.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+dom-util@2.0.4/node_modules/@antv/dom-util",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "tslib": "^2.0.3"
@@ -766,7 +766,7 @@
         "version": "0.1.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+event-emitter@0.1.3/node_modules/@antv/event-emitter",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -806,7 +806,7 @@
         "version": "0.5.15",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g-base@0.5.15/node_modules/@antv/g-base",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/event-emitter": "^0.1.1",
@@ -864,7 +864,7 @@
         "version": "0.1.9",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g-math@0.1.9/node_modules/@antv/g-math",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@antv/util": "~2.0.0",
@@ -904,7 +904,7 @@
         "version": "3.1.0-beta.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+matrix-util@3.1.0-beta.3/node_modules/@antv/matrix-util",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@antv/util": "^2.0.9",
@@ -944,7 +944,7 @@
         "version": "2.0.15",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+path-util@2.0.15/node_modules/@antv/path-util",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@antv/matrix-util": "^3.0.4",
@@ -984,7 +984,7 @@
         "version": "2.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+d3-timer@2.0.1/node_modules/@types/d3-timer",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -1006,7 +1006,7 @@
         "version": "1.0.7",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/d3-ease@1.0.7/node_modules/d3-ease",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -1038,7 +1038,7 @@
         "version": "3.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/d3-interpolate@3.0.1/node_modules/d3-interpolate",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "d3-color": "1 - 3"
@@ -1074,7 +1074,7 @@
         "version": "1.0.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/d3-timer@1.0.10/node_modules/d3-timer",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -1106,7 +1106,7 @@
         "version": "5.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/detect-browser@5.3.0/node_modules/detect-browser",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -1148,7 +1148,7 @@
         "version": "0.5.14",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g-canvas@0.5.14/node_modules/@antv/g-canvas",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/g-base": "^0.5.12",
@@ -1198,7 +1198,7 @@
         "version": "3.4.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/gl-matrix@3.4.3/node_modules/gl-matrix",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -1220,7 +1220,7 @@
         "version": "0.5.7",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g-svg@0.5.7/node_modules/@antv/g-svg",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/g-base": "^0.5.12",
@@ -1266,7 +1266,7 @@
         "version": "0.8.21",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6-core@0.8.21/node_modules/@antv/g6-core",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/algorithm": "^0.1.8",
@@ -1362,7 +1362,7 @@
         "version": "6.10.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ml-matrix@6.10.4/node_modules/ml-matrix",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "is-any-array": "^2.0.0",
@@ -1424,7 +1424,7 @@
         "version": "0.8.21",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6-element@0.8.21/node_modules/@antv/g6-element",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/g-base": "^0.5.1",
@@ -1502,7 +1502,7 @@
         "version": "0.8.21",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g6-plugin@0.8.21/node_modules/@antv/g6-plugin",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/dom-util": "^2.0.2",
@@ -1568,7 +1568,7 @@
         "version": "0.3.18",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+scale@0.3.18/node_modules/@antv/scale",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@antv/util": "~2.0.3",
@@ -1632,7 +1632,7 @@
         "version": "2.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/insert-css@2.0.0/node_modules/insert-css",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -1668,7 +1668,7 @@
         "version": "0.6.11",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+hierarchy@0.6.11/node_modules/@antv/hierarchy",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/util": "^2.0.7"
@@ -1752,7 +1752,7 @@
         "version": "0.3.23",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+layout@0.3.23_dagre@0.8.5/node_modules/@antv/layout",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antv/g-webgpu": "0.7.2",
@@ -1858,7 +1858,7 @@
         "version": "0.7.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+g-webgpu@0.7.2/node_modules/@antv/g-webgpu",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@antv/g-webgpu-core": "^0.7.2",
@@ -1900,7 +1900,7 @@
         "version": "1.2.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+graphlib@1.2.0/node_modules/@antv/graphlib",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -1970,7 +1970,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antv+util@3.3.4/node_modules/@antv/util",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "fast-deep-equal": "^3.1.3",
@@ -2047,7 +2047,7 @@
         "version": "2.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/d3-force@2.1.1/node_modules/d3-force",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "d3-dispatch": "1 - 2",
@@ -2087,7 +2087,7 @@
         "version": "2.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/d3-quadtree@2.0.0/node_modules/d3-quadtree",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -2121,7 +2121,7 @@
         "version": "0.0.11",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/dagre-compound@0.0.11_dagre@0.8.5/node_modules/dagre-compound",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -2221,7 +2221,7 @@
         "version": "3.2.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/color@3.2.1/node_modules/color",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "color-convert": "^1.9.3",
@@ -2255,7 +2255,7 @@
         "version": "1.9.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/color-convert@1.9.3/node_modules/color-convert",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "color-name": "1.1.3"
@@ -2287,7 +2287,7 @@
         "version": "1.9.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/color-string@1.9.1/node_modules/color-string",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "color-name": "^1.0.0",
@@ -2319,7 +2319,7 @@
         "version": "0.8.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/dagre@0.8.5/node_modules/dagre",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "graphlib": "^2.1.8",
@@ -2389,7 +2389,7 @@
         "version": "2.1.8",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/graphlib@2.1.8/node_modules/graphlib",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "lodash": "^4.17.15"
@@ -2459,7 +2459,7 @@
         "version": "4.17.21",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/lodash@4.17.21/node_modules/lodash",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -2523,7 +2523,7 @@
         "version": "3.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vitejs+plugin-vue-jsx@3.0.1_vite@4.4.9_vue@3.2.45/node_modules/@vitejs/plugin-vue-jsx",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@babel/core": "^7.20.7",
@@ -2557,7 +2557,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+core@7.22.10/node_modules/@babel/core",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@ampproject/remapping": "^2.2.0",
@@ -2644,7 +2644,7 @@
         "version": "2.2.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@ampproject+remapping@2.2.1/node_modules/@ampproject/remapping",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@jridgewell/gen-mapping": "^0.3.0",
@@ -2702,7 +2702,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+code-frame@7.22.10/node_modules/@babel/code-frame",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/highlight": "^7.22.10",
@@ -2734,7 +2734,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+generator@7.22.10/node_modules/@babel/generator",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/types": "^7.22.10",
@@ -2778,7 +2778,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helper-compilation-targets@7.22.10/node_modules/@babel/helper-compilation-targets",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/compat-data": "^7.22.9",
@@ -2820,7 +2820,7 @@
         "version": "7.22.9",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helper-module-transforms@7.22.9_@babel+core@7.22.10/node_modules/@babel/helper-module-transforms",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-environment-visitor": "^7.22.5",
@@ -2863,7 +2863,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helpers@7.22.10/node_modules/@babel/helpers",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/template": "^7.22.5",
@@ -2905,7 +2905,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+parser@7.22.10/node_modules/@babel/parser",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -2944,7 +2944,7 @@
         "version": "7.22.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+template@7.22.5/node_modules/@babel/template",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/code-frame": "^7.22.5",
@@ -2974,7 +2974,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+traverse@7.22.10/node_modules/@babel/traverse",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/code-frame": "^7.22.10",
@@ -3024,7 +3024,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+types@7.22.10/node_modules/@babel/types",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-string-parser": "^7.22.5",
@@ -3062,7 +3062,7 @@
         "version": "1.9.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/convert-source-map@1.9.0/node_modules/convert-source-map",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -3090,7 +3090,7 @@
         "version": "4.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/debug@4.3.4/node_modules/debug",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "ms": "2.1.2"
@@ -3140,7 +3140,7 @@
         "version": "1.0.0-beta.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/gensync@1.0.0-beta.2/node_modules/gensync",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -3182,7 +3182,7 @@
         "version": "2.2.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/json5@2.2.3/node_modules/json5",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -3240,7 +3240,7 @@
         "version": "6.3.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/semver@6.3.1/node_modules/semver",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -3271,7 +3271,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+plugin-transform-typescript@7.22.10_@babel+core@7.22.10/node_modules/@babel/plugin-transform-typescript",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-annotate-as-pure": "^7.22.5",
@@ -3313,7 +3313,7 @@
         "version": "7.22.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helper-annotate-as-pure@7.22.5/node_modules/@babel/helper-annotate-as-pure",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/types": "^7.22.5"
@@ -3339,7 +3339,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helper-create-class-features-plugin@7.22.10_@babel+core@7.22.10/node_modules/@babel/helper-create-class-features-plugin",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-annotate-as-pure": "^7.22.5",
@@ -3391,7 +3391,7 @@
         "version": "7.22.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helper-plugin-utils@7.22.5/node_modules/@babel/helper-plugin-utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -3413,7 +3413,7 @@
         "version": "7.22.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+plugin-syntax-typescript@7.22.5_@babel+core@7.22.10/node_modules/@babel/plugin-syntax-typescript",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-plugin-utils": "^7.22.5"
@@ -3445,7 +3445,7 @@
         "version": "1.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+babel-plugin-jsx@1.1.1_@babel+core@7.22.10/node_modules/@vue/babel-plugin-jsx",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-module-imports": "^7.0.0",
@@ -3515,7 +3515,7 @@
         "version": "7.22.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helper-module-imports@7.22.5/node_modules/@babel/helper-module-imports",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/types": "^7.22.5"
@@ -3547,7 +3547,7 @@
         "version": "7.22.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+plugin-syntax-jsx@7.22.5_@babel+core@7.22.10/node_modules/@babel/plugin-syntax-jsx",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-plugin-utils": "^7.22.5"
@@ -3577,7 +3577,7 @@
         "version": "1.1.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+babel-helper-vue-transform-on@1.1.5/node_modules/@vue/babel-helper-vue-transform-on",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -3599,7 +3599,7 @@
         "version": "6.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/camelcase@6.3.0/node_modules/camelcase",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -3629,7 +3629,7 @@
         "version": "3.3.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/html-tags@3.3.1/node_modules/html-tags",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -3659,7 +3659,7 @@
         "version": "1.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/svg-tags@1.0.0/node_modules/svg-tags",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -3691,7 +3691,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue@3.2.45/node_modules/vue",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.2.45",
@@ -3729,7 +3729,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+shared@3.2.45/node_modules/@vue/shared",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -3755,7 +3755,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-dom@3.2.45/node_modules/@vue/compiler-dom",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.2.45",
@@ -3787,7 +3787,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-core@3.2.45/node_modules/@vue/compiler-core",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.2.45",
@@ -3827,7 +3827,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+runtime-dom@3.2.45/node_modules/@vue/runtime-dom",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.2.45",
@@ -3861,7 +3861,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+runtime-core@3.2.45/node_modules/@vue/runtime-core",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.2.45",
@@ -3893,7 +3893,7 @@
         "version": "2.6.21",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/csstype@2.6.21/node_modules/csstype",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -3961,7 +3961,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-sfc@3.2.45/node_modules/@vue/compiler-sfc",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.16.4",
@@ -4033,7 +4033,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-ssr@3.2.45/node_modules/@vue/compiler-ssr",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.2.45",
@@ -4065,7 +4065,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+reactivity-transform@3.2.45/node_modules/@vue/reactivity-transform",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.16.4",
@@ -4109,7 +4109,7 @@
         "version": "2.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/estree-walker@2.0.2/node_modules/estree-walker",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -4144,7 +4144,7 @@
         "version": "0.25.9",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/magic-string@0.25.9/node_modules/magic-string",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "sourcemap-codec": "^1.4.8"
@@ -4198,7 +4198,7 @@
         "version": "0.6.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map@0.6.1/node_modules/source-map",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -4229,7 +4229,7 @@
         "version": "8.4.27",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss@8.4.27/node_modules/postcss",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "nanoid": "^3.3.6",
@@ -4262,7 +4262,7 @@
         "version": "3.2.45",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+server-renderer@3.2.45_vue@3.2.45/node_modules/@vue/server-renderer",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.2.45",
@@ -4294,7 +4294,7 @@
         "version": "17.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-loader@17.0.1_vue@3.2.45_webpack@5.88.2/node_modules/vue-loader",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "chalk": "^4.1.0",
@@ -4422,7 +4422,7 @@
         "version": "4.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chalk@4.1.2/node_modules/chalk",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "ansi-styles": "^4.1.0",
@@ -4470,7 +4470,7 @@
         "version": "4.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ansi-styles@4.3.0/node_modules/ansi-styles",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "color-convert": "^2.0.1"
@@ -4508,7 +4508,7 @@
         "version": "7.2.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/supports-color@7.2.0/node_modules/supports-color",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "has-flag": "^4.0.0"
@@ -4545,7 +4545,7 @@
         "version": "2.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/hash-sum@2.0.0/node_modules/hash-sum",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -4577,7 +4577,7 @@
         "version": "2.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/loader-utils@2.0.4/node_modules/loader-utils",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "big.js": "^5.2.2",
@@ -4623,7 +4623,7 @@
         "version": "5.2.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/big.js@5.2.2/node_modules/big.js",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -4645,7 +4645,7 @@
         "version": "3.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/emojis-list@3.0.0/node_modules/emojis-list",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -4679,7 +4679,7 @@
         "version": "4.1.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-router@4.1.6_vue@3.3.4/node_modules/vue-router",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@vue/devtools-api": "^6.4.5"
@@ -4771,7 +4771,7 @@
         "version": "6.5.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -4801,7 +4801,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+renderer-vue@4.0.74_vue-router@4.1.6_vue@3.2.45/node_modules/@umijs/renderer-vue",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "7.21.0"
@@ -4827,7 +4827,7 @@
         "version": "7.21.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+runtime@7.21.0/node_modules/@babel/runtime",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "regenerator-runtime": "^0.13.11"
@@ -4856,7 +4856,7 @@
         "version": "0.13.11",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/regenerator-runtime@0.13.11/node_modules/regenerator-runtime",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -4974,7 +4974,7 @@
         "version": "2.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tslib@2.3.0/node_modules/tslib",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -4999,7 +4999,7 @@
         "version": "5.4.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/zrender@5.4.4/node_modules/zrender",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "tslib": "2.3.0"
@@ -5099,7 +5099,7 @@
         "version": "0.14.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vue-demi@0.14.5_vue@3.3.4/node_modules/vue-demi",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -5169,7 +5169,7 @@
         "version": "3.2.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier-plugin-organize-imports@3.2.3_prettier@2.8.8_typescript@5.1.6/node_modules/prettier-plugin-organize-imports",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5205,7 +5205,7 @@
         "version": "2.4.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prettier-plugin-packagejson@2.4.3_prettier@2.8.8/node_modules/prettier-plugin-packagejson",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "sort-package-json": "2.4.1",
@@ -5241,7 +5241,7 @@
         "version": "2.4.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/sort-package-json@2.4.1/node_modules/sort-package-json",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "detect-indent": "^7.0.1",
@@ -5323,7 +5323,7 @@
         "version": "7.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/detect-indent@7.0.1/node_modules/detect-indent",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5355,7 +5355,7 @@
         "version": "4.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/detect-newline@4.0.0/node_modules/detect-newline",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5385,7 +5385,7 @@
         "version": "3.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/git-hooks-list@3.1.0/node_modules/git-hooks-list",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5443,7 +5443,7 @@
         "version": "13.2.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/globby@13.2.2/node_modules/globby",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "dir-glob": "^3.0.1",
@@ -5499,7 +5499,7 @@
         "version": "4.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/is-plain-obj@4.1.0/node_modules/is-plain-obj",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5529,7 +5529,7 @@
         "version": "1.1.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/sort-object-keys@1.1.3/node_modules/sort-object-keys",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5561,7 +5561,7 @@
         "version": "0.8.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/synckit@0.8.5/node_modules/synckit",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@pkgr/utils": "^2.3.1",
@@ -5589,7 +5589,7 @@
         "version": "2.4.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@pkgr+utils@2.4.2/node_modules/@pkgr/utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "cross-spawn": "^7.0.3",
@@ -5625,7 +5625,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+bundler-utils@4.0.74/node_modules/@umijs/bundler-utils",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "esbuild": "0.17.19",
@@ -5739,7 +5739,7 @@
         "version": "0.17.19",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/esbuild@0.17.19/node_modules/esbuild",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -5761,7 +5761,7 @@
         "version": "1.4.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/regenerate@1.4.2/node_modules/regenerate",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5799,7 +5799,7 @@
         "version": "10.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/regenerate-unicode-properties@10.1.0/node_modules/regenerate-unicode-properties",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "regenerate": "^1.4.2"
@@ -5837,7 +5837,7 @@
         "version": "4.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/spdy@4.0.2/node_modules/spdy",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "debug": "^4.1.0",
@@ -5881,7 +5881,7 @@
         "version": "2.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/handle-thing@2.0.1/node_modules/handle-thing",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5917,7 +5917,7 @@
         "version": "1.2.7",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/http-deceiver@1.2.7/node_modules/http-deceiver",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5949,7 +5949,7 @@
         "version": "2.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/select-hose@2.0.0/node_modules/select-hose",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -5983,7 +5983,7 @@
         "version": "3.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/spdy-transport@3.0.0/node_modules/spdy-transport",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "debug": "^4.1.0",
@@ -6033,7 +6033,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+utils@4.0.74/node_modules/@umijs/utils",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "chokidar": "3.5.3",
@@ -6155,7 +6155,7 @@
         "version": "3.5.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/chokidar@3.5.3/node_modules/chokidar",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "anymatch": "~3.1.2",
@@ -6217,7 +6217,7 @@
         "version": "7.11.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/pino@7.11.0/node_modules/pino",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "atomic-sleep": "^1.0.0",
@@ -6337,7 +6337,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+core@4.0.74/node_modules/@umijs/core",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@umijs/bundler-utils": "4.0.74",
@@ -6373,7 +6373,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+bundler-webpack@4.0.74_styled-components@6.0.7_typescript@5.1.6_webpack@5.88.2/node_modules/@umijs/bundler-webpack",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@pmmmwh/react-refresh-webpack-plugin": "0.5.10",
@@ -6511,7 +6511,7 @@
         "version": "0.5.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@pmmmwh+react-refresh-webpack-plugin@0.5.10_react-refresh@0.14.0_webpack@5.88.2/node_modules/@pmmmwh/react-refresh-webpack-plugin",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "ansi-html-community": "^0.0.8",
@@ -6641,7 +6641,7 @@
         "version": "0.0.8",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ansi-html-community@0.0.8/node_modules/ansi-html-community",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -6673,7 +6673,7 @@
         "version": "3.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/common-path-prefix@3.0.0/node_modules/common-path-prefix",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -6703,7 +6703,7 @@
         "version": "3.32.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/core-js-pure@3.32.0/node_modules/core-js-pure",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -6725,7 +6725,7 @@
         "version": "2.1.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/error-stack-parser@2.1.4/node_modules/error-stack-parser",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "stackframe": "^1.3.4"
@@ -6785,7 +6785,7 @@
         "version": "5.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/find-up@5.0.0/node_modules/find-up",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "locate-path": "^6.0.0",
@@ -6825,7 +6825,7 @@
         "version": "2.4.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/html-entities@2.4.0/node_modules/html-entities",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -6897,7 +6897,7 @@
         "version": "3.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/schema-utils@3.3.0/node_modules/schema-utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@types/json-schema": "^7.0.8",
@@ -6971,7 +6971,7 @@
         "version": "0.7.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map@0.7.4/node_modules/source-map",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -7014,7 +7014,7 @@
         "version": "6.5.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@svgr+core@6.5.1/node_modules/@svgr/core",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/core": "^7.19.6",
@@ -7052,7 +7052,7 @@
         "version": "6.5.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@svgr+babel-preset@6.5.1_@babel+core@7.22.10/node_modules/@svgr/babel-preset",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@svgr/babel-plugin-add-jsx-attribute": "^6.5.1",
@@ -7092,7 +7092,7 @@
         "version": "6.5.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@svgr+plugin-jsx@6.5.1_@svgr+core@6.5.1/node_modules/@svgr/plugin-jsx",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/core": "^7.19.6",
@@ -7124,7 +7124,7 @@
         "version": "7.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/cosmiconfig@7.1.0/node_modules/cosmiconfig",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@types/parse-json": "^4.0.0",
@@ -7210,7 +7210,7 @@
         "version": "6.5.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@svgr+plugin-svgo@6.5.1_@svgr+core@6.5.1/node_modules/@svgr/plugin-svgo",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "cosmiconfig": "^7.0.1",
@@ -7240,7 +7240,7 @@
         "version": "4.3.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/deepmerge@4.3.1/node_modules/deepmerge",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -7286,7 +7286,7 @@
         "version": "2.8.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/svgo@2.8.0/node_modules/svgo",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@trysound/sax": "0.2.0",
@@ -7362,7 +7362,7 @@
         "version": "17.1.9",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+hapi__joi@17.1.9/node_modules/@types/hapi__joi",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -7384,7 +7384,7 @@
         "version": "1.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+case-sensitive-paths-webpack-plugin@1.0.1/node_modules/@umijs/case-sensitive-paths-webpack-plugin",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -7428,7 +7428,7 @@
         "version": "2.8.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/cors@2.8.5/node_modules/cors",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "object-assign": "^4",
@@ -7470,7 +7470,7 @@
         "version": "4.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/object-assign@4.1.1/node_modules/object-assign",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -7502,7 +7502,7 @@
         "version": "1.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vary@1.1.2/node_modules/vary",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -7550,7 +7550,7 @@
         "version": "6.7.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/css-loader@6.7.1_webpack@5.88.2/node_modules/css-loader",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "icss-utils": "^5.1.0",
@@ -7662,7 +7662,7 @@
         "version": "5.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/icss-utils@5.1.0_postcss@8.4.27/node_modules/icss-utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -7702,7 +7702,7 @@
         "version": "3.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-modules-extract-imports@3.0.0_postcss@8.4.27/node_modules/postcss-modules-extract-imports",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -7742,7 +7742,7 @@
         "version": "4.0.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-modules-local-by-default@4.0.3_postcss@8.4.27/node_modules/postcss-modules-local-by-default",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "icss-utils": "^5.0.0",
@@ -7790,7 +7790,7 @@
         "version": "3.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-modules-scope@3.0.0_postcss@8.4.27/node_modules/postcss-modules-scope",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.4"
@@ -7834,7 +7834,7 @@
         "version": "4.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-modules-values@4.0.0_postcss@8.4.27/node_modules/postcss-modules-values",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "icss-utils": "^5.0.0"
@@ -7878,7 +7878,7 @@
         "version": "4.2.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-value-parser@4.2.0/node_modules/postcss-value-parser",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -7914,7 +7914,7 @@
         "version": "7.5.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/semver@7.5.4/node_modules/semver",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "lru-cache": "^6.0.0"
@@ -7951,7 +7951,7 @@
         "version": "0.1.86",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/es5-imcompatible-versions@0.1.86/node_modules/es5-imcompatible-versions",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -7973,7 +7973,7 @@
         "version": "8.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fork-ts-checker-webpack-plugin@8.0.0_typescript@5.1.6_webpack@5.88.2/node_modules/fork-ts-checker-webpack-plugin",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/code-frame": "^7.16.7",
@@ -8103,7 +8103,7 @@
         "version": "10.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fs-extra@10.1.0/node_modules/fs-extra",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "graceful-fs": "^4.2.0",
@@ -8153,7 +8153,7 @@
         "version": "3.5.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/memfs@3.5.3/node_modules/memfs",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "fs-monkey": "^1.0.4"
@@ -8213,7 +8213,7 @@
         "version": "3.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/minimatch@3.1.2/node_modules/minimatch",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "brace-expansion": "^1.1.7"
@@ -8243,7 +8243,7 @@
         "version": "3.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node-abort-controller@3.1.1/node_modules/node-abort-controller",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -8273,7 +8273,7 @@
         "version": "2.2.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -8309,7 +8309,7 @@
         "version": "29.4.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/jest-worker@29.4.3/node_modules/jest-worker",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@types/node": "*",
@@ -8359,7 +8359,7 @@
         "version": "20.4.9",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+node@20.4.9/node_modules/@types/node",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -8381,7 +8381,7 @@
         "version": "29.6.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/jest-util@29.6.2/node_modules/jest-util",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@jest/types": "^29.6.1",
@@ -8423,7 +8423,7 @@
         "version": "2.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/merge-stream@2.0.0/node_modules/merge-stream",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -8451,7 +8451,7 @@
         "version": "8.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/supports-color@8.1.1/node_modules/supports-color",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "has-flag": "^4.0.0"
@@ -8488,7 +8488,7 @@
         "version": "1.19.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/lightningcss@1.19.0/node_modules/lightningcss",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "detect-libc": "^1.0.3"
@@ -8576,7 +8576,7 @@
         "version": "1.0.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/detect-libc@1.0.3/node_modules/detect-libc",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -8608,7 +8608,7 @@
         "version": "2.2.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node-libs-browser@2.2.1/node_modules/node-libs-browser",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "assert": "^1.1.1",
@@ -8678,7 +8678,7 @@
         "version": "1.5.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/assert@1.5.0/node_modules/assert",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "object-assign": "^4.1.1",
@@ -8714,7 +8714,7 @@
         "version": "0.2.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/browserify-zlib@0.2.0/node_modules/browserify-zlib",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "pako": "~1.0.5"
@@ -8782,7 +8782,7 @@
         "version": "4.9.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/buffer@4.9.2/node_modules/buffer",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "base64-js": "^1.0.2",
@@ -8836,7 +8836,7 @@
         "version": "1.2.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/console-browserify@1.2.0/node_modules/console-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -8870,7 +8870,7 @@
         "version": "1.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/constants-browserify@1.0.0/node_modules/constants-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -8892,7 +8892,7 @@
         "version": "3.12.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/crypto-browserify@3.12.0/node_modules/crypto-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "browserify-cipher": "^1.0.0",
@@ -8952,7 +8952,7 @@
         "version": "1.2.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/domain-browser@1.2.0/node_modules/domain-browser",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -8986,7 +8986,7 @@
         "version": "3.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/events@3.3.0/node_modules/events",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -9022,7 +9022,7 @@
         "version": "1.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/https-browserify@1.0.0/node_modules/https-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -9048,7 +9048,7 @@
         "version": "0.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/os-browserify@0.3.0/node_modules/os-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -9070,7 +9070,7 @@
         "version": "0.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/path-browserify@0.0.1/node_modules/path-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -9096,7 +9096,7 @@
         "version": "0.11.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/process@0.11.10/node_modules/process",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -9124,7 +9124,7 @@
         "version": "1.4.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/punycode@1.4.1/node_modules/punycode",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -9164,7 +9164,7 @@
         "version": "0.2.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/querystring-es3@0.2.1/node_modules/querystring-es3",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -9196,7 +9196,7 @@
         "version": "2.3.8",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/readable-stream@2.3.8/node_modules/readable-stream",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "core-util-is": "~1.0.0",
@@ -9250,7 +9250,7 @@
         "version": "2.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/stream-browserify@2.0.2/node_modules/stream-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "inherits": "~2.0.1",
@@ -9286,7 +9286,7 @@
         "version": "2.8.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/stream-http@2.8.3/node_modules/stream-http",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "builtin-status-codes": "^3.0.0",
@@ -9338,7 +9338,7 @@
         "version": "1.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/string_decoder@1.3.0/node_modules/string_decoder",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "safe-buffer": "~5.2.0"
@@ -9374,7 +9374,7 @@
         "version": "2.0.12",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/timers-browserify@2.0.12/node_modules/timers-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "setimmediate": "^1.0.4"
@@ -9406,7 +9406,7 @@
         "version": "0.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tty-browserify@0.0.0/node_modules/tty-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -9432,7 +9432,7 @@
         "version": "0.11.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/url@0.11.1/node_modules/url",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "punycode": "^1.4.1",
@@ -9476,7 +9476,7 @@
         "version": "0.11.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/util@0.11.1/node_modules/util",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "inherits": "2.0.3"
@@ -9512,7 +9512,7 @@
         "version": "1.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vm-browserify@1.1.2/node_modules/vm-browserify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -9542,7 +9542,7 @@
         "version": "7.5.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-preset-env@7.5.0_postcss@8.4.27/node_modules/postcss-preset-env",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@csstools/postcss-color-function": "^1.1.0",
@@ -9660,7 +9660,7 @@
         "version": "1.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-color-function@1.1.1_postcss@8.4.27/node_modules/@csstools/postcss-color-function",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@csstools/postcss-progressive-custom-properties": "^1.1.0",
@@ -9692,7 +9692,7 @@
         "version": "1.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-font-format-keywords@1.0.1_postcss@8.4.27/node_modules/@csstools/postcss-font-format-keywords",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -9718,7 +9718,7 @@
         "version": "1.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-hwb-function@1.0.2_postcss@8.4.27/node_modules/@csstools/postcss-hwb-function",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -9744,7 +9744,7 @@
         "version": "1.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-ic-unit@1.0.1_postcss@8.4.27/node_modules/@csstools/postcss-ic-unit",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@csstools/postcss-progressive-custom-properties": "^1.1.0",
@@ -9772,7 +9772,7 @@
         "version": "2.0.7",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-is-pseudo-class@2.0.7_postcss@8.4.27/node_modules/@csstools/postcss-is-pseudo-class",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@csstools/selector-specificity": "^2.0.0",
@@ -9804,7 +9804,7 @@
         "version": "1.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-normalize-display-values@1.0.1_postcss@8.4.27/node_modules/@csstools/postcss-normalize-display-values",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -9830,7 +9830,7 @@
         "version": "1.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-oklab-function@1.1.1_postcss@8.4.27/node_modules/@csstools/postcss-oklab-function",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@csstools/postcss-progressive-custom-properties": "^1.1.0",
@@ -9858,7 +9858,7 @@
         "version": "1.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-progressive-custom-properties@1.3.0_postcss@8.4.27/node_modules/@csstools/postcss-progressive-custom-properties",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -9884,7 +9884,7 @@
         "version": "1.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-stepped-value-functions@1.0.1_postcss@8.4.27/node_modules/@csstools/postcss-stepped-value-functions",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -9910,7 +9910,7 @@
         "version": "1.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@csstools+postcss-unset-value@1.0.2_postcss@8.4.27/node_modules/@csstools/postcss-unset-value",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -9932,7 +9932,7 @@
         "version": "10.4.14",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/autoprefixer@10.4.14_postcss@8.4.27/node_modules/autoprefixer",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "browserslist": "^4.21.5",
@@ -9968,7 +9968,7 @@
         "version": "4.21.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/browserslist@4.21.10/node_modules/browserslist",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "caniuse-lite": "^1.0.30001517",
@@ -10000,7 +10000,7 @@
         "version": "3.0.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/css-blank-pseudo@3.0.3_postcss@8.4.27/node_modules/css-blank-pseudo",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.9"
@@ -10026,7 +10026,7 @@
         "version": "3.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/css-has-pseudo@3.0.4_postcss@8.4.27/node_modules/css-has-pseudo",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.9"
@@ -10058,7 +10058,7 @@
         "version": "6.0.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/css-prefers-color-scheme@6.0.3_postcss@8.4.27/node_modules/css-prefers-color-scheme",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10086,7 +10086,7 @@
         "version": "6.6.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/cssdb@6.6.3/node_modules/cssdb",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10134,7 +10134,7 @@
         "version": "5.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-attribute-case-insensitive@5.0.2_postcss@8.4.27/node_modules/postcss-attribute-case-insensitive",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.10"
@@ -10160,7 +10160,7 @@
         "version": "4.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-clamp@4.1.0_postcss@8.4.27/node_modules/postcss-clamp",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10186,7 +10186,7 @@
         "version": "4.2.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-color-functional-notation@4.2.4_postcss@8.4.27/node_modules/postcss-color-functional-notation",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10212,7 +10212,7 @@
         "version": "8.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-color-hex-alpha@8.0.4_postcss@8.4.27/node_modules/postcss-color-hex-alpha",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10238,7 +10238,7 @@
         "version": "7.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-color-rebeccapurple@7.1.1_postcss@8.4.27/node_modules/postcss-color-rebeccapurple",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10264,7 +10264,7 @@
         "version": "8.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-custom-media@8.0.2_postcss@8.4.27/node_modules/postcss-custom-media",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10290,7 +10290,7 @@
         "version": "12.1.11",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-custom-properties@12.1.11_postcss@8.4.27/node_modules/postcss-custom-properties",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10320,7 +10320,7 @@
         "version": "6.0.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-custom-selectors@6.0.3_postcss@8.4.27/node_modules/postcss-custom-selectors",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.4"
@@ -10346,7 +10346,7 @@
         "version": "6.0.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-dir-pseudo-class@6.0.5_postcss@8.4.27/node_modules/postcss-dir-pseudo-class",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.10"
@@ -10372,7 +10372,7 @@
         "version": "3.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-double-position-gradients@3.1.2_postcss@8.4.27/node_modules/postcss-double-position-gradients",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@csstools/postcss-progressive-custom-properties": "^1.1.0",
@@ -10400,7 +10400,7 @@
         "version": "4.0.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-env-function@4.0.6_postcss@8.4.27/node_modules/postcss-env-function",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10426,7 +10426,7 @@
         "version": "6.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-focus-visible@6.0.4_postcss@8.4.27/node_modules/postcss-focus-visible",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.9"
@@ -10458,7 +10458,7 @@
         "version": "5.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-focus-within@5.0.4_postcss@8.4.27/node_modules/postcss-focus-within",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.9"
@@ -10490,7 +10490,7 @@
         "version": "5.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-font-variant@5.0.0_postcss@8.4.27/node_modules/postcss-font-variant",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10524,7 +10524,7 @@
         "version": "3.0.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-gap-properties@3.0.5_postcss@8.4.27/node_modules/postcss-gap-properties",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -10546,7 +10546,7 @@
         "version": "4.0.7",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-image-set-function@4.0.7_postcss@8.4.27/node_modules/postcss-image-set-function",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10572,7 +10572,7 @@
         "version": "4.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-initial@4.0.1_postcss@8.4.27/node_modules/postcss-initial",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10608,7 +10608,7 @@
         "version": "4.2.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-lab-function@4.2.1_postcss@8.4.27/node_modules/postcss-lab-function",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@csstools/postcss-progressive-custom-properties": "^1.1.0",
@@ -10636,7 +10636,7 @@
         "version": "5.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-logical@5.0.4_postcss@8.4.27/node_modules/postcss-logical",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10664,7 +10664,7 @@
         "version": "5.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-media-minmax@5.0.0_postcss@8.4.27/node_modules/postcss-media-minmax",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10694,7 +10694,7 @@
         "version": "10.2.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-nesting@10.2.0_postcss@8.4.27/node_modules/postcss-nesting",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@csstools/selector-specificity": "^2.0.0",
@@ -10722,7 +10722,7 @@
         "version": "1.1.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-opacity-percentage@1.1.3_postcss@8.4.27/node_modules/postcss-opacity-percentage",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10760,7 +10760,7 @@
         "version": "3.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-overflow-shorthand@3.0.4_postcss@8.4.27/node_modules/postcss-overflow-shorthand",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10786,7 +10786,7 @@
         "version": "3.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-page-break@3.0.4_postcss@8.4.27/node_modules/postcss-page-break",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10826,7 +10826,7 @@
         "version": "7.0.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-place@7.0.5_postcss@8.4.27/node_modules/postcss-place",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-value-parser": "^4.2.0"
@@ -10852,7 +10852,7 @@
         "version": "7.1.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-pseudo-class-any-link@7.1.6_postcss@8.4.27/node_modules/postcss-pseudo-class-any-link",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "postcss-selector-parser": "^6.0.10"
@@ -10878,7 +10878,7 @@
         "version": "4.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-replace-overflow-wrap@4.0.0_postcss@8.4.27/node_modules/postcss-replace-overflow-wrap",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -10928,7 +10928,7 @@
         "version": "5.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-selector-not@5.0.0_postcss@8.4.27/node_modules/postcss-selector-not",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "balanced-match": "^1.0.0"
@@ -10970,7 +10970,7 @@
         "version": "6.0.9",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-error-overlay@6.0.9/node_modules/react-error-overlay",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -11062,7 +11062,7 @@
         "version": "0.14.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-refresh@0.14.0/node_modules/react-refresh",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -11092,7 +11092,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+babel-preset-umi@4.0.74_styled-components@6.0.7/node_modules/@umijs/babel-preset-umi",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "7.21.0",
@@ -11128,7 +11128,7 @@
         "version": "0.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@bloomberg+record-tuple-polyfill@0.0.4/node_modules/@bloomberg/record-tuple-polyfill",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -11150,7 +11150,7 @@
         "version": "2.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/babel-plugin-styled-components@2.1.1_styled-components@6.0.7/node_modules/babel-plugin-styled-components",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-annotate-as-pure": "^7.16.0",
@@ -11212,7 +11212,7 @@
         "version": "3.28.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/core-js@3.28.0/node_modules/core-js",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -11234,7 +11234,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+mfsu@4.0.74/node_modules/@umijs/mfsu",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "enhanced-resolve": "5.9.3",
@@ -11278,7 +11278,7 @@
         "version": "5.9.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/enhanced-resolve@5.9.3/node_modules/enhanced-resolve",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "graceful-fs": "^4.2.4",
@@ -11342,7 +11342,7 @@
         "version": "1.6.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/is-equal@1.6.4/node_modules/is-equal",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "es-get-iterator": "^1.1.2",
@@ -11436,7 +11436,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+bundler-esbuild@4.0.74/node_modules/@umijs/bundler-esbuild",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "enhanced-resolve": "5.9.3",
@@ -11476,7 +11476,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+preset-umi@4.0.74_@types+node@18.17.3_postcss@8.4.27_styled-components@6.0.7_typescript@5.1.6_webpack@5.88.2/node_modules/@umijs/preset-umi",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@iconify/utils": "2.1.1",
@@ -11592,7 +11592,7 @@
         "version": "2.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@iconify+utils@2.1.1/node_modules/@iconify/utils",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@antfu/install-pkg": "^0.1.1",
@@ -11652,7 +11652,7 @@
         "version": "0.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antfu+install-pkg@0.1.1/node_modules/@antfu/install-pkg",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "execa": "^5.1.1",
@@ -11698,7 +11698,7 @@
         "version": "0.7.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@antfu+utils@0.7.5/node_modules/@antfu/utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -11760,7 +11760,7 @@
         "version": "1.8.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/kolorist@1.8.0/node_modules/kolorist",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -11802,7 +11802,7 @@
         "version": "0.4.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/local-pkg@0.4.3/node_modules/local-pkg",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -11850,7 +11850,7 @@
         "version": "2.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@iconify+types@2.0.0/node_modules/@iconify/types",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -11876,7 +11876,7 @@
         "version": "0.0.7",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+es-module-parser@0.0.7/node_modules/@umijs/es-module-parser",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -11910,7 +11910,7 @@
         "version": "5.3.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+history@5.3.1/node_modules/@umijs/history",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "query-string": "^6.13.6",
@@ -11938,7 +11938,7 @@
         "version": "6.14.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/query-string@6.14.1/node_modules/query-string",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "decode-uri-component": "^0.2.0",
@@ -11984,7 +11984,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+runtime@7.22.10/node_modules/@babel/runtime",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "regenerator-runtime": "^0.14.0"
@@ -12013,7 +12013,7 @@
         "version": "2.3.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/babel-plugin-dynamic-import-node@2.3.3/node_modules/babel-plugin-dynamic-import-node",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "object.assign": "^4.1.0"
@@ -12085,7 +12085,7 @@
         "version": "4.1.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/object.assign@4.1.4/node_modules/object.assign",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "call-bind": "^1.0.2",
@@ -12151,7 +12151,7 @@
         "version": "1.0.8",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/click-to-react-component@1.0.8_react-dom@18.1.0_react@18.1.0/node_modules/click-to-react-component",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@floating-ui/react-dom-interactions": "^0.3.1",
@@ -12191,7 +12191,7 @@
         "version": "0.3.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@floating-ui+react-dom-interactions@0.3.1_react-dom@18.1.0_react@18.1.0/node_modules/@floating-ui/react-dom-interactions",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@floating-ui/react-dom": "^0.6.3",
@@ -12269,7 +12269,7 @@
         "version": "3.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/htm@3.1.1/node_modules/htm",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -12315,7 +12315,7 @@
         "version": "1.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-merge-refs@1.1.0/node_modules/react-merge-refs",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -12363,7 +12363,7 @@
         "version": "1.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/current-script-polyfill@1.0.0/node_modules/current-script-polyfill",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -12385,7 +12385,7 @@
         "version": "3.2.12",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/fast-glob@3.2.12/node_modules/fast-glob",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@nodelib/fs.stat": "^2.0.2",
@@ -12479,7 +12479,7 @@
         "version": "2.0.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@nodelib+fs.stat@2.0.5/node_modules/@nodelib/fs.stat",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -12505,7 +12505,7 @@
         "version": "1.2.8",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@nodelib+fs.walk@1.2.8/node_modules/@nodelib/fs.walk",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@nodelib/fs.scandir": "2.1.5",
@@ -12537,7 +12537,7 @@
         "version": "5.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/glob-parent@5.1.2/node_modules/glob-parent",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "is-glob": "^4.0.1"
@@ -12577,7 +12577,7 @@
         "version": "1.4.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/merge2@1.4.1/node_modules/merge2",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -12611,7 +12611,7 @@
         "version": "4.0.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/micromatch@4.0.5/node_modules/micromatch",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "braces": "^3.0.2",
@@ -12651,7 +12651,7 @@
         "version": "5.5.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/html-webpack-plugin@5.5.0_webpack@5.88.2/node_modules/html-webpack-plugin",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@types/html-minifier-terser": "^6.0.0",
@@ -12725,7 +12725,7 @@
         "version": "6.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+html-minifier-terser@6.1.0/node_modules/@types/html-minifier-terser",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -12747,7 +12747,7 @@
         "version": "6.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/html-minifier-terser@6.1.0/node_modules/html-minifier-terser",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "camel-case": "^4.1.2",
@@ -12807,7 +12807,7 @@
         "version": "4.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/pretty-error@4.0.0/node_modules/pretty-error",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "lodash": "^4.17.20",
@@ -12847,7 +12847,7 @@
         "version": "1.7.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/path-to-regexp@1.7.0/node_modules/path-to-regexp",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "isarray": "0.0.1"
@@ -12889,7 +12889,7 @@
         "version": "0.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/isarray@0.0.1/node_modules/isarray",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -12915,7 +12915,7 @@
         "version": "1.16.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-prefix-selector@1.16.0_postcss@8.4.27/node_modules/postcss-prefix-selector",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -12953,7 +12953,7 @@
         "version": "18.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react@18.1.0/node_modules/react",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "loose-envify": "^1.1.0"
@@ -12979,7 +12979,7 @@
         "version": "1.4.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/loose-envify@1.4.0/node_modules/loose-envify",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "js-tokens": "^3.0.0 || ^4.0.0"
@@ -13013,7 +13013,7 @@
         "version": "18.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-dom@18.1.0_react@18.1.0/node_modules/react-dom",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "loose-envify": "^1.1.0",
@@ -13041,7 +13041,7 @@
         "version": "0.22.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/scheduler@0.22.0/node_modules/scheduler",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "loose-envify": "^1.1.0"
@@ -13067,7 +13067,7 @@
         "version": "6.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-router@6.3.0_react@18.1.0/node_modules/react-router",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "history": "^5.2.0"
@@ -13096,7 +13096,7 @@
         "version": "5.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/history@5.3.0/node_modules/history",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "^7.7.6"
@@ -13122,7 +13122,7 @@
         "version": "6.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-router-dom@6.3.0_react-dom@18.1.0_react@18.1.0/node_modules/react-router-dom",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "react-router": "6.3.0",
@@ -13153,7 +13153,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+ast@4.0.74/node_modules/@umijs/ast",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@umijs/bundler-utils": "4.0.74"
@@ -13179,7 +13179,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+bundler-vite@4.0.74_@types+node@18.17.3_postcss@8.4.27/node_modules/@umijs/bundler-vite",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@svgr/core": "6.5.1",
@@ -13233,7 +13233,7 @@
         "version": "4.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vitejs+plugin-react@4.0.0_vite@4.3.1/node_modules/@vitejs/plugin-react",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/core": "^7.21.4",
@@ -13265,7 +13265,7 @@
         "version": "4.1.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/less@4.1.3/node_modules/less",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "copy-anything": "^2.0.1",
@@ -13391,7 +13391,7 @@
         "version": "5.9.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/rollup-plugin-visualizer@5.9.0/node_modules/rollup-plugin-visualizer",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "open": "^8.4.0",
@@ -13505,7 +13505,7 @@
         "version": "4.3.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/vite@4.3.1_@types+node@18.17.3_less@4.1.3/node_modules/vite",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "esbuild": "^0.17.5",
@@ -13655,7 +13655,7 @@
         "version": "1.0.3",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+did-you-know@1.0.3/node_modules/@umijs/did-you-know",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -13677,7 +13677,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+plugin-run@4.0.74/node_modules/@umijs/plugin-run",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "tsx": "^3.12.2"
@@ -13703,7 +13703,7 @@
         "version": "3.12.7",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tsx@3.12.7/node_modules/tsx",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@esbuild-kit/cjs-loader": "^2.4.2",
@@ -13733,7 +13733,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+server@4.0.74/node_modules/@umijs/server",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "history": "5.3.0",
@@ -13767,7 +13767,7 @@
         "version": "3.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+ui@3.0.1/node_modules/@umijs/ui",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -13805,7 +13805,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+renderer-react@4.0.74_react-dom@18.1.0_react@18.1.0/node_modules/@umijs/renderer-react",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "7.21.0",
@@ -13848,7 +13848,7 @@
         "version": "5.15.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@loadable+component@5.15.2_react@18.1.0/node_modules/@loadable/component",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "^7.7.7",
@@ -13881,7 +13881,7 @@
         "version": "1.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-helmet-async@1.3.0_react-dom@18.1.0_react@18.1.0/node_modules/react-helmet-async",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "^7.12.5",
@@ -13982,7 +13982,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+zod2ts@4.0.74/node_modules/@umijs/zod2ts",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -14004,7 +14004,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+renderer-react@4.0.74_react-dom@18.2.0_react@18.2.0/node_modules/@umijs/renderer-react",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "7.21.0",
@@ -14047,7 +14047,7 @@
         "version": "5.15.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@loadable+component@5.15.2_react@18.2.0/node_modules/@loadable/component",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "^7.7.7",
@@ -14080,7 +14080,7 @@
         "version": "3.3.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/hoist-non-react-statics@3.3.2/node_modules/hoist-non-react-statics",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "react-is": "^16.7.0"
@@ -14148,7 +14148,7 @@
         "version": "16.13.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-is@16.13.1/node_modules/react-is",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -14170,7 +14170,7 @@
         "version": "1.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-helmet-async@1.3.0_react-dom@18.2.0_react@18.2.0/node_modules/react-helmet-async",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/runtime": "^7.12.5",
@@ -14271,7 +14271,7 @@
         "version": "2.2.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/invariant@2.2.4/node_modules/invariant",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "loose-envify": "^1.0.0"
@@ -14305,7 +14305,7 @@
         "version": "15.8.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/prop-types@15.8.1/node_modules/prop-types",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "loose-envify": "^1.4.0",
@@ -14357,7 +14357,7 @@
         "version": "3.2.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-fast-compare@3.2.2/node_modules/react-fast-compare",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -14473,7 +14473,7 @@
         "version": "1.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/shallowequal@1.1.0/node_modules/shallowequal",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -14519,7 +14519,7 @@
         "version": "6.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-router-dom@6.3.0_react-dom@18.2.0_react@18.2.0/node_modules/react-router-dom",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "react-router": "6.3.0",
@@ -14550,7 +14550,7 @@
         "version": "6.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/react-router@6.3.0_react@18.2.0/node_modules/react-router",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "history": "^5.2.0"
@@ -14579,7 +14579,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+lint@4.0.74_eslint@8.46.0_styled-components@6.0.7_stylelint@14.16.1_typescript@5.1.6/node_modules/@umijs/lint",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@babel/core": "7.21.0",
@@ -14639,7 +14639,7 @@
         "version": "7.21.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+core@7.21.0/node_modules/@babel/core",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@ampproject/remapping": "^2.2.0",
@@ -14724,7 +14724,7 @@
         "version": "7.22.9",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helper-module-transforms@7.22.9_@babel+core@7.21.0/node_modules/@babel/helper-module-transforms",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-environment-visitor": "^7.22.5",
@@ -14767,7 +14767,7 @@
         "version": "7.19.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+eslint-parser@7.19.1_@babel+core@7.21.0_eslint@8.46.0/node_modules/@babel/eslint-parser",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@nicolo-ribaudo/eslint-scope-5-internals": "5.1.1-v1",
@@ -14805,7 +14805,7 @@
         "version": "5.1.1-v1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@nicolo-ribaudo+eslint-scope-5-internals@5.1.1-v1/node_modules/@nicolo-ribaudo/eslint-scope-5-internals",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "eslint-scope": "5.1.1"
@@ -14831,7 +14831,7 @@
         "version": "2.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint-visitor-keys@2.1.0/node_modules/eslint-visitor-keys",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -14867,7 +14867,7 @@
         "version": "0.38.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@stylelint+postcss-css-in-js@0.38.0_postcss-syntax@0.36.2_postcss@8.4.27/node_modules/@stylelint/postcss-css-in-js",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/core": "^7.17.9"
@@ -14939,7 +14939,7 @@
         "version": "5.48.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+eslint-plugin@5.48.1_@typescript-eslint+parser@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/eslint-plugin",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@typescript-eslint/scope-manager": "5.48.1",
@@ -15009,7 +15009,7 @@
         "version": "5.48.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+scope-manager@5.48.1/node_modules/@typescript-eslint/scope-manager",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@typescript-eslint/types": "5.48.1",
@@ -15057,7 +15057,7 @@
         "version": "5.48.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+type-utils@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/type-utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@typescript-eslint/typescript-estree": "5.48.1",
@@ -15095,7 +15095,7 @@
         "version": "5.48.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+utils@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@types/json-schema": "^7.0.9",
@@ -15144,7 +15144,7 @@
         "version": "5.2.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/ignore@5.2.4/node_modules/ignore",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -15198,7 +15198,7 @@
         "version": "1.4.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/natural-compare-lite@1.4.0/node_modules/natural-compare-lite",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -15226,7 +15226,7 @@
         "version": "3.2.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/regexpp@3.2.0/node_modules/regexpp",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -15286,7 +15286,7 @@
         "version": "3.21.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/tsutils@3.21.0_typescript@5.1.6/node_modules/tsutils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "tslib": "^1.8.1"
@@ -15350,7 +15350,7 @@
         "version": "5.48.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+parser@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/parser",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@typescript-eslint/scope-manager": "5.48.1",
@@ -15390,7 +15390,7 @@
         "version": "5.48.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+types@5.48.1/node_modules/@typescript-eslint/types",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -15416,7 +15416,7 @@
         "version": "5.48.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+typescript-estree@5.48.1_typescript@5.1.6/node_modules/@typescript-eslint/typescript-estree",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@typescript-eslint/types": "5.48.1",
@@ -15484,7 +15484,7 @@
         "version": "27.2.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint-plugin-jest@27.2.1_@typescript-eslint+eslint-plugin@5.48.1_eslint@8.46.0_typescript@5.1.6/node_modules/eslint-plugin-jest",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@typescript-eslint/utils": "^5.10.0"
@@ -15598,7 +15598,7 @@
         "version": "5.62.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@typescript-eslint+utils@5.62.0_eslint@8.46.0_typescript@5.1.6/node_modules/@typescript-eslint/utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@eslint-community/eslint-utils": "^4.2.0",
@@ -15647,7 +15647,7 @@
         "version": "7.32.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint-plugin-react@7.32.2_eslint@8.46.0/node_modules/eslint-plugin-react",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "array-includes": "^3.1.6",
@@ -15761,7 +15761,7 @@
         "version": "3.1.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/array-includes@3.1.6/node_modules/array-includes",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "call-bind": "^1.0.2",
@@ -15827,7 +15827,7 @@
         "version": "1.3.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/array.prototype.flatmap@1.3.1/node_modules/array.prototype.flatmap",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "call-bind": "^1.0.2",
@@ -15891,7 +15891,7 @@
         "version": "1.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/array.prototype.tosorted@1.1.1/node_modules/array.prototype.tosorted",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "call-bind": "^1.0.2",
@@ -15955,7 +15955,7 @@
         "version": "2.1.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/doctrine@2.1.0/node_modules/doctrine",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "esutils": "^2.0.2"
@@ -16007,7 +16007,7 @@
         "version": "5.3.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/estraverse@5.3.0/node_modules/estraverse",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -16053,7 +16053,7 @@
         "version": "3.3.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/jsx-ast-utils@3.3.5/node_modules/jsx-ast-utils",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "array-includes": "^3.1.6",
@@ -16137,7 +16137,7 @@
         "version": "1.1.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/object.entries@1.1.6/node_modules/object.entries",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "call-bind": "^1.0.2",
@@ -16195,7 +16195,7 @@
         "version": "2.0.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/object.fromentries@2.0.6/node_modules/object.fromentries",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "call-bind": "^1.0.2",
@@ -16247,7 +16247,7 @@
         "version": "1.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/object.hasown@1.1.2/node_modules/object.hasown",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "define-properties": "^1.1.4",
@@ -16305,7 +16305,7 @@
         "version": "1.1.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/object.values@1.1.6/node_modules/object.values",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "call-bind": "^1.0.2",
@@ -16365,7 +16365,7 @@
         "version": "2.0.0-next.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/resolve@2.0.0-next.4/node_modules/resolve",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "is-core-module": "^2.9.0",
@@ -16429,7 +16429,7 @@
         "version": "4.0.8",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/string.prototype.matchall@4.0.8/node_modules/string.prototype.matchall",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "call-bind": "^1.0.2",
@@ -16509,7 +16509,7 @@
         "version": "4.6.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/eslint-plugin-react-hooks@4.6.0_eslint@8.46.0/node_modules/eslint-plugin-react-hooks",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -16541,7 +16541,7 @@
         "version": "0.36.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss-syntax@0.36.2_postcss@8.4.27/node_modules/postcss-syntax",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -16591,7 +16591,7 @@
         "version": "25.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/stylelint-config-standard@25.0.0_stylelint@14.16.1/node_modules/stylelint-config-standard",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "stylelint-config-recommended": "^7.0.0"
@@ -16643,7 +16643,7 @@
         "version": "7.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/stylelint-config-recommended@7.0.0_stylelint@14.16.1/node_modules/stylelint-config-recommended",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -16691,7 +16691,7 @@
         "version": "4.0.74",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@umijs+test@4.0.74_@babel+core@7.22.10/node_modules/@umijs/test",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@babel/plugin-transform-modules-commonjs": "7.21.2",
@@ -16739,7 +16739,7 @@
         "version": "7.21.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+plugin-transform-modules-commonjs@7.21.2_@babel+core@7.22.10/node_modules/@babel/plugin-transform-modules-commonjs",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-module-transforms": "^7.21.2",
@@ -16781,7 +16781,7 @@
         "version": "7.22.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+helper-simple-access@7.22.5/node_modules/@babel/helper-simple-access",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/types": "^7.22.5"
@@ -16813,7 +16813,7 @@
         "version": "27.5.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@jest+types@27.5.1/node_modules/@jest/types",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@types/istanbul-lib-coverage": "^2.0.0",
@@ -16853,7 +16853,7 @@
         "version": "2.0.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+istanbul-lib-coverage@2.0.4/node_modules/@types/istanbul-lib-coverage",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -16875,7 +16875,7 @@
         "version": "3.0.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+istanbul-reports@3.0.1/node_modules/@types/istanbul-reports",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@types/istanbul-lib-report": "*"
@@ -16901,7 +16901,7 @@
         "version": "16.0.5",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+yargs@16.0.5/node_modules/@types/yargs",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@types/yargs-parser": "*"
@@ -16927,7 +16927,7 @@
         "version": "29.6.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/babel-jest@29.6.2_@babel+core@7.22.10/node_modules/babel-jest",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@jest/transform": "^29.6.2",
@@ -16973,7 +16973,7 @@
         "version": "29.6.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@jest+transform@29.6.2/node_modules/@jest/transform",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/core": "^7.11.6",
@@ -17043,7 +17043,7 @@
         "version": "7.20.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@types+babel__core@7.20.1/node_modules/@types/babel__core",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.20.7",
@@ -17077,7 +17077,7 @@
         "version": "6.1.1",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/babel-plugin-istanbul@6.1.1/node_modules/babel-plugin-istanbul",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@babel/helper-plugin-utils": "^7.0.0",
@@ -17135,7 +17135,7 @@
         "version": "29.5.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/babel-preset-jest@29.5.0_@babel+core@7.22.10/node_modules/babel-preset-jest",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "babel-plugin-jest-hoist": "^29.5.0",
@@ -17163,7 +17163,7 @@
         "version": "4.2.11",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/graceful-fs@4.2.11/node_modules/graceful-fs",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -17195,7 +17195,7 @@
         "version": "3.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/slash@3.0.0/node_modules/slash",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -17225,7 +17225,7 @@
         "version": "3.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/identity-obj-proxy@3.0.0/node_modules/identity-obj-proxy",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "harmony-reflect": "^1.4.6"
@@ -17271,7 +17271,7 @@
         "version": "1.6.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/harmony-reflect@1.6.2/node_modules/harmony-reflect",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -17293,7 +17293,7 @@
         "version": "4.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/isomorphic-unfetch@4.0.2/node_modules/isomorphic-unfetch",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "node-fetch": "^3.2.0",
@@ -17321,7 +17321,7 @@
         "version": "3.3.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/node-fetch@3.3.2/node_modules/node-fetch",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "data-uri-to-buffer": "^4.0.0",
@@ -17385,7 +17385,7 @@
         "version": "5.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/unfetch@5.0.0/node_modules/unfetch",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -17469,7 +17469,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+shared@3.3.4/node_modules/@vue/shared",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -17495,7 +17495,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-dom@3.3.4/node_modules/@vue/compiler-dom",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -17527,7 +17527,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-core@3.3.4/node_modules/@vue/compiler-core",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.21.3",
@@ -17567,7 +17567,7 @@
         "version": "1.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map-js@1.0.2/node_modules/source-map-js",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -17600,7 +17600,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+runtime-dom@3.3.4/node_modules/@vue/runtime-dom",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -17634,7 +17634,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+runtime-core@3.3.4/node_modules/@vue/runtime-core",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -17666,7 +17666,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+reactivity@3.3.4/node_modules/@vue/reactivity",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4"
@@ -17695,7 +17695,7 @@
         "version": "3.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/csstype@3.1.2/node_modules/csstype",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -17779,7 +17779,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-sfc@3.3.4/node_modules/@vue/compiler-sfc",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.20.15",
@@ -17853,7 +17853,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-ssr@3.3.4/node_modules/@vue/compiler-ssr",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -17885,7 +17885,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+reactivity-transform@3.3.4/node_modules/@vue/reactivity-transform",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.20.15",
@@ -17929,7 +17929,7 @@
         "version": "0.30.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/magic-string@0.30.2/node_modules/magic-string",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@jridgewell/sourcemap-codec": "^1.4.15"
@@ -17985,7 +17985,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+server-renderer@3.3.4_vue@3.3.4/node_modules/@vue/server-renderer",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -18155,7 +18155,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+shared@3.3.4/node_modules/@vue/shared",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -18181,7 +18181,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-dom@3.3.4/node_modules/@vue/compiler-dom",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -18213,7 +18213,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-core@3.3.4/node_modules/@vue/compiler-core",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.21.3",
@@ -18253,7 +18253,7 @@
         "version": "7.22.10",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@babel+parser@7.22.10/node_modules/@babel/parser",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -18292,7 +18292,7 @@
         "version": "2.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/estree-walker@2.0.2/node_modules/estree-walker",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -18327,7 +18327,7 @@
         "version": "1.0.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/source-map-js@1.0.2/node_modules/source-map-js",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -18360,7 +18360,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+runtime-dom@3.3.4/node_modules/@vue/runtime-dom",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -18394,7 +18394,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+runtime-core@3.3.4/node_modules/@vue/runtime-core",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -18426,7 +18426,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+reactivity@3.3.4/node_modules/@vue/reactivity",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4"
@@ -18455,7 +18455,7 @@
         "version": "3.1.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/csstype@3.1.2/node_modules/csstype",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {
@@ -18539,7 +18539,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-sfc@3.3.4/node_modules/@vue/compiler-sfc",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.20.15",
@@ -18613,7 +18613,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+compiler-ssr@3.3.4/node_modules/@vue/compiler-ssr",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",
@@ -18645,7 +18645,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+reactivity-transform@3.3.4/node_modules/@vue/reactivity-transform",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "@babel/parser": "^7.20.15",
@@ -18689,7 +18689,7 @@
         "version": "0.30.2",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/magic-string@0.30.2/node_modules/magic-string",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {
             "@jridgewell/sourcemap-codec": "^1.4.15"
@@ -18745,7 +18745,7 @@
         "version": "8.4.27",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/postcss@8.4.27/node_modules/postcss",
-        "deepLevel": 0,
+        "deepLevel": 2,
         "packageInfo": {
           "dependencies": {
             "nanoid": "^3.3.6",
@@ -18778,7 +18778,7 @@
         "version": "3.3.6",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/nanoid@3.3.6/node_modules/nanoid",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -18800,7 +18800,7 @@
         "version": "1.0.0",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/picocolors@1.0.0/node_modules/picocolors",
-        "deepLevel": 0,
+        "deepLevel": 3,
         "packageInfo": {
           "dependencies": {},
           "devDependencies": {}
@@ -18822,7 +18822,7 @@
         "version": "3.3.4",
         "installPathObj": {},
         "reslovePath": "/home/yao/www/npm-package-analyzer/node_modules/.pnpm/@vue+server-renderer@3.3.4_vue@3.3.4/node_modules/@vue/server-renderer",
-        "deepLevel": 0,
+        "deepLevel": 1,
         "packageInfo": {
           "dependencies": {
             "@vue/shared": "3.3.4",

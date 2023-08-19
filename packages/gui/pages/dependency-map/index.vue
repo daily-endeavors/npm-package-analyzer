@@ -35,10 +35,6 @@ const option: EChartsOption = {
       type: 'graph',
       layout: 'force',
       animation: false,
-      label: {
-        position: 'right',
-        show: true,
-      },
       force: {
         edgeLength: 5,
         repulsion: 20,
@@ -47,14 +43,7 @@ const option: EChartsOption = {
       // progressiveThreshold: 700,
       data: echartData.nodes.map(function (node) {
         return {
-          // x: node.x,
-          // y: node.y,
-          id: node.id,
-          name: node.label,
-          symbolSize: node.size,
-          itemStyle: {
-            color: node.color,
-          },
+          ...node,
         };
       }),
       edges: echartData.edges.map(function (edge) {
@@ -63,19 +52,30 @@ const option: EChartsOption = {
           target: edge.targetID,
         };
       }),
-      emphasis: {
-        focus: 'adjacency',
-        label: {
-          position: 'right',
-          show: true,
-        },
-      },
       roam: true,
       lineStyle: {
         width: 0.5,
         curveness: 0.3,
         opacity: 0.7,
       },
+      // emphasis: {
+      //   focus: 'adjacency',
+      //   label: {
+      //     position: 'right',
+      //     show: true,
+      //   },
+      // },
+      edgeSymbol: ['arrow'],
+      edgeSymbolSize: [4, 10],
+      edgeLabel: {
+        fontSize: 20,
+      },
+
+      // tooltip: {
+      //   // 参考 https://echarts.apache.org/zh/option.html#series-graph.tooltip.formatter
+      //   formatter: '{b}',
+      //   trigger: 'item',
+      // },
     },
   ],
 };
