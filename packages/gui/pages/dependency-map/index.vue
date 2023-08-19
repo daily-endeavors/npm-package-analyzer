@@ -6,8 +6,8 @@
         {{
           JSON.stringify(
             {
-              nodes: data.nodes.length,
-              edges: data.edges.length,
+              nodes: echartData.nodes.length,
+              edges: echartData.edges.length,
             },
             null,
             2,
@@ -24,107 +24,66 @@ import * as echarts from 'echarts';
 import demoData from './resource/data/demo.json';
 import * as Util from './util/index';
 import { onMounted } from 'vue';
-const data = Util.infoDb2G6(demoData as any);
+
+type EChartsOption = echarts.EChartsOption;
+
+const echartData = Util.infoDb2Echarts(demoData as any);
 
 onMounted(() => {
+  const chartDom = document.getElementById('g6Container')!;
+  console.log('chartDom =>', chartDom);
+  const myEchart = echarts.init(chartDom);
+
   const width = document.querySelector('#g6Container')?.clientWidth ?? 500;
   const height = document.querySelector('#g6Container')?.clientHeight ?? 500;
-  // const width = 500;
-  // const height = 500;
-  const graph = new G6.Graph({
-    container: 'g6Container',
-    width,
-    height,
-    fitView: true,
-    fitViewPadding: [20, 40, 50, 20],
-    // 启用动画
-    animate: true,
-    modes: {
-      default: [
-        // {
-        //   type: 'collapse-expand',
-        //   onChange: function onChange(item, collapsed) {
-        //     const data = item!.getModel();
-        //     data.collapsed = collapsed;
-        //     return true;
-        //   },
-        // },
-        'drag-canvas',
-        // 'zoom-canvas',
-      ],
+
+  const option: EChartsOption = {
+    title: {
+      text: 'NPM Dependencies',
     },
-    // 节点在默认状态下的样式配置（style）和其他配置
-    defaultNode: {
-      size: 30, // 节点大小
-      // ...                 // 节点的其他配置
-      // 节点样式配置
-      style: {
-        fill: 'steelblue', // 节点填充色
-        stroke: '#666', // 节点描边色
-        lineWidth: 1, // 节点描边粗细
-      },
-      // 节点上的标签文本配置
-      labelCfg: {
-        // 节点上的标签文本样式配置
-        style: {
-          fill: '#000000', // 节点标签文字颜色
+    animationDurationUpdate: 1500,
+    animationEasingUpdate: 'quinticInOut',
+    series: [
+      {
+        type: 'graph',
+        layout: 'none',
+        // progressiveThreshold: 700,
+        data: echartData.nodes.map(function (node) {
+          return {
+            x: node.x,
+            y: node.y,
+            id: node.id,
+            name: node.label,
+            symbolSize: node.size,
+            itemStyle: {
+              color: node.color,
+            },
+          };
+        }),
+        edges: echartData.edges.map(function (edge) {
+          return {
+            source: edge.sourceID,
+            target: edge.targetID,
+          };
+        }),
+        emphasis: {
+          focus: 'adjacency',
+          label: {
+            position: 'right',
+            show: true,
+          },
+        },
+        roam: true,
+        lineStyle: {
+          width: 0.5,
+          curveness: 0.3,
+          opacity: 0.7,
         },
       },
-    },
-    // 边在默认状态下的样式配置（style）和其他配置
-    defaultEdge: {
-      // ...                 // 边的其他配置
-      // 边样式配置
-      style: {
-        opacity: 0.6, // 边透明度
-        stroke: 'grey', // 边描边颜色
-      },
-      // 边上的标签文本配置
-      labelCfg: {
-        autoRotate: true, // 边上的标签文本根据边的方向旋转
-      },
-    },
-    // defaultEdge: {
-    //   type: 'cubic-horizontal',
-    // },
-    layout: {
-      type: 'force', // 指定为力导向布局
-      preventOverlap: true, // 防止节点重叠
-    },
-    // layout: {
-    //   type: 'compactBox',
-    //   direction: 'LR',
-    //   getId: function getId(d: any) {
-    //     return d.id;
-    //   },
-    //   getHeight: function getHeight() {
-    //     return 16;
-    //   },
-    //   getWidth: function getWidth() {
-    //     return 16;
-    //   },
-    //   getVGap: function getVGap() {
-    //     return 10;
-    //   },
-    //   getHGap: function getHGap() {
-    //     return 100;
-    //   },
-    // },
-  });
+    ],
+  };
 
-  // graph.node(function (node) {
-  //   return {
-  //     label: node.id,
-  //     labelCfg: {
-  //       offset: 10,
-  //       position: node.children && node.children.length > 0 ? 'left' : 'right',
-  //     },
-  //   };
-  // });
-
-  graph.data(data);
-  graph.render();
-  graph.fitView();
+  myEchart.setOption(option, true);
 });
 </script>
 <style scoped>
