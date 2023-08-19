@@ -39,6 +39,15 @@ const option: EChartsOption = {
       type: 'graph',
       layout: 'force',
       animation: false,
+      label: {
+        position: 'right',
+        show: true,
+      },
+      force: {
+        edgeLength: 5,
+        repulsion: 20,
+        gravity: 0.2,
+      },
       // progressiveThreshold: 700,
       data: echartData.nodes.map(function (node) {
         return {
