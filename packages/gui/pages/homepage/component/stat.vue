@@ -5,9 +5,7 @@
       <div class="stats-container">
         <div class="size-container">
           <h3>bundle size</h3>
-          <div class="size-stats">
-            <Stat value="" />
-          </div>
+          <div class="size-stats"></div>
         </div>
       </div>
     </div>
@@ -15,6 +13,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import Stat from './component/stat.vue';
+import { Static } from 'vue';
 </script>
 <style lang="less" scoped></style>
