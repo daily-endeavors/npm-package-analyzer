@@ -23,7 +23,11 @@
                   </div>
                 </div>
               </div>
-              <div clas="chart-container"></div>
+              <div class="chart-container">
+                <div class="bar-graph-container">
+                  <DependencyMap></DependencyMap>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -34,6 +38,7 @@
 <script lang="ts" setup>
 import Stat from './component/stat.vue';
 import Header from './component/header.vue';
+import DependencyMap from '../dependency-map/index.vue';
 </script>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
@@ -302,7 +307,7 @@ import Header from './component/header.vue';
   flex-direction: column;
   justify-content: center;
   flex: 1 1 0;
-  background-color: #7f8792;
+  // background-color: #7f8792;
 
   @media screen and (max-width: 48em) {
     margin: 5vh 0;
@@ -486,5 +491,17 @@ import Header from './component/header.vue';
   color: $raven;
   margin: $global-spacing * 3 0 0 0;
   line-height: 1.2;
+}
+
+.bar-graph,
+.bar-graph-container {
+  display: flex;
+  justify-content: center;
+}
+
+.bar-graph-container {
+  flex-direction: column;
+  width: 100%;
+  height: 48vh;
 }
 </style>

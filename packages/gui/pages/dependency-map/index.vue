@@ -2,17 +2,13 @@
   <div class="container">
     <div id="g6Container"></div>
     <div>
-      <div>数据分布</div>
+      <div>数据分布 =></div>
       <div>
         {{
-          JSON.stringify(
-            {
-              nodes节点数: echartData.nodes.length,
-              edges边数: echartData.edges.length,
-            },
-            null,
-            2,
-          )
+          JSON.stringify({
+            nodes节点数: echartData.nodes.length,
+            edges边数: echartData.edges.length,
+          })
         }}
       </div>
     </div>
@@ -100,20 +96,20 @@ onMounted(() => {
 }
 #g6Container {
   display: flex;
-  width: 50vw;
-  height: 50vh;
-  border: 1px solid #f0f0f0;
+  width: 100%;
+  height: 48vh;
+  /* border: 1px solid #f0f0f0;
   border-radius: 8px;
 
   margin-left: 4px;
   margin-right: 4px;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 16px; */
 }
 div {
   display: flex;
   white-space: break-spaces;
-  width: 50vw;
+  max-width: 50vw;
   word-break: break-all;
 }
 </style>
