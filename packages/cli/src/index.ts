@@ -56,8 +56,8 @@ export async function asyncRunner() {
   // 更新循环依赖检测
   await circularDependenceChecker(rawPackageAnaylzeResultList)
 
-  // 移除未使用的依赖
-  await removeUnusedPackageInRootPackageList(rawPackageAnaylzeResultList)
+  // 移除未使用的依赖, 最大递归检测深度为5层
+  await removeUnusedPackageInRootPackageList(rawPackageAnaylzeResultList, 3)
 
   // 更新多实例检测结果
   await muiltInstanceChecker(rawPackageAnaylzeResultList)
@@ -329,7 +329,8 @@ async function circularDependenceChecker(
 }
 
 // 确保根package的packageList中的项均为实际dependence的依赖(移除devDependence项)
-async function removeUnusedPackageInRootPackageList(packageAnaylzeResultList: RecordType.packageAnaylzeResult[]
+async function removeUnusedPackageInRootPackageList(packageAnaylzeResultList: RecordType.packageAnaylzeResult[],
+  maxDepth: number
 ) {
   // 首先初始化出所有的包列表
   const packageMap: Map<RecordType.item['uuid'], RecordType.item> = new Map()
@@ -339,8 +340,8 @@ async function removeUnusedPackageInRootPackageList(packageAnaylzeResultList: Re
     }
   }
 
-  // 从根节点出发, 获取所有的uuid类型
-  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidSet: Set<RecordType.item['uuid']> = new Set()) {
+  // 从根节点出发, 获取所有的uuid类型, 递归层数不超过maxDepth
+  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidSet: Set<RecordType.item['uuid']> = new Set(), currentDepth = 0) {
     // 只检查dependence项
     const packageItem = packageMap.get(rootUuid)
     if (packageItem === undefined) {
@@ -357,8 +358,11 @@ async function removeUnusedPackageInRootPackageList(packageAnaylzeResultList: Re
       }
       // 添加到依赖项中
       usageUuidSet.add(packageUuid)
-      // 操作的始终是同一个usageUuidSet, 因此无需获取子节点返回值
-      getUsageUuid(packageUuid, usageUuidSet)
+      // 限制最大搜索深度
+      if (currentDepth < maxDepth) {
+        // 操作的始终是同一个usageUuidSet, 因此无需获取子节点返回值
+        getUsageUuid(packageUuid, usageUuidSet, currentDepth + 1)
+      }
     }
     return usageUuidSet
   }
