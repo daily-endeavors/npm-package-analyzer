@@ -11,7 +11,7 @@
       </section>
       <section class="page-header--right-section">
         <ul class="page-header__quicklinks">
-          <li>
+          <!-- <li>
             <a
               target="_blank"
               rel="noreferrer noopener"
@@ -26,15 +26,21 @@
               href="https://github.com/sponsors/pastelsky"
               >Sponsor</a
             >
+          </li> -->
+          <li>
+            <a href="https://daily-endeavors.github.io/">Blog</a>
           </li>
           <li>
-            <a href="/blog">Blog</a>
-          </li>
-          <li>
-            <a href="/scan">Scan package.json</a>
+            <a
+              href="https://bytedance.feishu.cn/docx/MQHgdP03Ko8oUpxRnTnchUH7nEg"
+              >Require</a
+            >
           </li>
         </ul>
-        <a target="_blank" href="https://github.com/pastelsky/bundlephobia">
+        <a
+          target="_blank"
+          href="https://github.com/daily-endeavors/npm-package-analyzer"
+        >
           <svg width="33" height="33" viewBox="0 0 33 33" class="github-logo">
             <title>Github Link</title>
             <path
@@ -53,6 +59,10 @@ import { Static } from 'vue';
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
 @import 'scss-stylesheets/colors.scss';
+
+a {
+  text-decoration: none;
+}
 .page-header {
   padding: $global-spacing * 3;
   padding-bottom: $global-spacing * 2;
