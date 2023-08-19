@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
 
 settings:
   autoInstallPeers: true
@@ -62,9 +62,6 @@ importers:
       vue:
         specifier: ^3.2.45
         version: 3.3.4
-      vue-router:
-        specifier: ^4.2.4
-        version: 4.2.4(vue@3.3.4)
     devDependencies:
       prettier:
         specifier: ^2.8.8
@@ -3718,7 +3715,7 @@ packages:
       '@vue/babel-plugin-jsx': 1.1.1(@babel/core@7.22.10)
       vue: 3.2.45
       vue-loader: 17.0.1(vue@3.2.45)(webpack@5.88.2)
-      vue-router: 4.1.6(vue@3.2.45)
+      vue-router: 4.1.6(vue@3.3.4)
     transitivePeerDependencies:
       - '@babel/core'
       - '@vue/compiler-sfc'
@@ -3765,7 +3762,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       vue: 3.2.45
-      vue-router: 4.1.6(vue@3.2.45)
+      vue-router: 4.1.6(vue@3.3.4)
     dev: false
 
   /@umijs/server@4.0.74:
@@ -10217,17 +10214,8 @@ packages:
       webpack: 5.88.2
     dev: false
 
-  /vue-router@4.1.6(vue@3.2.45):
+  /vue-router@4.1.6(vue@3.3.4):
     resolution: {integrity: sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      '@vue/devtools-api': 6.5.0
-      vue: 3.2.45
-    dev: false
-
-  /vue-router@4.2.4(vue@3.3.4):
-    resolution: {integrity: sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
