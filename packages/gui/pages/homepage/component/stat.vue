@@ -2,22 +2,22 @@
   <div class="stat-container">
     <div class="stat-container__value-container">
       <div class="stat-container__value-wrap">
-        <div class="stat-container__value">{roundedValue}</div>
+        <div class="stat-container__value">91.1</div>
       </div>
-      <div class="stat-container__unit">
-        {type === Type.SIZE ? formatSize(value).unit : formatTime(value).unit}{'
-        '}
-      </div>
+      <div class="stat-container__unit">kb</div>
     </div>
     <div class="stat-container__divider" />
     <div class="stat-container__footer">
-      <div class="stat-container__label">{label}</div>
+      <div class="stat-container__label">Minified</div>
 
       <div
         class="stat-container__info-text"
         data-balloon-pos="right"
-        data-balloon="{infoText}"
-      ></div>
+        data-balloon="Download Speed: ⬇️ 875 kB/s.
+Exclusive of HTTP request latency."
+      >
+        i
+      </div>
     </div>
   </div>
 </template>
