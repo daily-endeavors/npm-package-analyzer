@@ -3,6 +3,7 @@ import * as Type from './resource/type'
 import * as RecordType from './resource/type/record'
 import * as fs from 'fs'
 import * as path from 'path'
+import md5 from 'md5'
 
 const itemMap: RecordType.itemMap = new Map()
 
@@ -35,7 +36,8 @@ export async function collect(targetPath: string) {
   const jsonObj = JSON.parse(readContent)
   //存放到record对象中
   let record: RecordType.item = {
-    uuid: realpath,
+    // 使用md5作为uuid, 降低资源使用量
+    uuid: md5(realpath),
 
     packageName: jsonObj.name ?? '',
     /**

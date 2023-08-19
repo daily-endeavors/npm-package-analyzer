@@ -19,11 +19,15 @@
     "build"
   ],
   "devDependencies": {
+    "@types/md5": "^2.3.2",
     "dotenv": "^16.3.1",
     "ts-node": "^10.8.0",
     "typescript": "^5.1.6"
   },
   "keywords": [
     "npm-package-analyzer"
-  ]
+  ],
+  "dependencies": {
+    "md5": "^2.3.0"
+  }
 }

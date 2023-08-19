@@ -4,7 +4,7 @@ import * as RecordType from './resource/type/record'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as Util from './util'
-import * as os from 'os'
+import { UUID } from 'crypto'
 
 export async function asyncRunner() {
   // 1. 在路径下, 执行npx cli
@@ -16,7 +16,7 @@ export async function asyncRunner() {
   const targetDir = process.cwd()
   console.log('待读取目录 => ', targetDir)
   const allIegalRootDirList = await Util.detectLegalRootDirList(targetDir)
-  const packageAnaylzeResultList: RecordType.packageAnaylzeResult[] = []
+  let rawPackageAnaylzeResultList: RecordType.packageAnaylzeResult[] = []
   for (let legalRootDir of allIegalRootDirList) {
     const allIegalDirList = await Util.detectCommonLegalDir(legalRootDir)
 
@@ -47,64 +47,85 @@ export async function asyncRunner() {
       const record = await Util.collect(legalDir)
       packageAnaylzeResult.packageList.push(record)
     }
-    packageAnaylzeResultList.push(packageAnaylzeResult)
+    rawPackageAnaylzeResultList.push(packageAnaylzeResult)
   }
 
-  // const newRecordList = await muiltInstanceChecker(recordList)
-  await dependencyInstallChecker(packageAnaylzeResultList)
+  // 更新组件依赖关系
+  await dependencyInstallChecker(rawPackageAnaylzeResultList)
 
   // 更新循环依赖检测
-  await circularDependenceChecker(packageAnaylzeResultList)
+  await circularDependenceChecker(rawPackageAnaylzeResultList)
+
+  // 移除未使用的依赖, 最大递归检测深度为5层
+  await removeUnusedPackageInRootPackageList(rawPackageAnaylzeResultList, 3)
+
+  // 更新多实例检测结果
+  await muiltInstanceChecker(rawPackageAnaylzeResultList)
 
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(targetDir, './dist/')
   fs.mkdirSync(directoryPath, {
     recursive: true,
   })
-  const fileName = 'infodb.json' // 新建文件名
-  const writeContent = JSON.stringify(packageAnaylzeResultList, null, 2) // 文件内容
-  fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
+  const rawFileName = 'raw_infodb.json' // 新建文件名
+  const rawWriteContent = JSON.stringify(rawPackageAnaylzeResultList, null, 2) // 文件内容
+  fs.writeFileSync(path.join(directoryPath, rawFileName), rawWriteContent)
+  const outputFileName = 'parse_result.json' // 解析结果
+  // 将installPathObj置为空对象
+  // 节约文件体积
+  const parseRackageAnaylzeResultList = rawPackageAnaylzeResultList.map(packageAnaylzeResult => {
+    let thinPackageAnaylzeResult = {
+      ...packageAnaylzeResult,
+      installPathObj: {}
+    }
+    thinPackageAnaylzeResult.packageList = thinPackageAnaylzeResult.packageList.map((item) => {
+      item.installPathObj = {}
+      return item
+    })
+    return thinPackageAnaylzeResult
+  })
+  fs.writeFileSync(path.join(directoryPath, outputFileName), JSON.stringify(parseRackageAnaylzeResultList, null, 2))
+
 
   console.log('解析完毕')
 }
 
 // 一: muiltInstance，检测同一个 package 是否包含多个版本实例；
 async function muiltInstanceChecker(
-  recordList: RecordType.packageAnaylzeResult[]
+  packageAnaylzeResultList: RecordType.packageAnaylzeResult[]
 ) {
   // 1. 创建packageNameMap, 格式为 [packageName]: recordItemList[]
-
   type packageNameMap = {
     [packageName: string]: RecordType.item[]
   }
 
   const packageNameMap: packageNameMap = {}
 
-  // 2. 遍历recordList,对每一项记录
-  for (let recordObj of recordList) {
-    // 2.1 若packageName不存在, 则在packageNameMap中创建新记录, value为[record]
-    if (packageNameMap[recordObj.packageName] === undefined) {
-      // @ts-ignore
-      packageNameMap[recordObj.packageName] = [recordObj]
-    } else {
-      // @ts-ignore
-      // 2.2 若packageName已存在, 则将record添加到packageNameMap[packageName]下的列表中
-      packageNameMap[recordObj.packageName].push(recordObj)
+  // 针对每一个根目录进行遍历
+  for (let packageAnaylzeResult of packageAnaylzeResultList) {
+    // 2. 遍历recordList,对每一项记录
+    for (let recordObj of packageAnaylzeResult.packageList) {
+      // 2.1 若packageName不存在, 则在packageNameMap中创建新记录, value为[record]
+      if (packageNameMap[recordObj.packageName] === undefined) {
+        // @ts-ignore
+        packageNameMap[recordObj.packageName] = [recordObj]
+      } else {
+        // @ts-ignore
+        // 2.2 若packageName已存在, 则将record添加到packageNameMap[packageName]下的列表中
+        packageNameMap[recordObj.packageName].push(recordObj)
+      }
     }
   }
 
-  const newRecordList: RecordType.item[] = []
   // 3. 遍历packageNameMap的每一个key
   for (let packageName of Object.keys(packageNameMap)) {
     let samePackageNameItemList = packageNameMap[packageName]
-    // 3.1 若value只有一项, 直接添加到新记录列表
+    // 3.1 若value只有一项, 说明没有重复项, 跳过
     if (samePackageNameItemList.length === 1) {
-      // 将只有一个记录项的值添加到新记录列表
-      newRecordList.push(samePackageNameItemList[0])
       continue
     }
-    // 3.2 若value中有多项, 更新每一项的detectInfo.muiltInstance信息后, 再将数据更新到新记录列表中
-
+    // 3.2 若value中有多项, 更新每一项的detectInfo.muiltInstance信息后
+    // 利用js中引用数据类型的性质, 直接更新到原数据的detectInfo内
     const uuids: string[] = []
     samePackageNameItemList.forEach((sameItem) => {
       uuids.push(sameItem.uuid)
@@ -112,11 +133,9 @@ async function muiltInstanceChecker(
     for (const samePackageNameItem of samePackageNameItemList) {
       samePackageNameItem.detectInfo.muiltInstance.hasMuiltInstance = true
       samePackageNameItem.detectInfo.muiltInstance.uuidList = uuids
-      newRecordList.push(samePackageNameItem)
     }
   }
-
-  return newRecordList
+  return packageAnaylzeResultList
 }
 // detectInfo解析步骤
 // 分三轮, 分别计算
@@ -308,6 +327,66 @@ async function circularDependenceChecker(
     packageCircularChecker(packageResult)
   }
 }
+
+// 确保根package的packageList中的项均为实际dependence的依赖(移除devDependence项)
+async function removeUnusedPackageInRootPackageList(packageAnaylzeResultList: RecordType.packageAnaylzeResult[],
+  maxDepth: number
+) {
+  // 首先初始化出所有的包列表
+  const packageMap: Map<RecordType.item['uuid'], RecordType.item> = new Map()
+  for (let packageAnaylzeResult of packageAnaylzeResultList) {
+    for (let packageItem of packageAnaylzeResult.packageList) {
+      packageMap.set(packageItem.uuid, packageItem)
+    }
+  }
+
+  // 从根节点出发, 获取所有的uuid类型, 递归层数不超过maxDepth
+  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidSet: Set<RecordType.item['uuid']> = new Set(), currentDepth = 0) {
+    // 只检查dependence项
+    const packageItem = packageMap.get(rootUuid)
+    if (packageItem === undefined) {
+      return usageUuidSet
+    }
+
+    for (let packageUuid of Object.values(packageItem.detectInfo.dependencyInstallStatus.dependencies)) {
+      if (packageUuid === "") {
+        continue
+      }
+      if (usageUuidSet.has(packageUuid)) {
+        // 已经检查过, 无需再次检查
+        continue
+      }
+      // 添加到依赖项中
+      usageUuidSet.add(packageUuid)
+      // 限制最大搜索深度
+      if (currentDepth < maxDepth) {
+        // 操作的始终是同一个usageUuidSet, 因此无需获取子节点返回值
+        getUsageUuid(packageUuid, usageUuidSet, currentDepth + 1)
+      }
+    }
+    return usageUuidSet
+  }
+
+  // 然后针对每一个包, 生成新packageList
+  for (let packageAnaylzeResult of packageAnaylzeResultList) {
+
+    const rootPackage = packageAnaylzeResult.packageList[0]
+    const usageUuidSet = getUsageUuid(rootPackage.uuid, new Set([rootPackage.uuid]))
+    // 剔除根节点
+    usageUuidSet.delete(rootPackage.uuid)
+
+    const usagePackageList: RecordType.packageAnaylzeResult['packageList'] = [rootPackage]
+    for (let usageUuid of usageUuidSet) {
+      const usageItem = packageMap.get(usageUuid)
+      if (usageItem !== undefined) {
+        usagePackageList.push(usageItem)
+      }
+    }
+    packageAnaylzeResult.packageList = usagePackageList
+  }
+  return
+}
+
 if (process.argv?.[1]?.includes('packages/cli/src/index.ts')) {
   // 本地启动
   asyncRunner()
