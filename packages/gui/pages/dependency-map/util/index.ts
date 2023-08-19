@@ -119,10 +119,17 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
             recordCounter = recordCounter + 1
             const node: TypeG6.EchartsNode = {
                 id: record.uuid,
-                label: `${record.packageName}@${record.version}`,
-                color: packageColor,
-                // 保底为1
-                size: Math.max(Object.keys(record.packageInfo.dependencies).length, 1),
+                symbol: "circle",
+                itemStyle: {
+                    color: packageColor,
+                },
+                // 用所处层数作为size大小, 保底为1
+                symbolSize: Math.max((10 - record.deepLevel) * 2, 1),
+                name: `${record.packageName}@${record.version}`,
+                label: {
+                    show: record.deepLevel <= 1 ? true : false,
+                    overflow: "truncate",
+                },
                 y: 0,
                 x: 0,
                 attributes: {},
@@ -130,7 +137,7 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
             if (recordCounter === 1) {
                 // 每个循环的第一个是根节点, 需要给与特殊标记
                 // node.color = "#007bff"
-                node.size = 100
+                node.symbolSize = 100
             }
 
             // 避免重复添加node节点
