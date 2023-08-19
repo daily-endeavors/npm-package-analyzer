@@ -1,12 +1,12 @@
 const routes = [
-    {
-        path: "/",
-        component: "dependency-map"
-    },
-    {
-        path: "/dependency-map",
-        component: "index"
-    }
-]
+  {
+    path: '/',
+    component: 'homepage',
+  },
+  {
+    path: '/dependency-map',
+    component: 'index',
+  },
+];
 
-export default routes
+export default routes;
