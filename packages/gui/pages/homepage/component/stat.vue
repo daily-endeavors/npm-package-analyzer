@@ -13,8 +13,7 @@
       <div
         class="stat-container__info-text"
         data-balloon-pos="right"
-        data-balloon="Download Speed: ⬇️ 875 kB/s.
-Exclusive of HTTP request latency."
+        data-balloon="Download Speed: ⬇️ 875 kB/s.Exclusive of HTTP request latency."
       >
         i
       </div>
