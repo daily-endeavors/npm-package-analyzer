@@ -13,11 +13,11 @@ export type G6Data = {
 
 export type EchartsNode = {
     color: "#4f19c7" | `#${string}`,
-    label: "jquery" | "string",
+    label: "jquery" | string,
     attributes: {},
     y: -404.26147 | number,
     x: -739.36383 | number,
-    id: "jquery" | "string",
+    id: "jquery" | string,
     size: 4.7252817 | number
 }
 export type EchartsEdge = {
@@ -27,6 +27,6 @@ export type EchartsEdge = {
     size: 1 | number
 }
 export type EchartsData = {
-    nodes: G6Node[],
-    edges: G6Edge[],
+    nodes: EchartsNode[],
+    edges: EchartsEdge[],
 }
