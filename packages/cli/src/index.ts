@@ -61,9 +61,25 @@ export async function asyncRunner() {
   fs.mkdirSync(directoryPath, {
     recursive: true,
   })
-  const fileName = 'infodb.json' // 新建文件名
-  const writeContent = JSON.stringify(packageAnaylzeResultList, null, 2) // 文件内容
-  fs.writeFileSync(path.join(directoryPath, fileName), writeContent)
+  const rawFileName = 'raw_infodb.json' // 新建文件名
+  const rawWriteContent = JSON.stringify(packageAnaylzeResultList, null, 2) // 文件内容
+  fs.writeFileSync(path.join(directoryPath, rawFileName), rawWriteContent)
+  const outputFileName = 'parse_result.json' // 解析结果
+  // 将installPathObj置为空对象
+  // 节约文件体积
+  const parseRackageAnaylzeResultList = packageAnaylzeResultList.map(packageAnaylzeResult => {
+    let thinPackageAnaylzeResult = {
+      ...packageAnaylzeResult,
+      installPathObj: {}
+    }
+    thinPackageAnaylzeResult.packageList = thinPackageAnaylzeResult.packageList.map((item) => {
+      item.installPathObj = {}
+      return item
+    })
+    return thinPackageAnaylzeResult
+  })
+  fs.writeFileSync(path.join(directoryPath, outputFileName), JSON.stringify(parseRackageAnaylzeResultList, null, 2))
+
 
   console.log('解析完毕')
 }
