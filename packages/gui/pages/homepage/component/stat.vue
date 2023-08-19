@@ -1,15 +1,24 @@
 <template>
-  <div>
-    <h2>UmiJS x Vue Pinia</h2>
-    <div class="content-split-container">
-      <div class="stats-container">
-        <div class="size-container">
-          <h3>bundle size</h3>
-          <div class="size-stats"></div>
-        </div>
+  <div class="stat-container">
+    <div class="stat-container__value-container">
+      <div class="stat-container__value-wrap">
+        <div class="stat-container__value">{roundedValue}</div>
+      </div>
+      <div class="stat-container__unit">
+        {type === Type.SIZE ? formatSize(value).unit : formatTime(value).unit}{'
+        '}
       </div>
     </div>
-    <div></div>
+    <div class="stat-container__divider" />
+    <div class="stat-container__footer">
+      <div class="stat-container__label">{label}</div>
+
+      <div
+        class="stat-container__info-text"
+        data-balloon-pos="right"
+        data-balloon="{infoText}"
+      ></div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>

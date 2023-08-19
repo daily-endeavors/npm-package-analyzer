@@ -2,16 +2,8 @@
   <div>
     <h2>UmiJS x Vue Pinia</h2>
     <div class="content-split-container">
-      <div class="stats-container">
-        <div class="size-container">
-          <h3>bundle size</h3>
-          <div class="size-stats">
-            <Stat value="" />
-          </div>
-        </div>
-      </div>
+      <Stat></Stat>
     </div>
-    <div></div>
   </div>
 </template>
 <script lang="ts" setup>
