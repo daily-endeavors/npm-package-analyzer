@@ -4,6 +4,7 @@ import * as RecordType from './resource/type/record'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as Util from './util'
+import { UUID } from 'crypto'
 
 export async function asyncRunner() {
   // 1. 在路径下, 执行npx cli
@@ -49,11 +50,17 @@ export async function asyncRunner() {
     rawPackageAnaylzeResultList.push(packageAnaylzeResult)
   }
 
-  rawPackageAnaylzeResultList = await muiltInstanceChecker(rawPackageAnaylzeResultList)
+  // 更新组件依赖关系
   await dependencyInstallChecker(rawPackageAnaylzeResultList)
 
   // 更新循环依赖检测
   await circularDependenceChecker(rawPackageAnaylzeResultList)
+
+  // 移除未使用的依赖
+  await removeUnusedPackageInRootPackageList(rawPackageAnaylzeResultList)
+
+  // 更新多实例检测结果
+  await muiltInstanceChecker(rawPackageAnaylzeResultList)
 
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(targetDir, './dist/')
@@ -110,8 +117,6 @@ async function muiltInstanceChecker(
     }
   }
 
-
-
   // 3. 遍历packageNameMap的每一个key
   for (let packageName of Object.keys(packageNameMap)) {
     let samePackageNameItemList = packageNameMap[packageName]
@@ -129,9 +134,8 @@ async function muiltInstanceChecker(
       samePackageNameItem.detectInfo.muiltInstance.hasMuiltInstance = true
       samePackageNameItem.detectInfo.muiltInstance.uuidList = uuids
     }
-
-    return packageAnaylzeResultList
   }
+  return packageAnaylzeResultList
 }
 // detectInfo解析步骤
 // 分三轮, 分别计算
@@ -323,6 +327,62 @@ async function circularDependenceChecker(
     packageCircularChecker(packageResult)
   }
 }
+
+// 确保根package的packageList中的项均为实际dependence的依赖(移除devDependence项)
+async function removeUnusedPackageInRootPackageList(packageAnaylzeResultList: RecordType.packageAnaylzeResult[]
+) {
+  // 首先初始化出所有的包列表
+  const packageMap: Map<RecordType.item['uuid'], RecordType.item> = new Map()
+  for (let packageAnaylzeResult of packageAnaylzeResultList) {
+    for (let packageItem of packageAnaylzeResult.packageList) {
+      packageMap.set(packageItem.uuid, packageItem)
+    }
+  }
+
+  // 从根节点出发, 获取所有的uuid类型
+  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidSet: Set<RecordType.item['uuid']> = new Set()) {
+    // 只检查dependence项
+    const packageItem = packageMap.get(rootUuid)
+    if (packageItem === undefined) {
+      return usageUuidSet
+    }
+
+    for (let packageUuid of Object.values(packageItem.detectInfo.dependencyInstallStatus.dependencies)) {
+      if (packageUuid === "") {
+        continue
+      }
+      if (usageUuidSet.has(packageUuid)) {
+        // 已经检查过, 无需再次检查
+        continue
+      }
+      // 添加到依赖项中
+      usageUuidSet.add(packageUuid)
+      // 操作的始终是同一个usageUuidSet, 因此无需获取子节点返回值
+      getUsageUuid(packageUuid, usageUuidSet)
+    }
+    return usageUuidSet
+  }
+
+  // 然后针对每一个包, 生成新packageList
+  for (let packageAnaylzeResult of packageAnaylzeResultList) {
+
+    const rootPackage = packageAnaylzeResult.packageList[0]
+    const usageUuidSet = getUsageUuid(rootPackage.uuid, new Set([rootPackage.uuid]))
+    // 剔除根节点
+    usageUuidSet.delete(rootPackage.uuid)
+
+    const usagePackageList: RecordType.packageAnaylzeResult['packageList'] = [rootPackage]
+    for (let usageUuid of usageUuidSet) {
+      const usageItem = packageMap.get(usageUuid)
+      if (usageItem !== undefined) {
+        usagePackageList.push(usageItem)
+      }
+    }
+    packageAnaylzeResult.packageList = usagePackageList
+  }
+  return
+}
+
 if (process.argv?.[1]?.includes('packages/cli/src/index.ts')) {
   // 本地启动
   asyncRunner()
