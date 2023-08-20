@@ -67,7 +67,7 @@ export async function asyncRunner() {
 
   // 移除未使用的依赖, 最大递归检测深度为5层
   // 更新包的被依赖信息
-  await removeUnusedPackageAndUpdateDetectInfo(rawPackageAnaylzeResultList, 5)
+  await removeUnusedPackageAndUpdateDetectInfo(rawPackageAnaylzeResultList, 99999)
 
   // 更新多实例检测结果
   await muiltInstanceChecker(rawPackageAnaylzeResultList)
