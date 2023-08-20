@@ -28,7 +28,10 @@
                     </div>
                     <div class="time-container">
                       <h3>download size</h3>
-                      <div class="time-stats"></div>
+                      <div class="time-stats">
+                        <Stat></Stat>
+                        <Stat></Stat>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -351,7 +354,7 @@ h2 {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 10vh;
+  margin-top: 3vh;
 
   @media screen and (max-width: 48em) {
     flex-direction: column;
@@ -393,8 +396,8 @@ h2 {
 }
 
 .time-container {
-  border-top: 1px solid lighten($raven, 50%);
-  padding-top: 5vh;
+  border-bottom: 1px solid lighten($raven, 50%);
+  padding-bottom: 5vh;
 
   @media screen and (max-width: 48em) {
     padding-top: 3vh;

@@ -2,13 +2,13 @@
   <div class="stat-container">
     <div class="stat-container__value-container">
       <div class="stat-container__value-wrap">
-        <div class="stat-container__value">100</div>
+        <div class="stat-container__value">4</div>
       </div>
-      <div class="stat-container__unit">kb</div>
+      <div class="stat-container__unit">个</div>
     </div>
     <div class="stat-container__divider" />
     <div class="stat-container__footer">
-      <div class="stat-container__label">minified</div>
+      <div class="stat-container__label">子项目总数</div>
       <div
         class="stat-container__info-text"
         data-balloon-pos="right"
