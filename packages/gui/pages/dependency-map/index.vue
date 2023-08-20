@@ -37,7 +37,9 @@ import { onMounted, ref } from 'vue';
 const isDebug = ref(false);
 type EChartsOption = echarts.EChartsOption;
 
-const echartData = Util.infoDb2Echarts(demoData as any);
+// 优先尝试从全局变量中获取, 没有则使用demo数据
+const parseData = (globalThis as any)?.npmPackageAnalyzeResultList ?? demoData;
+const echartData = Util.infoDb2Echarts(parseData as any);
 
 const legendSelected: Record<string, boolean> = {};
 for (let key of echartData.categoryMap.keys()) {

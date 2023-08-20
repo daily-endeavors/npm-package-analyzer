@@ -122,12 +122,8 @@ globalThis.npmPackageAnalyzeResultList = ${JSON.stringify(parseRackageAnaylzeRes
   app.listen(legalPort, () => {
     console.log("start")
   })
-  try {
-    open(url)
-  } catch (e) {
-
-  }
-
+  // 打开url
+  open(url)
   console.log("---")
 }
 
