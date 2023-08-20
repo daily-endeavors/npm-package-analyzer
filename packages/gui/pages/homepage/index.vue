@@ -1,48 +1,67 @@
 <template>
   <div>
-    <div class="page-container">
-      <Header></Header>
-      <div class="page-content">
-        <section class="content-container-wrap">
-          <div class="content-container">
-            <h2>NPM Package 依赖关系分析</h2>
-            <div class="content-split-container">
-              <div class="stats-container">
-                <div class="size-container">
-                  <h3>bundle size</h3>
-                  <div class="size-stats">
-                    <Stat></Stat>
-                    <Stat></Stat>
+    <section class="layout">
+      <section>
+        <div class="page-container">
+          <Header></Header>
+          <div class="page-content">
+            <section class="content-container-wrap">
+              <div class="content-container">
+                <h2>NPM Package 依赖关系分析</h2>
+                <div class="autocomplete-input-box">
+                  <div class="current-path">
+                    当前分析路径:/Users/yang/Desktop/npm-package-analyzer/packages/gui/
                   </div>
                 </div>
-                <div class="time-container">
-                  <h3>download size</h3>
-                  <div class="time-stats">
-                    <Stat></Stat>
-                    <Stat></Stat>
+                <div class="autocomplete-input-box_footer">
+                  <div class="quick-stats-bar"></div>
+                </div>
+
+                <div class="content-split-container">
+                  <div class="stats-container">
+                    <div class="size-container">
+                      <h3>分析统计</h3>
+                      <div class="size-stats">
+                        <Stat></Stat>
+                        <Stat></Stat>
+                      </div>
+                    </div>
+                    <div class="time-container">
+                      <h3>download size</h3>
+                      <div class="time-stats">
+                        <Stat></Stat>
+                        <Stat></Stat>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-split-container">
+                  <div class="bar-graph-container">
+                    <DependencyMap></DependencyMap>
                   </div>
                 </div>
               </div>
-              <div class="chart-container">
-                <div class="bar-graph-container">
-                  <DependencyMap></DependencyMap>
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
-        </section>
-      </div>
-    </div>
+        </div>
+      </section>
+    </section>
   </div>
 </template>
 <script lang="ts" setup>
 import Stat from './component/stat.vue';
 import Header from './component/header.vue';
 import DependencyMap from '../dependency-map/index.vue';
+import { stat } from 'fs';
 </script>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
 @import 'scss-stylesheets/colors.scss';
+
+.layout {
+  max-width: 100%;
+}
+
 .page-header {
   padding: $global-spacing * 3;
   padding-bottom: $global-spacing * 2;
@@ -52,6 +71,60 @@ import DependencyMap from '../dependency-map/index.vue';
   @media screen and (max-width: 40em) {
     padding: $global-spacing * 2;
   }
+}
+.autocomplete-input-box {
+  border: 1px solid $autocomplete-border-color;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  min-width: 600px;
+  min-height: 80px;
+
+  @media screen and (max-width: 48em) {
+    width: 85vw;
+    max-width: 550px;
+    min-width: auto;
+  }
+
+  @media screen and (max-width: 40em) {
+    width: 85vw;
+    min-width: auto;
+  }
+}
+
+.autocomplete-input-box__footer {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    margin: auto;
+    height: 1px;
+  }
+}
+
+.quick-stats-bar {
+  display: flex;
+  align-content: center;
+  font-size: 0.8rem;
+  color: #8d949e;
+  background: #fbfbfc;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+.current-path {
+  font-size: 1.3rem;
+  padding: 15px 45px 15px 30px;
+  font-family: Source Code Pro, SF Mono, Consolas, Liberation Mono, Menlo,
+    Courier, monospace;
+  font-weight: 300;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: -0.7px;
+  margin: 0;
 }
 
 .page-header--right-section {
@@ -148,13 +221,22 @@ import DependencyMap from '../dependency-map/index.vue';
   }
 }
 
+h2 {
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 1000;
+  margin: 0 0 20px;
+  color: #666;
+}
+
 .size-container h3,
 .time-container h3 {
   font-size: 1.35rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 300;
-  margin: 0 0 20px;
+  margin: 20px 0 0;
   color: #7f8792;
 }
 
@@ -272,7 +354,7 @@ import DependencyMap from '../dependency-map/index.vue';
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 10vh;
+  margin-top: 3vh;
 
   @media screen and (max-width: 48em) {
     flex-direction: column;
@@ -301,22 +383,6 @@ import DependencyMap from '../dependency-map/index.vue';
   justify-content: center;
 }
 
-.chart-container {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1 1 0;
-  // background-color: #7f8792;
-
-  @media screen and (max-width: 48em) {
-    margin: 5vh 0;
-    align-items: center;
-    flex: 1;
-    width: 100%;
-  }
-}
-
 .stats-container {
   display: flex;
   flex-direction: column;
@@ -330,8 +396,8 @@ import DependencyMap from '../dependency-map/index.vue';
 }
 
 .time-container {
-  border-top: 1px solid lighten($raven, 50%);
-  padding-top: 5vh;
+  border-bottom: 1px solid lighten($raven, 50%);
+  padding-bottom: 5vh;
 
   @media screen and (max-width: 48em) {
     padding-top: 3vh;
@@ -372,6 +438,21 @@ import DependencyMap from '../dependency-map/index.vue';
   display: flex;
 }
 
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10vh;
+
+  @media screen and (max-width: 48em) {
+    flex-direction: column;
+    margin-top: 5vh;
+  }
+
+  @media screen and (max-width: 40em) {
+    padding: 0 $global-spacing * 2;
+  }
+}
 .ct-series-a .ct-bar {
   stroke: #00b4ae;
   stroke-width: 40px;
@@ -500,7 +581,7 @@ import DependencyMap from '../dependency-map/index.vue';
 }
 
 .bar-graph-container {
-  flex-direction: column;
+  //   flex-direction: column;
   width: 100%;
   height: 48vh;
 }

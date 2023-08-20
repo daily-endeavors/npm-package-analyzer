@@ -1,6 +1,6 @@
 {
   "name": "daily-endeavors-npm-package-analyzer",
-  "version": "0.1.8",
+  "version": "0.1.14",
   "description": "分析本地 npm 包依赖关系",
   "author": "yangmingming",
   "license": "MIT",
@@ -13,8 +13,8 @@
   "homepage": "https://daily-endeavors.github.io",
   "scripts": {
     "dev": "ts-node --esm src/index.ts",
-    "build": "cd ../gui && npm run build && cd ../cli && npm run only-build-cli",
-    "only-build-cli": "tsc  --project ./",
+    "build": "rm -rf ./build && cd ../gui && npm run build && cd ../cli && npm run only-build-cli",
+    "only-build-cli": "tsc  --project ./ && mv ./build/src/* ./build",
     "prepublishOnly": "npm run build"
   },
   "files": [

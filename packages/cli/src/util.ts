@@ -93,10 +93,10 @@ export async function collect(targetPath: string) {
         dependencies: {},
         devDependencies: {},
       },
-      "dependencyBy": {
-        "dependencies": {},
-        "devDependencies": {}
-      }
+      dependencyBy: {
+        dependencies: {},
+        devDependencies: {},
+      },
     },
   }
 
@@ -169,9 +169,13 @@ export async function detectCommonLegalDir(
     //   return false
     // }
     // 只看文件夹
-    if (
-      fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
-    ) {
+    try {
+      if (
+        fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
+      ) {
+        return false
+      }
+    } catch (e) {
       return false
     }
     return true
@@ -214,9 +218,13 @@ export async function detectLegalRootDirList(targetDir: string) {
       return false
     }
     // 只看文件夹
-    if (
-      fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
-    ) {
+    try {
+      if (
+        fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
+      ) {
+        return false
+      }
+    } catch (e) {
       return false
     }
     return true
@@ -256,9 +264,13 @@ export async function generateAllLegalDir(
       if (filename.startsWith('.')) {
         return false
       }
-      if (
-        fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
-      ) {
+      try {
+        if (
+          fs.statSync(path.resolve(targetDir, filename)).isDirectory() === false
+        ) {
+          return false
+        }
+      } catch (e) {
         return false
       }
       return true
