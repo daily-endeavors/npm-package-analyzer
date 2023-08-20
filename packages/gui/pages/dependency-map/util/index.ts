@@ -2,6 +2,7 @@
 import * as TypePackageRecord from '../resource/type/info_record'
 import * as TypeG6 from '../resource/type/g6-echarts'
 import * as ConstColor from '../resource/const/color'
+import * as Consts from '../resource/const/index'
 
 /**
  * 将依赖数据转换为G6绘图所需数据
@@ -150,7 +151,7 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
             // 将子依赖项对应的categoryIndex添加到Set中, 方便后续展示
             if (categoryMap.has(record.uuid) === false) {
                 categoryMap.set(record.uuid, {
-                    isShow: record.deepLevel < 2,
+                    isShow: record.deepLevel < Consts.DefaultShowLevel,
                 })
             }
             const node = {

@@ -2,31 +2,39 @@
   <div class="container">
     <div id="g6Container"></div>
     <div>
-      <div>数据分布 =></div>
-      <div>
-        {{
-          JSON.stringify(
-            {
-              nodes节点数: echartData.nodes.length,
-              edges边数: echartData.edges.length,
-              颜色列表: colorList,
-              option,
-            },
-            null,
-            2,
-          )
-        }}
-      </div>
+      <input type="checkbox" id="checkbox" v-model="isDebug" />
+      <label for="checkbox">调试模式:{{ isDebug }}</label>
     </div>
+    <template v-if="isDebug">
+      <div>
+        <div>数据分布 =></div>
+        <div>
+          {{
+            JSON.stringify(
+              {
+                nodes节点数: echartData.nodes.length,
+                edges边数: echartData.edges.length,
+                颜色列表: colorList,
+                option,
+              },
+              null,
+              2,
+            )
+          }}
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 <script setup lang="ts">
 import * as echarts from 'echarts';
+import * as Consts from './resource/const/index';
 
 import demoData from './resource/data/demo.json';
 import * as Util from './util/index';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
+const isDebug = ref(false);
 type EChartsOption = echarts.EChartsOption;
 
 const echartData = Util.infoDb2Echarts(demoData as any);
@@ -68,8 +76,8 @@ const option: EChartsOption = {
         // repulsion: 20,
         // gravity: 0.2,
         repulsion: 50,
-        edgeLength: 20,
-        gravity: 0.05,
+        edgeLength: 50,
+        gravity: 0.02,
       },
       categories: [...echartData.dataCategoryList].map((uuid) => {
         return {
@@ -146,8 +154,8 @@ onMounted(() => {
 
     const targetClickItem = echartData.uuidMap.get(targetClickUuid)!;
     const categoryStatus = echartData.categoryMap.get(targetClickUuid)!;
-    if (targetClickItem.deepLevel < 2) {
-      // 层级小于2 直接展示子节点
+    if (targetClickItem.deepLevel < Consts.MinShowLevel) {
+      // 层级小于Consts.MinShowLevel 直接展示子节点
       for (let categoryUuid of Object.values(
         targetClickItem.detectInfo.dependencyInstallStatus.dependencies,
       )) {
@@ -201,6 +209,7 @@ onMounted(() => {
 .container {
   display: flex;
   flex-direction: column;
+  width: 50vw;
 }
 #g6Container {
   display: flex;
