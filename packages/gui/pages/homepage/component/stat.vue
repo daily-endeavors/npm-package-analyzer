@@ -2,14 +2,13 @@
   <div class="stat-container">
     <div class="stat-container__value-container">
       <div class="stat-container__value-wrap">
-        <div class="stat-container__value">91.1</div>
+        <div class="stat-container__value">100</div>
       </div>
       <div class="stat-container__unit">kb</div>
     </div>
     <div class="stat-container__divider" />
     <div class="stat-container__footer">
-      <div class="stat-container__label">Minified</div>
-
+      <div class="stat-container__label">minified</div>
       <div
         class="stat-container__info-text"
         data-balloon-pos="right"

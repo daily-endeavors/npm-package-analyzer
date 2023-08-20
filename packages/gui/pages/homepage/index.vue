@@ -8,10 +8,19 @@
             <section class="content-container-wrap">
               <div class="content-container">
                 <h2>NPM Package 依赖关系分析</h2>
+                <div class="autocomplete-input-box">
+                  <div class="current-path">
+                    当前分析路径:/Users/yang/Desktop/npm-package-analyzer/packages/gui/
+                  </div>
+                </div>
+                <div class="autocomplete-input-box_footer">
+                  <div class="quick-stats-bar"></div>
+                </div>
+
                 <div class="content-split-container">
                   <div class="stats-container">
                     <div class="size-container">
-                      <h3>bundle size</h3>
+                      <h3>分析统计</h3>
                       <div class="size-stats">
                         <Stat></Stat>
                         <Stat></Stat>
@@ -19,10 +28,7 @@
                     </div>
                     <div class="time-container">
                       <h3>download size</h3>
-                      <div class="time-stats">
-                        <Stat></Stat>
-                        <Stat></Stat>
-                      </div>
+                      <div class="time-stats"></div>
                     </div>
                   </div>
                 </div>
@@ -43,6 +49,7 @@
 import Stat from './component/stat.vue';
 import Header from './component/header.vue';
 import DependencyMap from '../dependency-map/index.vue';
+import { stat } from 'fs';
 </script>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
@@ -61,6 +68,60 @@ import DependencyMap from '../dependency-map/index.vue';
   @media screen and (max-width: 40em) {
     padding: $global-spacing * 2;
   }
+}
+.autocomplete-input-box {
+  border: 1px solid $autocomplete-border-color;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  min-width: 600px;
+  min-height: 80px;
+
+  @media screen and (max-width: 48em) {
+    width: 85vw;
+    max-width: 550px;
+    min-width: auto;
+  }
+
+  @media screen and (max-width: 40em) {
+    width: 85vw;
+    min-width: auto;
+  }
+}
+
+.autocomplete-input-box__footer {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    margin: auto;
+    height: 1px;
+  }
+}
+
+.quick-stats-bar {
+  display: flex;
+  align-content: center;
+  font-size: 0.8rem;
+  color: #8d949e;
+  background: #fbfbfc;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+.current-path {
+  font-size: 1.3rem;
+  padding: 15px 45px 15px 30px;
+  font-family: Source Code Pro, SF Mono, Consolas, Liberation Mono, Menlo,
+    Courier, monospace;
+  font-weight: 300;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: -0.7px;
+  margin: 0;
 }
 
 .page-header--right-section {
