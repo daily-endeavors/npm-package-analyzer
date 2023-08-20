@@ -8,5 +8,9 @@ export default {
   polyfill: false,
   base: "/npm-package-analyzer/",
   publicPath: process.env.NODE_ENV === 'production' ? "./" : "/",
+  headScripts: [
+    { src: './npm_package_analyze.js' },
+  ],
+  devtool: "source-map",
   routes
 };
