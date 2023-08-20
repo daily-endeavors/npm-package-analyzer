@@ -48,7 +48,7 @@ export function infoDb2G6(packageRecordList: TypePackageRecord.packageAnaylzeRes
                 }
                 if (uuidMap.has(dependencyPackageUuid) === false) {
                     // 数据表中无此id, 自动跳过
-                    console.log("auto skip =>", dependencyPackageUuid)
+                    // console.log("auto skip =>", dependencyPackageUuid)
                     continue
                 }
                 // 避免重复添加edge边
