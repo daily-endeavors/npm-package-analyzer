@@ -1,9 +1,15 @@
-import * as Const from './resource/const'
-import * as Type from './resource/type'
-import * as RecordType from './resource/type/record'
+import * as Const from './resource/const/index.js'
+import * as Type from './resource/type/index.js'
+import * as RecordType from './resource/type/record.js'
 import * as fs from 'fs'
 import * as path from 'path'
-import * as Util from './util'
+import * as Util from './util.js'
+import * as shelljs from 'shelljs'
+import HttpServer from 'http-server'
+import open from 'open'
+import express from 'express'
+import koa from 'koa'
+import GetPort from 'get-port'
 
 export async function asyncRunner() {
   // 1. 在路径下, 执行npx cli
@@ -90,8 +96,39 @@ export async function asyncRunner() {
   })
   fs.writeFileSync(path.join(directoryPath, outputFileName), JSON.stringify(parseRackageAnaylzeResultList, null, 2))
 
+  console.log(`将解析结果输出到项目运行目录中 => ${Const.cliRuntimeGuiDataUri}`)
+  fs.writeFileSync(Const.cliRuntimeGuiDataUri, `
+globalThis.npmPackageAnalyzeResultList = ${JSON.stringify(parseRackageAnaylzeResultList, null, 2)}
+  `)
 
-  console.log('解析完毕')
+  console.log('解析结果输出完毕, 启动本地服务')
+
+  const legalPort = await GetPort({
+    host: "127.0.0.1",
+  })
+  const url = `http://127.0.0.1:${legalPort}/npm-package-analyzer`
+  console.log(`本地地址 => ${url}`)
+  const app = express()
+  console.log("静态服务地址Const.cliRuntimeGuiPath => ", Const.cliRuntimeGuiPath)
+  app.use("/npm-package-analyzer",
+    express.static(Const.cliRuntimeGuiPath)
+  )
+  // 以/npm-package-analyzer作为路径
+  app.use("/",
+    async (req, res) => {
+      res.redirect("/npm-package-analyzer")
+    }
+  )
+  app.listen(legalPort, () => {
+    console.log("start")
+  })
+  try {
+    open(url)
+  } catch (e) {
+
+  }
+
+  console.log("---")
 }
 
 // 一: muiltInstance，检测同一个 package 是否包含多个版本实例；

@@ -1,6 +1,4 @@
-import * as Const from './resource/const'
-import * as Type from './resource/type'
-import * as RecordType from './resource/type/record'
+import * as RecordType from './resource/type/record.js'
 import * as fs from 'fs'
 import * as path from 'path'
 import md5 from 'md5'

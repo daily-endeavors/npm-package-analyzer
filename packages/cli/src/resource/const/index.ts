@@ -1,5 +1,8 @@
-import * as Type from '../type'
-import * as RecordType from '../type/record'
+import * as Type from '../type/index.js'
+import * as RecordType from '../type/record.js'
+import * as path from 'path'
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
 
 export const json: Type.json = {
   package_name: 'test',
@@ -75,3 +78,13 @@ export const defaultRecord: RecordType.item = {
     },
   },
 }
+
+export const cliRuntimeRootPath = path.resolve(__filename, "../../../..")
+/**
+ * gui文件所在路径
+ */
+export const cliRuntimeGuiPath = path.resolve(cliRuntimeRootPath, "./build/npm-package-analyzer")
+/**
+ * 解析结果输出路径
+ */
+export const cliRuntimeGuiDataUri = path.resolve(cliRuntimeGuiPath, "./npm_package_analyze.js")
