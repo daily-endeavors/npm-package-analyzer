@@ -5,21 +5,25 @@
   "author": "yangmingming",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "main": "index.js",
   "bin": {
     "daily-endeavors-npm-package-analyzer": "index.js"
   },
   "homepage": "https://daily-endeavors.github.io",
   "scripts": {
-    "dev": "ts-node src/index.ts",
-    "build": "tsc  --project ./ ",
+    "dev": "ts-node --esm src/index.ts",
+    "build": "cd ../gui && npm run build && cd ../cli && npm run only-build-cli",
+    "only-build-cli": "tsc  --project ./",
     "prepublishOnly": "npm run build"
   },
   "files": [
     "build"
   ],
   "devDependencies": {
+    "@types/http-server": "^0.12.1",
     "@types/md5": "^2.3.2",
+    "@types/shelljs": "^0.8.12",
     "dotenv": "^16.3.1",
     "ts-node": "^10.8.0",
     "typescript": "^5.1.6"
@@ -28,6 +32,15 @@
     "npm-package-analyzer"
   ],
   "dependencies": {
-    "md5": "^2.3.0"
+    "@types/express": "^4.17.17",
+    "@types/koa": "^2.13.8",
+    "express": "^4.18.2",
+    "get-port": "^7.0.0",
+    "http-server": "^14.1.1",
+    "koa": "^2.14.2",
+    "md5": "^2.3.0",
+    "open": "^9.1.0",
+    "serve": "^14.2.0",
+    "shelljs": "^0.8.5"
   }
 }
