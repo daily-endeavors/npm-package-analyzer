@@ -27,6 +27,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import * as TypePackageRecord from '../../../cli/src/resource/type/record';
 import * as echarts from 'echarts';
 import * as Consts from './resource/const/index';
 
@@ -38,7 +39,8 @@ const isDebug = ref(false);
 type EChartsOption = echarts.EChartsOption;
 
 // 优先尝试从全局变量中获取, 没有则使用demo数据
-const parseData = (globalThis as any)?.npmPackageAnalyzeResultList ?? demoData;
+const parseData: TypePackageRecord.packageAnaylzeResult[] =
+  (globalThis as any)?.npmPackageAnalyzeResultList ?? demoData;
 const echartData = Util.infoDb2Echarts(parseData as any);
 
 const legendSelected: Record<string, boolean> = {};
