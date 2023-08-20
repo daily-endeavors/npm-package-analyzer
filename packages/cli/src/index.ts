@@ -352,7 +352,7 @@ async function removeUnusedPackageAndUpdateDepthInfo(packageAnaylzeResultList: R
    * @param currentDepth 
    * @returns 
    */
-  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidMap: Map<RecordType.item['uuid'], number> = new Map(), currentDepth = 0) {
+  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidMap: Map<RecordType.item['uuid'], number> = new Map(), currentDepth = 1) {
     // 只检查dependence项
     const packageItem = packageMap.get(rootUuid)
     if (packageItem === undefined) {
@@ -384,7 +384,7 @@ async function removeUnusedPackageAndUpdateDepthInfo(packageAnaylzeResultList: R
     const rootPackage = packageAnaylzeResult.packageList[0]
     let usageUuidMap = new Map()
     usageUuidMap.set(rootPackage.uuid, 0)
-    usageUuidMap = getUsageUuid(rootPackage.uuid, usageUuidMap)
+    usageUuidMap = getUsageUuid(rootPackage.uuid, usageUuidMap, 1)
     // 剔除根节点
     usageUuidMap.delete(rootPackage.uuid)
 
