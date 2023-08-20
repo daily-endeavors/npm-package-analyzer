@@ -38,6 +38,10 @@ export async function asyncRunner() {
         "dependencyInstallStatus": {
           "dependencies": {},
           "devDependencies": {}
+        },
+        "dependencyBy": {
+          "dependencies": {},
+          "devDependencies": {}
         }
       },
     }
@@ -56,7 +60,8 @@ export async function asyncRunner() {
   await circularDependenceChecker(rawPackageAnaylzeResultList)
 
   // 移除未使用的依赖, 最大递归检测深度为5层
-  await removeUnusedPackageAndUpdateDepthInfo(rawPackageAnaylzeResultList, 3)
+  // 更新包的被依赖信息
+  await removeUnusedPackageAndUpdateDetectInfo(rawPackageAnaylzeResultList, 5)
 
   // 更新多实例检测结果
   await muiltInstanceChecker(rawPackageAnaylzeResultList)
@@ -328,14 +333,15 @@ async function circularDependenceChecker(
 }
 
 /**
- * 更新每个包所处的依赖层数, 并确保根package的packageList中的项均为实际dependence的依赖(移除devDependence项)
+ * 更新每个包所处的依赖层数 & 更新包的被依赖项(便于后续制作节点梯次展开效果)
+ * 确保根package的packageList中的项均为实际dependence的依赖(移除devDependence项)
  * 
  * @param packageAnaylzeResultList 
  * @param maxDepth 
  * @returns 
  */
-async function removeUnusedPackageAndUpdateDepthInfo(packageAnaylzeResultList: RecordType.packageAnaylzeResult[],
-  maxDepth: number
+async function removeUnusedPackageAndUpdateDetectInfo(packageAnaylzeResultList: RecordType.packageAnaylzeResult[],
+  maxDepth: number = 99999
 ) {
   // 首先初始化出所有的包列表
   const packageMap: Map<RecordType.item['uuid'], RecordType.item> = new Map()
@@ -352,27 +358,33 @@ async function removeUnusedPackageAndUpdateDepthInfo(packageAnaylzeResultList: R
    * @param currentDepth 
    * @returns 
    */
-  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidMap: Map<RecordType.item['uuid'], number> = new Map(), currentDepth = 0) {
+  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidMap: Map<RecordType.item['uuid'], number> = new Map(), currentDepth = 1) {
     // 只检查dependence项
-    const packageItem = packageMap.get(rootUuid)
-    if (packageItem === undefined) {
+    const rootPackageItem = packageMap.get(rootUuid)
+    if (rootPackageItem === undefined) {
       return usageUuidMap
     }
 
-    for (let packageUuid of Object.values(packageItem.detectInfo.dependencyInstallStatus.dependencies)) {
-      if (packageUuid === "") {
+    for (let dependenciesPackageUuid of Object.values(rootPackageItem.detectInfo.dependencyInstallStatus.dependencies)) {
+      if (dependenciesPackageUuid === "") {
         continue
       }
-      if (usageUuidMap.has(packageUuid)) {
+      const dependenciesPackageItem = packageMap.get(dependenciesPackageUuid)
+      if (dependenciesPackageItem !== undefined) {
+        // 更新包的被依赖信息
+        dependenciesPackageItem.detectInfo.dependencyBy.dependencies[rootPackageItem.uuid] = rootPackageItem.packageName
+      }
+
+      if (usageUuidMap.has(dependenciesPackageUuid)) {
         // 已经检查过, 无需再次检查
         continue
       }
       // 添加到依赖项中
-      usageUuidMap.set(packageUuid, currentDepth)
+      usageUuidMap.set(dependenciesPackageUuid, currentDepth)
       // 限制最大搜索深度
       if (currentDepth < maxDepth) {
         // 操作的始终是同一个usageUuidSet, 因此无需获取子节点返回值
-        getUsageUuid(packageUuid, usageUuidMap, currentDepth + 1)
+        getUsageUuid(dependenciesPackageUuid, usageUuidMap, currentDepth + 1)
       }
     }
     return usageUuidMap
@@ -384,7 +396,7 @@ async function removeUnusedPackageAndUpdateDepthInfo(packageAnaylzeResultList: R
     const rootPackage = packageAnaylzeResult.packageList[0]
     let usageUuidMap = new Map()
     usageUuidMap.set(rootPackage.uuid, 0)
-    usageUuidMap = getUsageUuid(rootPackage.uuid, usageUuidMap)
+    usageUuidMap = getUsageUuid(rootPackage.uuid, usageUuidMap, 1)
     // 剔除根节点
     usageUuidMap.delete(rootPackage.uuid)
 

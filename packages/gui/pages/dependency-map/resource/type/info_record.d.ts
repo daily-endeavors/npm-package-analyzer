@@ -98,6 +98,23 @@ export type item = {
       devDependencies: {
         [packageName: string]: item['uuid'] | ''
       }
+    },
+    /**
+     * 被哪些节点依赖(便于后续制作节点梯次展开效果)
+     */
+    dependencyBy: {
+      /**
+       * 通过dependencies依赖
+       */
+      dependencies: {
+        [packageUuid: item['uuid']]: item['packageName'] | ''
+      }
+      /**
+       * 通过devDependencies依赖
+       */
+      devDependencies: {
+        [packageUuid: item['uuid']]: item['packageName'] | ''
+      }
     }
   }
 }
@@ -150,6 +167,23 @@ export type packageAnaylzeResult = Omit<item, 'detectInfo'> & {
       }
       devDependencies: {
         [packageName: string]: item['uuid'] | ''
+      }
+    },
+    /**
+     * 被哪些节点依赖(便于后续制作节点梯次展开效果)
+     */
+    dependencyBy: {
+      /**
+       * 通过dependencies依赖
+       */
+      dependencies: {
+        [packageUuid: item['uuid']]: item['packageName'] | ''
+      }
+      /**
+       * 通过devDependencies依赖
+       */
+      devDependencies: {
+        [packageUuid: item['uuid']]: item['packageName'] | ''
       }
     }
   }

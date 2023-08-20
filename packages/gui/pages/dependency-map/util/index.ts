@@ -2,6 +2,7 @@
 import * as TypePackageRecord from '../resource/type/info_record'
 import * as TypeG6 from '../resource/type/g6-echarts'
 import * as ConstColor from '../resource/const/color'
+import * as Consts from '../resource/const/index'
 
 /**
  * 将依赖数据转换为G6绘图所需数据
@@ -98,17 +99,41 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
     // packageRecordList = [packageRecordList[0]]
 
     // 先初始化uuid => item 映射表
-    const uuidMap = new Map()
+    const uuidMap: Map<TypePackageRecord.item['uuid'], TypePackageRecord.item> = new Map()
     for (let packageRecord of packageRecordList) {
         uuidMap.set(packageRecord.uuid, packageRecord)
         for (let item of packageRecord.packageList) {
             uuidMap.set(item.uuid, item)
         }
     }
+    const dataCategoryList = [...uuidMap.keys()]
 
 
     const uniqueNodeSet = new Set<string>()
     const uniquePathSet = new Set<string>()
+
+    const ConstSymbolSize = {
+        // // 根节点
+        // [0]: [100, 10],
+        // // 第一层依赖
+        // [1]: [50, 10],
+        // // 第二层依赖
+        // [2]: [20, 10],
+        // [3]: [10, 10],
+        // "default": [5, 5]
+        // 根节点
+        [0]: 100,
+        // 第一层依赖
+        [1]: 50,
+        // 第二层依赖
+        [2]: 20,
+        [3]: 10,
+        "default": 5
+    }
+
+    const categoryMap: Map<string, {
+        isShow: boolean
+    }> = new Map()
 
     // 然后再绘制依赖图
     for (let packageRecord of packageRecordList) {
@@ -117,27 +142,35 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
         const packageColor = getRgbColor()
         for (let record of [...packageRecord.packageList]) {
             recordCounter = recordCounter + 1
-            const node: TypeG6.EchartsNode = {
+
+            // @ts-ignore
+            const symbolSize = ConstSymbolSize[record.deepLevel as any] ?? ConstSymbolSize.default
+
+            // symbolSize[1] = Math.max(symbolSize[1], `${record.packageName}@${record.version}`.length)
+
+            // 将子依赖项对应的categoryIndex添加到Set中, 方便后续展示
+            if (categoryMap.has(record.uuid) === false) {
+                categoryMap.set(record.uuid, {
+                    isShow: record.deepLevel < Consts.DefaultShowLevel,
+                })
+            }
+            const node = {
                 id: record.uuid,
                 symbol: "circle",
                 itemStyle: {
                     color: packageColor,
                 },
-                // 用所处层数作为size大小, 保底为1
-                symbolSize: Math.max((10 - record.deepLevel) * 2, 1),
-                name: `${record.packageName}@${record.version}`,
+                symbolSize: symbolSize,
+                // 每项一个类目
+                category: dataCategoryList.indexOf(record.uuid),
+                name: `${record.packageName}\n${record.version}`,
                 label: {
-                    show: record.deepLevel <= 1 ? true : false,
+                    show: true,
                     overflow: "truncate",
                 },
-                y: 0,
-                x: 0,
+                // y: 0,
+                // x: 0,
                 attributes: {},
-            }
-            if (recordCounter === 1) {
-                // 每个循环的第一个是根节点, 需要给与特殊标记
-                // node.color = "#007bff"
-                node.symbolSize = 100
             }
 
             // 避免重复添加node节点
@@ -151,21 +184,24 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
                     // 未检测到依赖, 自动跳过
                     continue
                 }
-                if (uuidMap.has(dependencyPackageUuid) === false) {
+                const dependencyPackage = uuidMap.get(dependencyPackageUuid)
+                if (dependencyPackage === undefined) {
                     // 数据表中无此id, 自动跳过
-                    console.log("auto skip =>", dependencyPackageUuid)
+                    // console.log("auto skip =>", dependencyPackageUuid)
                     continue
                 }
                 // 避免重复添加edge边
                 const pathLink = `${record.uuid}->${dependencyPackageUuid}`
                 if (uniquePathSet.has(pathLink) === false) {
                     uniquePathSet.add(pathLink)
-                    echartsEdgeList.push({
-                        sourceID: record.uuid,
-                        attributes: {},
-                        targetID: dependencyPackageUuid,
+                    const link = {
+                        source: record.uuid,
+                        target: dependencyPackageUuid,
+                        tooltip: `${record.packageName}->${dependencyPackage.packageName}`,
                         size: 1
-                    })
+                    }
+                    // @ts-ignore
+                    echartsEdgeList.push(link)
                 }
             }
         }
@@ -177,5 +213,8 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
     return {
         nodes: echartsNodeList,
         edges: echartsEdgeList,
+        categoryMap: categoryMap,
+        dataCategoryList,
+        uuidMap
     }
 }
