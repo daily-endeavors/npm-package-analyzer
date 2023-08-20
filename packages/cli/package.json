@@ -1,6 +1,6 @@
 {
   "name": "daily-endeavors-npm-package-analyzer",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "分析本地 npm 包依赖关系",
   "author": "yangmingming",
   "license": "MIT",
