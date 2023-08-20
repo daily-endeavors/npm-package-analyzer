@@ -69,5 +69,9 @@ export const defaultRecord: RecordType.item = {
       devDependencies: {},
       dependencies: {},
     },
+    dependencyBy: {
+      devDependencies: {},
+      dependencies: {},
+    },
   },
 }

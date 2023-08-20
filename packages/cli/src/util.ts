@@ -95,6 +95,10 @@ export async function collect(targetPath: string) {
         dependencies: {},
         devDependencies: {},
       },
+      "dependencyBy": {
+        "dependencies": {},
+        "devDependencies": {}
+      }
     },
   }
 
