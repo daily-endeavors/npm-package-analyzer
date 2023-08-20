@@ -1,38 +1,42 @@
 <template>
   <div>
-    <div class="page-container">
-      <Header></Header>
-      <div class="page-content">
-        <section class="content-container-wrap">
-          <div class="content-container">
-            <h2>NPM Package 依赖关系分析</h2>
-            <div class="content-split-container">
-              <div class="stats-container">
-                <div class="size-container">
-                  <h3>bundle size</h3>
-                  <div class="size-stats">
-                    <Stat></Stat>
-                    <Stat></Stat>
+    <section class="layout">
+      <section>
+        <div class="page-container">
+          <Header></Header>
+          <div class="page-content">
+            <section class="content-container-wrap">
+              <div class="content-container">
+                <h2>NPM Package 依赖关系分析</h2>
+                <div class="content-split-container">
+                  <div class="stats-container">
+                    <div class="size-container">
+                      <h3>bundle size</h3>
+                      <div class="size-stats">
+                        <Stat></Stat>
+                        <Stat></Stat>
+                      </div>
+                    </div>
+                    <div class="time-container">
+                      <h3>download size</h3>
+                      <div class="time-stats">
+                        <Stat></Stat>
+                        <Stat></Stat>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="time-container">
-                  <h3>download size</h3>
-                  <div class="time-stats">
-                    <Stat></Stat>
-                    <Stat></Stat>
+                <div class="content-split-container">
+                  <div class="bar-graph-container">
+                    <DependencyMap></DependencyMap>
                   </div>
                 </div>
               </div>
-              <div class="chart-container">
-                <div class="bar-graph-container">
-                  <DependencyMap></DependencyMap>
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
-        </section>
-      </div>
-    </div>
+        </div>
+      </section>
+    </section>
   </div>
 </template>
 <script lang="ts" setup>
@@ -43,6 +47,11 @@ import DependencyMap from '../dependency-map/index.vue';
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
 @import 'scss-stylesheets/colors.scss';
+
+.layout {
+  max-width: 100%;
+}
+
 .page-header {
   padding: $global-spacing * 3;
   padding-bottom: $global-spacing * 2;
@@ -148,13 +157,22 @@ import DependencyMap from '../dependency-map/index.vue';
   }
 }
 
+h2 {
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 1000;
+  margin: 0 0 20px;
+  color: #666;
+}
+
 .size-container h3,
 .time-container h3 {
   font-size: 1.35rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 300;
-  margin: 0 0 20px;
+  margin: 20px 0 0;
   color: #7f8792;
 }
 
@@ -301,22 +319,6 @@ import DependencyMap from '../dependency-map/index.vue';
   justify-content: center;
 }
 
-.chart-container {
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1 1 0;
-  // background-color: #7f8792;
-
-  @media screen and (max-width: 48em) {
-    margin: 5vh 0;
-    align-items: center;
-    flex: 1;
-    width: 100%;
-  }
-}
-
 .stats-container {
   display: flex;
   flex-direction: column;
@@ -372,6 +374,21 @@ import DependencyMap from '../dependency-map/index.vue';
   display: flex;
 }
 
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10vh;
+
+  @media screen and (max-width: 48em) {
+    flex-direction: column;
+    margin-top: 5vh;
+  }
+
+  @media screen and (max-width: 40em) {
+    padding: 0 $global-spacing * 2;
+  }
+}
 .ct-series-a .ct-bar {
   stroke: #00b4ae;
   stroke-width: 40px;
@@ -500,7 +517,7 @@ import DependencyMap from '../dependency-map/index.vue';
 }
 
 .bar-graph-container {
-  flex-direction: column;
+  //   flex-direction: column;
   width: 100%;
   height: 48vh;
 }

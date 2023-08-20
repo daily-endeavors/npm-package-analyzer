@@ -207,6 +207,7 @@ onMounted(() => {
   });
 });
 </script>
+
 <style scoped>
 .container {
   display: flex;
