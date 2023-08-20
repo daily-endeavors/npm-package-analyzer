@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import currentPkg from './package.json' assert { type: 'json' }
-import * as runner from './build/src/index.js'
+import * as runner from './build/index.js'
 console.log(`当前运行指令: ${currentPkg.name}@${currentPkg.version}`)
 console.log(``)
 console.log('开始执行')
