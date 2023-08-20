@@ -5,12 +5,16 @@
       <div>数据分布 =></div>
       <div>
         {{
-          JSON.stringify({
-            nodes节点数: echartData.nodes.length,
-            edges边数: echartData.edges.length,
-            颜色列表: colorList,
-            option,
-          })
+          JSON.stringify(
+            {
+              nodes节点数: echartData.nodes.length,
+              edges边数: echartData.edges.length,
+              颜色列表: colorList,
+              option,
+            },
+            null,
+            2,
+          )
         }}
       </div>
     </div>
@@ -26,6 +30,12 @@ import { onMounted } from 'vue';
 type EChartsOption = echarts.EChartsOption;
 
 const echartData = Util.infoDb2Echarts(demoData as any);
+
+const legendSelected: Record<string, boolean> = {};
+for (let key of echartData.categoryMap.keys()) {
+  legendSelected[key] = !!echartData.categoryMap.get(key)?.isShow;
+}
+
 const option: EChartsOption = {
   title: {
     text: 'NPM 依赖分析',
@@ -35,6 +45,16 @@ const option: EChartsOption = {
     formatter: '{b}',
     trigger: 'item',
   },
+  legend: {
+    show: false,
+    data: [...echartData.dataCategoryList],
+    selected: legendSelected,
+    // .map((uuid) => {
+    //   return {
+    //     name: uuid,
+    //   };
+    // }),
+  },
   animationDurationUpdate: 1500,
   animationEasingUpdate: 'quinticInOut',
   series: [
@@ -42,6 +62,7 @@ const option: EChartsOption = {
       type: 'graph',
       layout: 'force',
       animation: false,
+      // selectedMode: 'series',
       force: {
         // edgeLength: 5,
         // repulsion: 20,
@@ -50,6 +71,11 @@ const option: EChartsOption = {
         edgeLength: 20,
         gravity: 0.05,
       },
+      categories: [...echartData.dataCategoryList].map((uuid) => {
+        return {
+          name: uuid,
+        };
+      }),
       // progressiveThreshold: 700,
       data: echartData.nodes,
       links: echartData.edges,
@@ -82,14 +108,93 @@ const colorList = [
   ).values(),
 ];
 
+let myEchart: ReturnType<typeof echarts.init>;
+
 onMounted(() => {
   const chartDom = document.getElementById('g6Container')!;
-  const myEchart = echarts.init(chartDom);
-
+  myEchart = echarts.init(chartDom);
   const width = document.querySelector('#g6Container')?.clientWidth ?? 500;
   const height = document.querySelector('#g6Container')?.clientHeight ?? 500;
 
   myEchart.setOption(option, true);
+
+  // // 按图例隐藏节点
+  // for (let categoryKey of echartData.categoryMap.keys()) {
+  //   const item = echartData.categoryMap.get(categoryKey)!;
+  //   if (item.isShow) {
+  //     myEchart.dispatchAction({
+  //       type: 'legendSelect',
+  //       // 图例名称
+  //       name: categoryKey,
+  //     });
+  //   } else {
+  //     myEchart.dispatchAction({
+  //       type: 'legendUnSelect',
+  //       // 图例名称
+  //       name: categoryKey,
+  //     });
+  //   }
+  // }
+
+  myEchart.on('click', function (params) {
+    if (params.dataType !== 'node') {
+      return;
+    }
+
+    const targetClickUuid = params.data.id;
+    console.log('targetClickUuid =>', params);
+
+    const targetClickItem = echartData.uuidMap.get(targetClickUuid)!;
+    const categoryStatus = echartData.categoryMap.get(targetClickUuid)!;
+    if (targetClickItem.deepLevel < 2) {
+      // 层级小于2 直接展示子节点
+      for (let categoryUuid of Object.values(
+        targetClickItem.detectInfo.dependencyInstallStatus.dependencies,
+      )) {
+        myEchart.dispatchAction({
+          type: 'legendSelect',
+          // 图例名称
+          name: categoryUuid,
+        });
+      }
+
+      categoryStatus.isShow = true;
+      echartData.categoryMap.set(targetClickUuid, categoryStatus);
+      return;
+    }
+
+    // 如果 category 状态为显示，则通过一定规则隐藏所有 childres
+
+    if (categoryStatus.isShow) {
+      for (let categoryUuid of Object.values(
+        targetClickItem.detectInfo.dependencyInstallStatus.dependencies,
+      )) {
+        myEchart.dispatchAction({
+          type: 'legendUnSelect',
+          // 图例名称
+          name: categoryUuid,
+        });
+      }
+
+      categoryStatus.isShow = false;
+      echartData.categoryMap.set(targetClickUuid, categoryStatus);
+    } else {
+      // 如 category 状态为隐藏，则显示
+
+      for (let categoryUuid of Object.values(
+        targetClickItem.detectInfo.dependencyInstallStatus.dependencies,
+      )) {
+        myEchart.dispatchAction({
+          type: 'legendSelect',
+          // 图例名称
+          name: categoryUuid,
+        });
+      }
+
+      categoryStatus.isShow = true;
+      echartData.categoryMap.set(targetClickUuid, categoryStatus);
+    }
+  });
 });
 </script>
 <style scoped>

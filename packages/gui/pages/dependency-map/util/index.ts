@@ -105,6 +105,7 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
             uuidMap.set(item.uuid, item)
         }
     }
+    const dataCategoryList = [...uuidMap.keys()]
 
 
     const uniqueNodeSet = new Set<string>()
@@ -129,6 +130,10 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
         "default": 5
     }
 
+    const categoryMap: Map<string, {
+        isShow: boolean
+    }> = new Map()
+
     // 然后再绘制依赖图
     for (let packageRecord of packageRecordList) {
         let recordCounter = 0
@@ -142,6 +147,12 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
 
             // symbolSize[1] = Math.max(symbolSize[1], `${record.packageName}@${record.version}`.length)
 
+            // 将子依赖项对应的categoryIndex添加到Set中, 方便后续展示
+            if (categoryMap.has(record.uuid) === false) {
+                categoryMap.set(record.uuid, {
+                    isShow: record.deepLevel < 2,
+                })
+            }
             const node = {
                 id: record.uuid,
                 symbol: "circle",
@@ -149,10 +160,11 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
                     color: packageColor,
                 },
                 symbolSize: symbolSize,
+                // 每项一个类目
+                category: dataCategoryList.indexOf(record.uuid),
                 name: `${record.packageName}\n${record.version}`,
                 label: {
-                    // 只展示前两层的依赖
-                    show: record.deepLevel < 2 ? true : false,
+                    show: true,
                     overflow: "truncate",
                 },
                 // y: 0,
@@ -200,5 +212,8 @@ export function infoDb2Echarts(packageRecordList: TypePackageRecord.packageAnayl
     return {
         nodes: echartsNodeList,
         edges: echartsEdgeList,
+        categoryMap: categoryMap,
+        dataCategoryList,
+        uuidMap
     }
 }
