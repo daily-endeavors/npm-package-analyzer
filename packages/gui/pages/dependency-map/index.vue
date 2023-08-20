@@ -8,6 +8,8 @@
           JSON.stringify({
             nodes节点数: echartData.nodes.length,
             edges边数: echartData.edges.length,
+            颜色列表: colorList,
+            option,
           })
         }}
       </div>
@@ -28,6 +30,11 @@ const option: EChartsOption = {
   title: {
     text: 'NPM 依赖分析',
   },
+  tooltip: {
+    // 参考 https://echarts.apache.org/zh/option.html#series-graph.tooltip.formatter
+    formatter: '{b}',
+    trigger: 'item',
+  },
   animationDurationUpdate: 1500,
   animationEasingUpdate: 'quinticInOut',
   series: [
@@ -36,49 +43,45 @@ const option: EChartsOption = {
       layout: 'force',
       animation: false,
       force: {
-        edgeLength: 5,
-        repulsion: 20,
-        gravity: 0.2,
+        // edgeLength: 5,
+        // repulsion: 20,
+        // gravity: 0.2,
+        repulsion: 50,
+        edgeLength: 20,
+        gravity: 0.05,
       },
       // progressiveThreshold: 700,
-      data: echartData.nodes.map(function (node) {
-        return {
-          ...node,
-        };
-      }),
-      edges: echartData.edges.map(function (edge) {
-        return {
-          source: edge.sourceID,
-          target: edge.targetID,
-        };
-      }),
+      data: echartData.nodes,
+      links: echartData.edges,
       roam: true,
       lineStyle: {
         width: 0.5,
         curveness: 0.3,
         opacity: 0.7,
       },
-      // emphasis: {
-      //   focus: 'adjacency',
-      //   label: {
-      //     position: 'right',
-      //     show: true,
-      //   },
-      // },
-      edgeSymbol: ['arrow'],
-      edgeSymbolSize: [4, 10],
+      emphasis: {
+        focus: 'adjacency',
+        label: {
+          position: 'right',
+          show: true,
+        },
+      },
+      edgeSymbol: ['circle', 'arrow'],
+      edgeSymbolSize: [1, 5],
       edgeLabel: {
         fontSize: 20,
       },
-
-      // tooltip: {
-      //   // 参考 https://echarts.apache.org/zh/option.html#series-graph.tooltip.formatter
-      //   formatter: '{b}',
-      //   trigger: 'item',
-      // },
     },
   ],
 };
+const colorList = [
+  ...new Set(
+    echartData.nodes.map(function (node) {
+      return node.itemStyle.color;
+    }),
+  ).values(),
+];
+
 onMounted(() => {
   const chartDom = document.getElementById('g6Container')!;
   const myEchart = echarts.init(chartDom);
