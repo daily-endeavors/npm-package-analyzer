@@ -27,20 +27,17 @@
   </div>
 </template>
 <script setup lang="ts">
-import * as TypePackageRecord from '../../../cli/src/resource/type/record';
 import * as echarts from 'echarts';
 import * as Consts from './resource/const/index';
 
-import demoData from './resource/data/demo.json';
 import * as Util from './util/index';
+import * as GlobalUtil from '@/utils/index';
 import { onMounted, ref } from 'vue';
 
 const isDebug = ref(false);
 type EChartsOption = echarts.EChartsOption;
 
-// 优先尝试从全局变量中获取, 没有则使用demo数据
-const parseData: TypePackageRecord.packageAnaylzeResult[] =
-  (globalThis as any)?.npmPackageAnalyzeResultList ?? demoData;
+const parseData = GlobalUtil.getPackageAnaylzeResult();
 const echartData = Util.infoDb2Echarts(parseData as any);
 
 const legendSelected: Record<string, boolean> = {};
@@ -114,7 +111,7 @@ const option: EChartsOption = {
 };
 const colorList = [
   ...new Set(
-    echartData.nodes.map(function (node) {
+    echartData.nodes.map((node: any) => {
       return node.itemStyle.color;
     }),
   ).values(),
@@ -153,6 +150,7 @@ onMounted(() => {
       return;
     }
 
+    // @ts-ignore
     const targetClickUuid = params.data.id;
     console.log('targetClickUuid =>', params);
 

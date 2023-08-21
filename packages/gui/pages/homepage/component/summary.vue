@@ -1,49 +1,60 @@
 <template>
   <div>
-    <section class="content-container-wrap">
-      <div class="content-container">
-        <h2>NPM Package 依赖关系分析</h2>
-        <div class="autocomplete-input-box">
-          <div class="current-path">
-            当前分析路径:/Users/yang/Desktop/npm-package-analyzer/packages/gui/
-          </div>
-        </div>
-        <div class="autocomplete-input-box_footer">
-          <div class="quick-stats-bar"></div>
-        </div>
+    <section class="layout">
+      <section>
+        <div class="page-container">
+          <Header></Header>
+          <div class="page-content">
+            <section class="content-container-wrap">
+              <div class="content-container">
+                <h2>NPM Package 依赖关系分析</h2>
+                <div class="autocomplete-input-box">
+                  <div class="current-path">
+                    当前分析路径:/Users/yang/Desktop/npm-package-analyzer/packages/gui/
+                  </div>
+                </div>
+                <div class="autocomplete-input-box_footer">
+                  <div class="quick-stats-bar"></div>
+                </div>
 
-        <div class="content-split-container">
-          <div class="stats-container">
-            <div class="size-container">
-              <h3>分析统计</h3>
-              <div class="size-stats">
-                <Stat></Stat>
-                <Stat></Stat>
+                <div class="content-split-container">
+                  <div class="stats-container">
+                    <div class="size-container">
+                      <h3>分析统计</h3>
+                      <div class="size-stats">
+                        <Stat></Stat>
+                        <Stat></Stat>
+                      </div>
+                    </div>
+                    <div class="time-container">
+                      <h3>download size</h3>
+                      <div class="time-stats">
+                        <Stat></Stat>
+                        <Stat></Stat>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-split-container">
+                  <div class="bar-graph-container">
+                    <DependencyMap></DependencyMap>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="time-container">
-              <h3>download size</h3>
-              <div class="time-stats">
-                <Stat></Stat>
-                <Stat></Stat>
-              </div>
-            </div>
+            </section>
           </div>
         </div>
-        <div class="content-split-container">
-          <div class="bar-graph-container">
-            <DependencyMap></DependencyMap>
-          </div>
-        </div>
-      </div>
+      </section>
     </section>
   </div>
 </template>
 <script lang="ts" setup>
-import Stat from './component/stat.vue';
-import Header from './component/header.vue';
-import DependencyMap from '../dependency-map/index.vue';
-import { stat } from 'fs';
+import Stat from './stat.vue';
+import Header from './header.vue';
+import demoData from '../../dependency-map/resource/data/demo.json';
+
+
+
 </script>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
