@@ -290,7 +290,7 @@
                 <div class="title2" style="color: #88619a">INTJ/尧歌游</div>
                 <div class="title2" style="color: #88619a">INTP/雪舟寺</div>
                 <div class="image">
-                  <img class="entered exited" src="images/INFP-T.svg" />
+                  <!-- <img class="entered exited" src="images/INFP-T.svg" /> -->
                 </div>
                 <div class="post-tips">
                   在
