@@ -91,6 +91,16 @@
                               src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.2iecm7hlr1i0.webp"
                             />
                           </div>
+                          <div
+                            class="tags-group-icon"
+                            style="background: #4577c1"
+                          >
+                            <img
+                              title="Typescript"
+                              class="entered exited"
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/AI改图-WX20230821-235445@2x-611x742.4rtq05euhvu0.webp"
+                            />
+                          </div>
                         </div>
 
                         <div class="tags-group-icon-pair">
@@ -103,16 +113,34 @@
                               title="CSS3"
                             />
                           </div>
+                          <div
+                            class="tags-group-icon"
+                            style="background: #b7e5cb"
+                          >
+                            <img
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/AI改图-6128107-134x117.5jn76ud88t80.webp"
+                              title="VUE"
+                            />
+                          </div>
                         </div>
 
                         <div class="tags-group-icon-pair">
                           <div
                             class="tags-group-icon"
-                            style="background: #df5b40"
+                            style="background: #afc49a"
                           >
                             <img
-                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.1kteqm5rhcf4.webp"
-                              title="Git"
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/AI改图-nodejs-1200x734.65k3cy8vadg0.webp"
+                              title="NODEJS"
+                            />
+                          </div>
+                          <div
+                            class="tags-group-icon"
+                            style="background: #cacbf7"
+                          >
+                            <img
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/AI改图-u=2344469649,1881238485&fm=253&fmt=auto&app=120&f=JPEG-324x172.7b39ox7ojwg0.webp"
+                              title="php"
                             />
                           </div>
                         </div>
@@ -134,7 +162,6 @@
                         <div class="skill-icon" style="background: #f7cb4f">
                           <img
                             title="JS"
-                            
                             class="entered exited"
                             src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.1fzwyxwlxhnk.webp"
                           />
