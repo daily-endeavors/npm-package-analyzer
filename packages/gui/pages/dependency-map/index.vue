@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div id="g6Container"></div>
+    <div ref="containerRef" class="echart-container"></div>
     <div>
       <input type="checkbox" id="checkbox" v-model="isDebug" />
       <label for="checkbox">调试模式:{{ isDebug }}</label>
@@ -32,13 +32,20 @@ import * as Consts from './resource/const/index';
 
 import * as Util from './util/index';
 import * as GlobalUtil from '@/utils/index';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, shallowRef } from 'vue';
+
+const containerRef = shallowRef();
+
+const { packageAnaylzeResult } = defineProps<{
+  packageAnaylzeResult: ReturnType<
+    typeof GlobalUtil.getPackageAnaylzeResult
+  >[number];
+}>();
 
 const isDebug = ref(false);
 type EChartsOption = echarts.EChartsOption;
 
-const parseData = GlobalUtil.getPackageAnaylzeResult();
-const echartData = Util.infoDb2Echarts(parseData as any);
+const echartData = Util.infoDb2Echarts([packageAnaylzeResult]);
 
 const legendSelected: Record<string, boolean> = {};
 for (let key of echartData.categoryMap.keys()) {
@@ -46,9 +53,9 @@ for (let key of echartData.categoryMap.keys()) {
 }
 
 const option: EChartsOption = {
-  title: {
-    text: 'NPM 依赖分析',
-  },
+  // title: {
+  //   text: `${packageAnaylzeResult.packageName}@${packageAnaylzeResult.version} 依赖分析`,
+  // },
   tooltip: {
     // 参考 https://echarts.apache.org/zh/option.html#series-graph.tooltip.formatter
     formatter: '{b}',
@@ -120,8 +127,8 @@ const colorList = [
 let myEchart: ReturnType<typeof echarts.init>;
 
 onMounted(() => {
-  const chartDom = document.getElementById('g6Container')!;
-  myEchart = echarts.init(chartDom);
+  console.log('containerRef.value => ', containerRef.value);
+  myEchart = echarts.init(containerRef.value);
   const width = document.querySelector('#g6Container')?.clientWidth ?? 500;
   const height = document.querySelector('#g6Container')?.clientHeight ?? 500;
 
@@ -214,7 +221,7 @@ onMounted(() => {
   flex-direction: column;
   width: 50vw;
 }
-#g6Container {
+.echart-container {
   display: flex;
   width: 100%;
   height: 48vh;

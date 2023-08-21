@@ -3,16 +3,62 @@
     <section class="layout">
       <section>
         <div class="page-container">
-          <Header></Header>
           <div class="page-content">
             <section class="content-container-wrap">
-              <Summary></Summary>
+              <div class="content-container">
+                <h2>{{ packageAnaylzeResult.packageName }} 项目依赖关系分析</h2>
+                <div class="autocomplete-input-box">
+                  <div class="current-path">
+                    项目根路径:{{ packageAnaylzeResult.rootDir }}
+                  </div>
+                </div>
+                <div class="autocomplete-input-box_footer">
+                  <div class="quick-stats-bar"></div>
+                </div>
+
+                <div class="content-split-container">
+                  <div class="stats-container">
+                    <div class="size-container">
+                      <h3>分析统计</h3>
+                      <div class="size-stats">
+                        <Stat
+                          :count="maxDeepLevel"
+                          unit="层"
+                          tip="最大依赖深度"
+                        ></Stat>
+                        <Stat
+                          :count="totalSubPackageCount"
+                          unit="个"
+                          tip="npm包"
+                        ></Stat>
+                      </div>
+                    </div>
+                    <div class="time-container">
+                      <h3>项目概览</h3>
+                      <div class="time-stats">
+                        <Stat
+                          :count="muiltInstanceCount"
+                          unit="个"
+                          tip="多重实例"
+                        ></Stat>
+                        <Stat
+                          :count="circularCount"
+                          unit="条"
+                          tip="循环依赖链路数"
+                        ></Stat>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-split-container">
+                  <div class="bar-graph-container">
+                    <DependencyMap
+                      :package-anaylze-result="packageAnaylzeResult"
+                    ></DependencyMap>
+                  </div>
+                </div>
+              </div>
             </section>
-            <template v-for="packageAnaylzeResult of packageAnaylzeResultList">
-              <AnaylzeDetail
-                :packageAnaylzeResult="packageAnaylzeResult"
-              ></AnaylzeDetail>
-            </template>
           </div>
         </div>
       </section>
@@ -20,13 +66,27 @@
   </div>
 </template>
 <script lang="ts" setup>
-import Header from './component/header.vue';
-import Summary from './component/summary.vue';
-import AnaylzeDetail from './component/anaylze-detail.vue';
+import Stat from './stat.vue';
+import * as GlobalUtil from '../../../utils';
+import DependencyMap from '../../dependency-map/index.vue';
 
-import * as GlobalUtil from '../../utils';
+const { packageAnaylzeResult } = defineProps<{
+  packageAnaylzeResult: ReturnType<
+    typeof GlobalUtil.getPackageAnaylzeResult
+  >[number];
+}>();
 
-const packageAnaylzeResultList = GlobalUtil.getPackageAnaylzeResult();
+let totalSubPackageCount = 0;
+let maxDeepLevel = 0;
+let circularCount = 0;
+let muiltInstanceCount = 0;
+const analyzeInfo = GlobalUtil.getPackageSummary(packageAnaylzeResult);
+totalSubPackageCount = totalSubPackageCount + analyzeInfo.packageCount;
+circularCount = circularCount + analyzeInfo.circularPackageNameListList.length;
+for (let muiltInstancePackageList of analyzeInfo.muiltInstancePackageListList) {
+  muiltInstanceCount = muiltInstancePackageList.length;
+}
+maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
 </script>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
@@ -197,7 +257,6 @@ const packageAnaylzeResultList = GlobalUtil.getPackageAnaylzeResult();
 
 h2 {
   font-size: 1.35rem;
-  text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 1000;
   margin: 0 0 20px;
