@@ -13,7 +13,7 @@
               </div>
               <div class="author-img">
                 <img
-                  src="./images/日拱一卒logo.jpg"
+                  src="./images/kedaya.jpeg"
                   alt="日拱一卒前端开发群"
                   data-ll-status="loaded"
                   class="entered loaded"
