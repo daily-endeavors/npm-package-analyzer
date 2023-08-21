@@ -88,8 +88,8 @@ const option: EChartsOption = {
         // repulsion: 20,
         // gravity: 0.2,
         repulsion: 50,
-        edgeLength: 50,
-        gravity: 0.02,
+        edgeLength: 100,
+        gravity: 0.01,
       },
       categories: [...echartData.dataCategoryList].map((uuid) => {
         return {

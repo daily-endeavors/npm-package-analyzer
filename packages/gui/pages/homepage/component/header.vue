@@ -28,12 +28,15 @@
             >
           </li> -->
           <li>
-            <a href="https://daily-endeavors.github.io/">Blog</a>
+            <a href="https://daily-endeavors.github.io/" target="_blank"
+              >团队博客</a
+            >
           </li>
           <li>
             <a
-              href="https://bytedance.feishu.cn/docx/MQHgdP03Ko8oUpxRnTnchUH7nEg"
-              >Require</a
+              target="_blank"
+              href="https://github.com/daily-endeavors/npm-package-analyzer/blob/main/readme.md"
+              >项目说明</a
             >
           </li>
         </ul>
