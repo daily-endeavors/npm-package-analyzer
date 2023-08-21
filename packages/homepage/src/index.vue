@@ -136,7 +136,7 @@
                             title="JS"
                             
                             class="entered exited"
-                            src=https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.1fzwyxwlxhnk.webp"
+                            src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.1fzwyxwlxhnk.webp"
                           />
                         </div>
                         <div class="skill-name"><span>JS</span></div>
