@@ -1,29 +1,33 @@
 <template>
   <div class="container">
-    <div ref="containerRef" class="echart-container"></div>
-    <div>
-      <input type="checkbox" id="checkbox" v-model="isDebug" />
-      <label for="checkbox">调试模式:{{ isDebug }}</label>
+    <div class="base-container">
+      <div ref="containerRef" class="echart-container"></div>
     </div>
-    <template v-if="isDebug">
+    <div class="debug-container">
       <div>
-        <div>数据分布 =></div>
-        <div>
-          {{
-            JSON.stringify(
-              {
-                nodes节点数: echartData.nodes.length,
-                edges边数: echartData.edges.length,
-                颜色列表: colorList,
-                option,
-              },
-              null,
-              2,
-            )
-          }}
-        </div>
+        <input type="checkbox" id="checkbox" v-model="isDebug" />
+        <label for="checkbox">调试模式:{{ isDebug }}</label>
       </div>
-    </template>
+      <template v-if="isDebug">
+        <div>
+          <div>数据分布 =></div>
+          <div>
+            {{
+              JSON.stringify(
+                {
+                  nodes节点数: echartData.nodes.length,
+                  edges边数: echartData.edges.length,
+                  颜色列表: colorList,
+                  option,
+                },
+                null,
+                2,
+              )
+            }}
+          </div>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -219,7 +223,15 @@ onMounted(() => {
 .container {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  align-items: center;
+  justify-content: flex-start;
+}
+.base-container {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  align-items: center;
+  justify-content: center;
 }
 .echart-container {
   display: flex;
@@ -232,11 +244,15 @@ onMounted(() => {
   margin-right: 4px;
   margin-top: 16px;
   margin-bottom: 16px; */
+
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-div {
+div.debug-container {
   display: flex;
   white-space: break-spaces;
-  max-width: 50vw;
   word-break: break-all;
 }
 </style>

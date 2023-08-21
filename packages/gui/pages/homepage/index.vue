@@ -99,6 +99,7 @@ const packageAnaylzeResultList = GlobalUtil.getPackageAnaylzeResult();
   box-sizing: border-box;
   letter-spacing: -0.7px;
   margin: 0;
+  word-break: break-all;
 }
 
 .page-header--right-section {

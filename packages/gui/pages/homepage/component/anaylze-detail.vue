@@ -16,45 +16,49 @@
                   <div class="quick-stats-bar"></div>
                 </div>
 
-                <div class="content-split-container">
-                  <div class="stats-container">
-                    <div class="size-container">
-                      <h3>分析统计</h3>
-                      <div class="size-stats">
-                        <Stat
-                          :count="maxDeepLevel"
-                          unit="层"
-                          tip="最大依赖深度"
-                        ></Stat>
-                        <Stat
-                          :count="totalSubPackageCount"
-                          unit="个"
-                          tip="npm包"
-                        ></Stat>
-                      </div>
-                    </div>
-                    <div class="time-container">
-                      <h3>项目概览</h3>
-                      <div class="time-stats">
-                        <Stat
-                          :count="muiltInstanceCount"
-                          unit="个"
-                          tip="多重实例"
-                        ></Stat>
-                        <Stat
-                          :count="circularCount"
-                          unit="条"
-                          tip="循环依赖链路数"
-                        ></Stat>
+                <div class="conbine-container">
+                  <div class="content-split-container">
+                    <div class="stats-container">
+                      <div class="left-info-container">
+                        <div class="size-container">
+                          <h3>分析统计</h3>
+                          <div class="size-stats">
+                            <Stat
+                              :count="maxDeepLevel"
+                              unit="层"
+                              tip="最大依赖深度"
+                            ></Stat>
+                            <Stat
+                              :count="totalSubPackageCount"
+                              unit="个"
+                              tip="npm包"
+                            ></Stat>
+                          </div>
+                        </div>
+                        <div class="time-container">
+                          <h3>项目概览</h3>
+                          <div class="time-stats">
+                            <Stat
+                              :count="muiltInstanceCount"
+                              unit="个"
+                              tip="多重实例"
+                            ></Stat>
+                            <Stat
+                              :count="circularCount"
+                              unit="条"
+                              tip="循环依赖链路数"
+                            ></Stat>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="content-split-container">
-                  <div class="bar-graph-container">
-                    <DependencyMap
-                      :package-anaylze-result="packageAnaylzeResult"
-                    ></DependencyMap>
+                  <div class="content-split-container">
+                    <div class="bar-graph-container">
+                      <DependencyMap
+                        :package-anaylze-result="packageAnaylzeResult"
+                      ></DependencyMap>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -91,6 +95,20 @@ maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
 @import 'scss-stylesheets/colors.scss';
+
+.conbine-container {
+  display: flex;
+  margin-top: 3vh;
+  align-items: flex-start;
+}
+.left-info-container {
+  width: 45vw;
+  height: 48vh;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 
 .layout {
   max-width: 100%;
@@ -159,6 +177,7 @@ maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
   box-sizing: border-box;
   letter-spacing: -0.7px;
   margin: 0;
+  word-break: break-all;
 }
 
 .page-header--right-section {
@@ -387,7 +406,6 @@ h2 {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 3vh;
 
   @media screen and (max-width: 48em) {
     flex-direction: column;
@@ -425,15 +443,6 @@ h2 {
 
   @media screen and (max-width: 48em) {
     flex: 1;
-  }
-}
-
-.time-container {
-  border-bottom: 1px solid lighten($raven, 50%);
-  padding-bottom: 5vh;
-
-  @media screen and (max-width: 48em) {
-    padding-top: 3vh;
   }
 }
 
@@ -607,15 +616,15 @@ h2 {
   line-height: 1.2;
 }
 
-.bar-graph,
-.bar-graph-container {
-  display: flex;
-  justify-content: center;
-}
+// .bar-graph,
+// .bar-graph-container {
+//   display: flex;
+//   justify-content: center;
+// }
 
-.bar-graph-container {
-  //   flex-direction: column;
-  width: 100%;
-  height: 48vh;
-}
+// .bar-graph-container {
+//   //   flex-direction: column;
+//   width: 100%;
+//   height: 48vh;
+// }
 </style>
