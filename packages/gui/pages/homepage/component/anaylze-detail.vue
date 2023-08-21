@@ -421,7 +421,7 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 10%;
+  // padding: 0 10px;
   flex-grow: 1;
   animation: fade-in-full 0.2s;
 }
