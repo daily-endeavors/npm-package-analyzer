@@ -2,17 +2,17 @@
   <div class="stat-container">
     <div class="stat-container__value-container">
       <div class="stat-container__value-wrap">
-        <div class="stat-container__value">4</div>
+        <div class="stat-container__value">{{ count }}</div>
       </div>
-      <div class="stat-container__unit">个</div>
+      <div class="stat-container__unit">{{ unit }}</div>
     </div>
     <div class="stat-container__divider" />
     <div class="stat-container__footer">
-      <div class="stat-container__label">子项目总数</div>
+      <div class="stat-container__label">{{ tip }}</div>
       <div
         class="stat-container__info-text"
         data-balloon-pos="right"
-        data-balloon="Download Speed: ⬇️ 875 kB/s.Exclusive of HTTP request latency."
+        :data-balloon="detail"
       >
         i
       </div>
@@ -21,6 +21,13 @@
 </template>
 <script lang="ts" setup>
 import { Static } from 'vue';
+
+defineProps({
+  tip: String,
+  count: Number,
+  unit: String,
+  detail: String,
+});
 </script>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';

@@ -6,7 +6,7 @@
           <div class="page-content">
             <section class="content-container-wrap">
               <div class="content-container">
-                <h2>{{ rootPackage.packageName }} 依赖关系分析</h2>
+                <h2>{{ rootPackage.packageName }} 项目依赖关系分析</h2>
                 <div class="autocomplete-input-box">
                   <div class="current-path">
                     项目根路径:{{ rootPackage.rootDir }}
@@ -21,22 +21,38 @@
                     <div class="size-container">
                       <h3>分析统计</h3>
                       <div class="size-stats">
-                        <Stat></Stat>
-                        <Stat></Stat>
+                        <Stat
+                          :count="packageAnaylzeResultList.length"
+                          unit="个"
+                          tip="包含项目"
+                        ></Stat>
+                        <Stat
+                          :count="totalSubPackageCount"
+                          unit="个"
+                          tip="npm包"
+                        ></Stat>
                       </div>
                     </div>
                     <div class="time-container">
-                      <h3>download size</h3>
+                      <h3>项目概览</h3>
                       <div class="time-stats">
-                        <Stat></Stat>
-                        <Stat></Stat>
+                        <Stat
+                          :count="maxDeepLevel"
+                          unit="层"
+                          tip="最大依赖深度"
+                        ></Stat>
+                        <Stat
+                          :count="muiltInstanceCount"
+                          unit="个"
+                          tip="多重实例"
+                        ></Stat>
+                        <Stat
+                          :count="circularCount"
+                          unit="条"
+                          tip="循环依赖链路数"
+                        ></Stat>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="content-split-container">
-                  <div class="bar-graph-container">
-                    <DependencyMap></DependencyMap>
                   </div>
                 </div>
               </div>
@@ -54,6 +70,20 @@ import * as GlobalUtil from '../../../utils';
 const packageAnaylzeResultList = GlobalUtil.getPackageAnaylzeResult();
 
 const rootPackage = packageAnaylzeResultList[0];
+let totalSubPackageCount = 0;
+let maxDeepLevel = 0;
+let circularCount = 0;
+let muiltInstanceCount = 0;
+for (let packageAnaylzeResult of packageAnaylzeResultList) {
+  const analyzeInfo = GlobalUtil.getPackageSummary(packageAnaylzeResult);
+  totalSubPackageCount = totalSubPackageCount + analyzeInfo.packageCount;
+  circularCount =
+    circularCount + analyzeInfo.circularPackageNameListList.length;
+  for (let muiltInstancePackageList of analyzeInfo.muiltInstancePackageListList) {
+    muiltInstanceCount = muiltInstancePackageList.length;
+  }
+  maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
+}
 </script>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
@@ -224,7 +254,6 @@ const rootPackage = packageAnaylzeResultList[0];
 
 h2 {
   font-size: 1.35rem;
-  text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 1000;
   margin: 0 0 20px;
