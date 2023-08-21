@@ -64,9 +64,8 @@
                           >
                             <img
                               title="JS"
-                              onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
                               class="entered loading"
-                              src="https://p.zhheo.com/2023786e7fc488f453d5fb2be760c96185c0075502.png!cover"
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.1fzwyxwlxhnk.webp"
                               data-ll-status="loading"
                             />
                           </div>
@@ -76,9 +75,8 @@
                           >
                             <img
                               title="HTML"
-                              onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
                               class="entered exited"
-                              src="https://p.zhheo.com/202372b4d760fd8a497d442140c295655426070302.png!cover"
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.6od80rxiwes.webp"
                             />
                           </div>
                         </div>
@@ -89,9 +87,8 @@
                           >
                             <img
                               title="Git"
-                              onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
                               class="entered exited"
-                              src="https://p.zhheo.com/2023ffa5707c4e25b6beb3e6a3d286ede4c6071102.png!cover"
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.2iecm7hlr1i0.webp"
                             />
                           </div>
                         </div>
@@ -102,33 +99,20 @@
                             style="background: #2c51db"
                           >
                             <img
-                              src="https://p.zhheo.com/20237c548846044a20dad68a13c0f0e1502f074602.png!cover"
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.7gd3vqxs8z40.webp"
                               title="CSS3"
-                              onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
                             />
                           </div>
                         </div>
-                        <div class="tags-group-icon-pair">
-                          <div
-                            class="tags-group-icon"
-                            style="background: #e9572b"
-                          >
-                            <img
-                              src="https://p.zhheo.com/202372b4d760fd8a497d442140c295655426070302.png!cover"
-                              title="HTML"
-                              onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            />
-                          </div>
-                        </div>
+
                         <div class="tags-group-icon-pair">
                           <div
                             class="tags-group-icon"
                             style="background: #df5b40"
                           >
                             <img
-                              src="https://p.zhheo.com/2023ffa5707c4e25b6beb3e6a3d286ede4c6071102.png!cover"
+                              src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.1kteqm5rhcf4.webp"
                               title="Git"
-                              onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
                             />
                           </div>
                         </div>
@@ -140,9 +124,8 @@
                         <div class="skill-icon" style="background: #2c51db">
                           <img
                             title="CSS3"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
                             class="entered exited"
-                            src="https://p.zhheo.com/20237c548846044a20dad68a13c0f0e1502f074602.png!cover"
+                            src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.7gd3vqxs8z40.webp"
                           />
                         </div>
                         <div class="skill-name"><span>CSS3</span></div>
@@ -151,9 +134,9 @@
                         <div class="skill-icon" style="background: #f7cb4f">
                           <img
                             title="JS"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
+                            
                             class="entered exited"
-                            src="https://p.zhheo.com/2023786e7fc488f453d5fb2be760c96185c0075502.png!cover"
+                            src=https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.1fzwyxwlxhnk.webp"
                           />
                         </div>
                         <div class="skill-name"><span>JS</span></div>
@@ -162,9 +145,8 @@
                         <div class="skill-icon" style="background: #e9572b">
                           <img
                             title="HTML"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
                             class="entered exited"
-                            src="https://p.zhheo.com/202372b4d760fd8a497d442140c295655426070302.png!cover"
+                            src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.6od80rxiwes.webp"
                           />
                         </div>
                         <div class="skill-name"><span>HTML</span></div>
@@ -173,9 +155,8 @@
                         <div class="skill-icon" style="background: #df5b40">
                           <img
                             title="Git"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
                             class="entered exited"
-                            src="https://p.zhheo.com/2023ffa5707c4e25b6beb3e6a3d286ede4c6071102.png!cover"
+                            src="https://cdn.staticaly.com/gh/FionaYuliang/picx-images-hosting@master/20230821/image.1kteqm5rhcf4.webp"
                           />
                         </div>
                         <div class="skill-name"><span>Git</span></div>
