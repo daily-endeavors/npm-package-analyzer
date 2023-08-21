@@ -3,14 +3,13 @@
     <section class="layout">
       <section>
         <div class="page-container">
-          <Header></Header>
           <div class="page-content">
             <section class="content-container-wrap">
               <div class="content-container">
-                <h2>NPM Package 依赖关系分析</h2>
+                <h2>{{ rootPackage.packageName }} 依赖关系分析</h2>
                 <div class="autocomplete-input-box">
                   <div class="current-path">
-                    当前分析路径:/Users/yang/Desktop/npm-package-analyzer/packages/gui/
+                    项目根路径:{{ rootPackage.rootDir }}
                   </div>
                 </div>
                 <div class="autocomplete-input-box_footer">
@@ -50,11 +49,11 @@
 </template>
 <script lang="ts" setup>
 import Stat from './stat.vue';
-import Header from './header.vue';
-import demoData from '../../dependency-map/resource/data/demo.json';
+import * as GlobalUtil from '../../../utils';
 
+const packageAnaylzeResultList = GlobalUtil.getPackageAnaylzeResult();
 
-
+const rootPackage = packageAnaylzeResultList[0];
 </script>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
