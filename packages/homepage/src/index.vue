@@ -13,7 +13,7 @@
               </div>
               <div class="author-img">
                 <img
-                  src="/images/日拱一卒logo.jpg"
+                  src="./images/日拱一卒logo.jpg"
                   alt="日拱一卒前端开发群"
                   data-ll-status="loaded"
                   class="entered loaded"
@@ -52,24 +52,11 @@
             <div class="author-content">
               <div class="author-content-item skills">
                 <div class="card-content">
-                  <div class="author-content-item-tips">成员</div>
+                  <div class="author-content-item-tips">技术栈</div>
                   <span class="author-content-item-title">开启创造力</span>
                   <div class="skills-style-group">
                     <div class="tags-group-all">
                       <div class="tags-group-wrapper">
-                        <div class="tags-group-icon-pair">
-                          <div
-                            class="tags-group-icon"
-                            style="background: #2c51db"
-                          >
-                            <img
-                              title="CSS3"
-                              onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                              class="entered exited"
-                              src="https://p.zhheo.com/20237c548846044a20dad68a13c0f0e1502f074602.png!cover"
-                            />
-                          </div>
-                        </div>
                         <div class="tags-group-icon-pair">
                           <div
                             class="tags-group-icon"
@@ -124,16 +111,6 @@
                         <div class="tags-group-icon-pair">
                           <div
                             class="tags-group-icon"
-                            style="background: #f7cb4f"
-                          >
-                            <img
-                              src="https://p.zhheo.com/2023786e7fc488f453d5fb2be760c96185c0075502.png!cover"
-                              title="JS"
-                              onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            />
-                          </div>
-                          <div
-                            class="tags-group-icon"
                             style="background: #e9572b"
                           >
                             <img
@@ -158,110 +135,7 @@
                       </div>
                     </div>
                     <div class="skills-list">
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #989bf8">
-                          <img
-                            src="https://p.zhheo.com/20239df3f66615b532ce571eac6d14ff21cf072602.png!cover"
-                            title="AfterEffect"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            data-ll-status="loaded"
-                            class="entered loaded"
-                          />
-                        </div>
-                        <div class="skill-name"><span>AfterEffect</span></div>
-                      </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #ffffff">
-                          <img
-                            src="https://p.zhheo.com/2023e0ded7b724a39f12d59c3dc8fbdc7cbe074202.png!cover"
-                            title="Sketch"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            data-ll-status="loaded"
-                            class="entered loaded"
-                          />
-                        </div>
-                        <div class="skill-name"><span>Sketch</span></div>
-                      </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #57b6e6">
-                          <img
-                            src="https://p.zhheo.com/20231108a540b2862d26f8850172e4ea58ed075102.png!cover"
-                            title="Docker"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            data-ll-status="loaded"
-                            class="entered loaded"
-                          />
-                        </div>
-                        <div class="skill-name"><span>Docker</span></div>
-                      </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #4082c3">
-                          <img
-                            src="https://p.zhheo.com/2023e4058a91608ea41751c4f102b131f267075902.png!cover"
-                            title="Photoshop"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            data-ll-status="loaded"
-                            class="entered loaded"
-                          />
-                        </div>
-                        <div class="skill-name"><span>Photoshop</span></div>
-                      </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #ffffff">
-                          <img
-                            src="https://p.zhheo.com/20233e777652412247dd57fd9b48cf997c01070702.png!cover"
-                            title="FinalCutPro"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            data-ll-status="loaded"
-                            class="entered loaded"
-                          />
-                        </div>
-                        <div class="skill-name"><span>FinalCutPro</span></div>
-                      </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #ffffff">
-                          <img
-                            title="Python"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            class="entered exited"
-                            src="https://p.zhheo.com/20235c0731cd4c0c95fc136a8db961fdf963071502.png!cover"
-                          />
-                        </div>
-                        <div class="skill-name"><span>Python</span></div>
-                      </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #eb6840">
-                          <img
-                            title="Swift"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            class="entered exited"
-                            src="https://p.zhheo.com/202328bbee0b314297917b327df4a704db5c072402.png!cover"
-                          />
-                        </div>
-                        <div class="skill-name"><span>Swift</span></div>
-                      </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #8f55ba">
-                          <img
-                            title="Principle"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            class="entered exited"
-                            src="https://p.zhheo.com/2023f76570d2770c8e84801f7e107cd911b5073202.png!cover"
-                          />
-                        </div>
-                        <div class="skill-name"><span>Principle</span></div>
-                      </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #f29e39">
-                          <img
-                            title="illustrator"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            class="entered exited"
-                            src="https://p.zhheo.com/20237359d71b45ab77829cee5972e36f8c30073902.png!cover"
-                          />
-                        </div>
-                        <div class="skill-name"><span>illustrator</span></div>
-                      </div>
+                      <div class="skill-info"></div>
                       <div class="skill-info">
                         <div class="skill-icon" style="background: #2c51db">
                           <img
@@ -306,17 +180,6 @@
                         </div>
                         <div class="skill-name"><span>Git</span></div>
                       </div>
-                      <div class="skill-info">
-                        <div class="skill-icon" style="background: #1f1f1f">
-                          <img
-                            title="Rhino"
-                            onerror="this.onerror=null;this.src='https://bu.dusays.com/2023/03/03/6401a79030db5.png'"
-                            class="entered exited"
-                            src="https://p.zhheo.com/20231ca53fa0b09a3ff1df89acd7515e9516173302.png!cover"
-                          />
-                        </div>
-                        <div class="skill-name"><span>Rhino</span></div>
-                      </div>
                       <div class="etc">...</div>
                     </div>
                   </div>
@@ -324,16 +187,92 @@
               </div>
               <div class="author-content-item careers">
                 <div class="card-content">
-                  <div class="author-content-item-tips">生涯</div>
+                  <div class="author-content-item-tips">成员</div>
                   <span class="author-content-item-title">无限进步</span>
                   <div class="careers-group">
                     <div class="careers-item">
-                      <div class="circle" style="background: #357ef5"></div>
-                      <div class="name">软件工程</div>
+                      <div
+                        class="circle"
+                        style="
+                          background-image: url('https://avatars.githubusercontent.com/u/141559074?s=400&u=839e2d7981c945b832d857d982996d314199eaee&v=4');
+                        "
+                      >
+                        <a href="https://github.com/yaogeyou-github"></a>
+                      </div>
+                      <div class="name">
+                        尧歌游 -
+                        <a
+                          href="https://github.com/yaogeyou-github"
+                          target="_blank"
+                          >github</a
+                        >
+                      </div>
                     </div>
                     <div class="careers-item">
-                      <div class="circle" style="background: #eb372a"></div>
-                      <div class="name">计算机科学</div>
+                      <div
+                        class="circle"
+                        style="
+                          background-image: url('https://avatars.githubusercontent.com/u/20492174?v=4');
+                        "
+                      >
+                        <a href="https://github.com/FionaYuliang"></a>
+                      </div>
+                      <div class="name">
+                        雪舟寺 -
+                        <a
+                          href="https://github.com/FionaYuliang"
+                          target="_blank"
+                          >github</a
+                        >
+                      </div>
+                    </div>
+                    <div class="careers-item">
+                      <div
+                        class="circle"
+                        style="
+                          background-image: url('https://avatars.githubusercontent.com/u/141700623?v=4');
+                        "
+                      >
+                        <a href="https://github.com/2003dyc"></a>
+                      </div>
+                      <div class="name">
+                        戴戴戴yc -
+                        <a href="https://github.com/2003dyc" target="_blank"
+                          >github</a
+                        >
+                      </div>
+                    </div>
+                    <div class="careers-item">
+                      <div
+                        class="circle"
+                        style="
+                          background-image: url('https://avatars.githubusercontent.com/u/122665661?v=4');
+                        "
+                      >
+                        <a href="https://github.com/jjiuen"></a>
+                      </div>
+                      <div class="name">
+                        Dynamite -
+                        <a href="https://github.com/jjiuen" target="_blank"
+                          >github</a
+                        >
+                      </div>
+                    </div>
+                    <div class="careers-item">
+                      <div
+                        class="circle"
+                        style="
+                          background-image: url('https://avatars.githubusercontent.com/u/141724265?v=4');
+                        "
+                      >
+                        <a href="https://github.com/yuruYe"></a>
+                      </div>
+                      <div class="name">
+                        叶钰茹 -
+                        <a href="https://github.com/yuruYe" target="_blank"
+                          >github</a
+                        >
+                      </div>
                     </div>
                   </div>
                   <img
@@ -368,7 +307,7 @@
                 <img
                   class="author-content-img entered exited"
                   alt="our travel"
-                  src="images/travel.jpg"
+                  src="./images/travel.jpg"
                 />
               </div>
             </div>
@@ -400,24 +339,24 @@
               </div>
             </div>
             <div class="author-content">
-              <div class="author-content-item game-lol">
+              <div class="author-content-item interest-moive">
                 <div class="card-content">
-                  <div class="author-content-item-tips">爱好游戏</div>
-                  <span class="author-content-item-title">英雄联盟</span>
+                  <div class="author-content-item-tips">兴趣爱好</div>
+                  <span class="author-content-item-title">科幻影视剧</span>
                   <div class="content-bottom">
                     <div class="icon-group">
-                      <i class="icon-pos-mid"> </i><i class="icon-pos-sup"></i>
+                      <!-- <i class="icon-pos-mid"> </i><i class="icon-pos-sup"></i> -->
                     </div>
-                    <div class="tips">比尔吉沃特</div>
+                    <div class="tips">西部世界</div>
                   </div>
                 </div>
               </div>
-              <div class="author-content-item game-wolf">
+              <div class="author-content-item interest-language">
                 <div class="card-content">
-                  <div class="author-content-item-tips">爱好游戏</div>
-                  <span class="author-content-item-title">狼人杀</span>
+                  <div class="author-content-item-tips">兴趣爱好</div>
+                  <span class="author-content-item-title">语言文化</span>
                   <div class="content-bottom">
-                    <div class="tips">ID 1333E3FF</div>
+                    <div class="tips">英语 & 日语</div>
                   </div>
                 </div>
               </div>
@@ -438,12 +377,12 @@
                   <span class="author-content-item-title">Hiphop、民谣、</span
                   ><span class="author-content-item-title">华语流行</span>
                   <div class="content-bottom">
-                    <div class="tips">跟 张洪Heo 一起欣赏更多音乐</div>
+                    <div class="tips">一起欣赏更多音乐</div>
                   </div>
                   <div class="banner-button-group">
                     <a
                       class="banner-button"
-                      href="https://music.zhheo.com/"
+                      href=""
                       target="_blank"
                       rel="noopener nofollow"
                       ><i class="heofont icon-arrow-right-circle-fill"></i
@@ -454,7 +393,7 @@
               </div>
             </div>
 
-            <div class="author-content">
+            <!-- <div class="author-content">
               <div class="create-site-post author-content-item single">
                 <div class="author-content-item-tips">心路历程</div>
                 <span class="author-content-item-title">为什么建站？</span>
@@ -471,7 +410,7 @@
                   这些就是创造这个小站的本意，<strong>也是我分享生活的方式</strong>。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
                 </p>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <!-- js -->
@@ -16356,18 +16295,21 @@ span.hexo-douban-pagenum {
 
 .author-content-item.careers .careers-group {
   margin-top: 12px;
+  font-size: 25px;
 }
 
 .author-content-item.careers .careers-item {
   display: flex;
   align-items: center;
+  margin-top: 5px;
 }
 
 .author-content-item.careers .careers-item .circle {
-  width: 16px;
-  height: 16px;
+  width: 60px;
+  height: 60px;
   margin-right: 8px;
-  border-radius: 16px;
+  border-radius: 30px;
+  background-size: cover;
 }
 
 .author-content-item.careers .careers-item .name {
@@ -16854,13 +16796,12 @@ span.hexo-douban-pagenum {
   display: none;
 }
 
-.author-content-item.game-lol {
-  background: url(https://bu.dusays.com/2023/03/12/640dc7d294f69.png) no-repeat
-    top;
+.author-content-item.interest-moive {
+  background: url(./images/themaze.png) no-repeat bottom;
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
-  color: var(#fff);
+  color: #fff;
   width: 59%;
 }
 
@@ -16888,7 +16829,7 @@ span.hexo-douban-pagenum {
   }
 }
 
-.author-content-item.game-lol::after {
+.author-content-item.interest-moive::after {
   box-shadow: 0 -69px 203px 11px #04120f inset;
   position: absolute;
   content: '';
@@ -16924,26 +16865,25 @@ video.author-content-video {
   margin-right: 0.5rem;
 }
 
-.icon-pos-sup {
+/* .icon-pos-sup {
   background: url(https://bu.dusays.com/2023/03/12/640dc913ee26b.webp);
 }
 
 .icon-pos-mid {
   background: url(https://bu.dusays.com/2023/03/12/640dc931a2cd4.webp);
-}
+} */
 
-.author-content-item.game-wolf {
+.author-content-item.interest-language {
   width: 39%;
-  background: url(https://bu.dusays.com/2023/03/12/640dc67e55bf0.png) no-repeat
-    top;
+  background: url(./images/readbook.jpg) no-repeat top;
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
-  color: var(#fff);
+  color: #fff;
 }
 
-.author-content-item.game-wolf::after {
-  box-shadow: 0 -69px 203px 11px #415dc9 inset;
+.author-content-item.interest-language::after {
+  box-shadow: 0 -69px 203px 11px #ff724242 inset;
   position: absolute;
   content: '';
   width: 100%;
@@ -16956,7 +16896,7 @@ video.author-content-video {
   background: url(https://bu.dusays.com/2023/03/12/640dc69d4cf22.png) no-repeat;
   background-size: cover;
   min-height: 230px;
-  color: var(#fff);
+  color: #fff;
 }
 
 .author-content-item.like-technology::after {
@@ -16974,7 +16914,7 @@ video.author-content-video {
     top;
   background-size: cover;
   min-height: 400px;
-  color: var(#fff);
+  color: #fff;
   overflow: hidden;
 }
 
