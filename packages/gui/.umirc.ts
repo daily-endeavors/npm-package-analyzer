@@ -12,5 +12,5 @@ export default {
     { src: './npm_package_analyze.js' },
   ],
   devtool: "source-map",
-  routes
+  routes,
 };

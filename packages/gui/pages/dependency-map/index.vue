@@ -1,47 +1,55 @@
 <template>
   <div class="container">
-    <div id="g6Container"></div>
-    <div>
-      <input type="checkbox" id="checkbox" v-model="isDebug" />
-      <label for="checkbox">调试模式:{{ isDebug }}</label>
+    <div class="base-container">
+      <div ref="containerRef" class="echart-container"></div>
     </div>
-    <template v-if="isDebug">
+    <div class="debug-container">
       <div>
-        <div>数据分布 =></div>
-        <div>
-          {{
-            JSON.stringify(
-              {
-                nodes节点数: echartData.nodes.length,
-                edges边数: echartData.edges.length,
-                颜色列表: colorList,
-                option,
-              },
-              null,
-              2,
-            )
-          }}
-        </div>
+        <input type="checkbox" id="checkbox" v-model="isDebug" />
+        <label for="checkbox">调试模式:{{ isDebug }}</label>
       </div>
-    </template>
+      <template v-if="isDebug">
+        <div>
+          <div>数据分布 =></div>
+          <div>
+            {{
+              JSON.stringify(
+                {
+                  nodes节点数: echartData.nodes.length,
+                  edges边数: echartData.edges.length,
+                  颜色列表: colorList,
+                  option,
+                },
+                null,
+                2,
+              )
+            }}
+          </div>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
-import * as TypePackageRecord from '../../../cli/src/resource/type/record';
 import * as echarts from 'echarts';
 import * as Consts from './resource/const/index';
 
-import demoData from './resource/data/demo.json';
 import * as Util from './util/index';
-import { onMounted, ref } from 'vue';
+import * as GlobalUtil from '@/utils/index';
+import { onMounted, ref, shallowRef } from 'vue';
+
+const containerRef = shallowRef();
+
+const { packageAnaylzeResult } = defineProps<{
+  packageAnaylzeResult: ReturnType<
+    typeof GlobalUtil.getPackageAnaylzeResult
+  >[number];
+}>();
 
 const isDebug = ref(false);
 type EChartsOption = echarts.EChartsOption;
 
-// 优先尝试从全局变量中获取, 没有则使用demo数据
-const parseData: TypePackageRecord.packageAnaylzeResult[] =
-  (globalThis as any)?.npmPackageAnalyzeResultList ?? demoData;
-const echartData = Util.infoDb2Echarts(parseData as any);
+const echartData = Util.infoDb2Echarts([packageAnaylzeResult]);
 
 const legendSelected: Record<string, boolean> = {};
 for (let key of echartData.categoryMap.keys()) {
@@ -49,9 +57,9 @@ for (let key of echartData.categoryMap.keys()) {
 }
 
 const option: EChartsOption = {
-  title: {
-    text: 'NPM 依赖分析',
-  },
+  // title: {
+  //   text: `${packageAnaylzeResult.packageName}@${packageAnaylzeResult.version} 依赖分析`,
+  // },
   tooltip: {
     // 参考 https://echarts.apache.org/zh/option.html#series-graph.tooltip.formatter
     formatter: '{b}',
@@ -80,8 +88,8 @@ const option: EChartsOption = {
         // repulsion: 20,
         // gravity: 0.2,
         repulsion: 50,
-        edgeLength: 50,
-        gravity: 0.02,
+        edgeLength: 100,
+        gravity: 0.01,
       },
       categories: [...echartData.dataCategoryList].map((uuid) => {
         return {
@@ -114,7 +122,7 @@ const option: EChartsOption = {
 };
 const colorList = [
   ...new Set(
-    echartData.nodes.map(function (node) {
+    echartData.nodes.map((node: any) => {
       return node.itemStyle.color;
     }),
   ).values(),
@@ -123,8 +131,8 @@ const colorList = [
 let myEchart: ReturnType<typeof echarts.init>;
 
 onMounted(() => {
-  const chartDom = document.getElementById('g6Container')!;
-  myEchart = echarts.init(chartDom);
+  console.log('containerRef.value => ', containerRef.value);
+  myEchart = echarts.init(containerRef.value);
   const width = document.querySelector('#g6Container')?.clientWidth ?? 500;
   const height = document.querySelector('#g6Container')?.clientHeight ?? 500;
 
@@ -153,6 +161,7 @@ onMounted(() => {
       return;
     }
 
+    // @ts-ignore
     const targetClickUuid = params.data.id;
     console.log('targetClickUuid =>', params);
 
@@ -214,9 +223,17 @@ onMounted(() => {
 .container {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  align-items: center;
+  justify-content: flex-start;
 }
-#g6Container {
+.base-container {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  align-items: center;
+  justify-content: center;
+}
+.echart-container {
   display: flex;
   width: 100%;
   height: 48vh;
@@ -227,11 +244,15 @@ onMounted(() => {
   margin-right: 4px;
   margin-top: 16px;
   margin-bottom: 16px; */
+
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-div {
+div.debug-container {
   display: flex;
   white-space: break-spaces;
-  max-width: 50vw;
   word-break: break-all;
 }
 </style>
