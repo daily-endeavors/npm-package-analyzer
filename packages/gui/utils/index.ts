@@ -71,7 +71,7 @@ export function getPackageSummary(parseResult: TypePackageRecord.packageAnaylzeR
         circularPackageNameListList.push(packageNameList)
     }
 
-    packageCount = uuidMap.size
+    packageCount = parseResult.packageList.length
 
     return {
         packageCount,
