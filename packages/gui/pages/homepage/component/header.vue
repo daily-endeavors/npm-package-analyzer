@@ -33,10 +33,8 @@
             >
           </li>
           <li>
-            <a
-              target="_blank"
-              href="https://github.com/daily-endeavors/npm-package-analyzer/blob/main/readme.md"
-              >项目说明</a
+            <a target="_blank" href="https://daily-endeavors.github.io/"
+              >团队介绍</a
             >
           </li>
         </ul>

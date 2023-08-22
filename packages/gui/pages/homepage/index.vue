@@ -23,6 +23,10 @@
 import Header from './component/header.vue';
 import Summary from './component/summary.vue';
 import AnaylzeDetail from './component/anaylze-detail.vue';
+import { onMounted } from 'vue';
+// onMounted(() => {
+//   document.title = '项目依赖关系分析';
+// });
 
 import * as GlobalUtil from '../../utils';
 
