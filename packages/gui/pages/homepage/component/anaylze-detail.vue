@@ -103,7 +103,7 @@ maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
 }
 .left-info-container {
   width: 45vw;
-  height: 48vh;
+  height: 60vh;
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 10px;
   background: transparent;

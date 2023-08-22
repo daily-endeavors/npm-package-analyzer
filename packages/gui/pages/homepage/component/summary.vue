@@ -6,11 +6,30 @@
           <div class="page-content">
             <section class="content-container-wrap">
               <div class="content-container">
-                <h2>{{ rootPackage.packageName }} 项目依赖关系分析</h2>
+                <h2 class="h2-title">
+                  {{ rootPackage.packageName }} 项目依赖关系分析
+                </h2>
                 <div class="autocomplete-input-box">
                   <div class="current-path">
-                    项目根路径:{{ rootPackage.rootDir }}
+                    项目根路径
+                    <span class="path-title">{{ rootPackage.rootDir }}</span>
                   </div>
+                  <div class="current-path">
+                    运行命令
+                    (Mac) <span class="path-title"
+                      >npm_config_registry=https://registry.npmjs.org npx -y
+                      daily-endeavors-npm-package-analyzer@latest</span
+                    >
+                   
+                  </div>
+                  <!-- <div class="current-path">
+                    
+                    (Windows) <span class="path-title"
+                      >npm_config_registry=https://registry.npmjs.org npx -y
+                      daily-endeavors-npm-package-analyzer@latest</span
+                    >
+                   
+                  </div> -->
                 </div>
                 <div class="autocomplete-input-box_footer">
                   <div class="quick-stats-bar"></div>
@@ -19,7 +38,7 @@
                 <div class="content-split-container">
                   <div class="stats-container">
                     <div class="size-container">
-                      <h3>分析统计</h3>
+                      <h3 class="h3-title">分析统计</h3>
                       <div class="size-stats">
                         <Stat
                           :count="packageAnaylzeResultList.length"
@@ -146,6 +165,14 @@ for (let packageAnaylzeResult of packageAnaylzeResultList) {
   overflow: hidden;
 }
 
+.h2-title {
+  font-size: 30px;
+  color: #00b4ae;
+}
+
+.h3-title {
+  color: #00b4ae;
+}
 .current-path {
   font-size: 1.3rem;
   padding: 15px 45px 15px 30px;
@@ -157,6 +184,10 @@ for (let packageAnaylzeResult of packageAnaylzeResultList) {
   letter-spacing: -0.7px;
   margin: 0;
   word-break: break-all;
+}
+
+.path-title {
+  color: #5e90f0;
 }
 
 .page-header--right-section {

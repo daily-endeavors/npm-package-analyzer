@@ -131,7 +131,7 @@ const colorList = [
 let myEchart: ReturnType<typeof echarts.init>;
 
 onMounted(() => {
-  console.log('containerRef.value => ', containerRef.value);
+  // console.log('containerRef.value => ', containerRef.value);
   myEchart = echarts.init(containerRef.value);
   const width = document.querySelector('#g6Container')?.clientWidth ?? 500;
   const height = document.querySelector('#g6Container')?.clientHeight ?? 500;
@@ -236,7 +236,7 @@ onMounted(() => {
 .echart-container {
   display: flex;
   width: 100%;
-  height: 48vh;
+  height: 60vh;
   /* border: 1px solid #f0f0f0;
   border-radius: 8px;
 
