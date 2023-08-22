@@ -6,10 +6,15 @@
           <div class="page-content">
             <section class="content-container-wrap">
               <div class="content-container">
-                <h2>{{ packageAnaylzeResult.packageName }} 项目依赖关系分析</h2>
+                <h2 class="h2-title">
+                  {{ packageAnaylzeResult.packageName }} 项目依赖关系分析
+                </h2>
                 <div class="autocomplete-input-box">
                   <div class="current-path">
-                    项目根路径:{{ packageAnaylzeResult.rootDir }}
+                    项目根路径
+                    <div class="path-title">
+                      {{ packageAnaylzeResult.rootDir }}
+                    </div>
                   </div>
                 </div>
                 <div class="autocomplete-input-box_footer">
@@ -21,7 +26,7 @@
                     <div class="stats-container">
                       <div class="left-info-container">
                         <div class="size-container">
-                          <h3>分析统计</h3>
+                          <h3 class="h3-title">分析统计</h3>
                           <div class="size-stats">
                             <Stat
                               :count="maxDeepLevel"
@@ -165,6 +170,19 @@ maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
   background: #fbfbfc;
   border-radius: 0 0 10px 10px;
   overflow: hidden;
+}
+
+.h2-title {
+  font-size: 30px;
+  color: #00b4ae;
+}
+
+.h3-title {
+  color: #00b4ae;
+}
+
+.path-title {
+  color: #5e90f0;
 }
 
 .current-path {
@@ -459,6 +477,7 @@ h2 {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 5vh;
 }
 
 .size-container h3,
