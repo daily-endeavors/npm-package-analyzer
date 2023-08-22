@@ -24,7 +24,7 @@
                 ><span class="author-tag">🏠 英语日语小能手</span>
               </div>
             </div>
-            <div class="author-title">关于本站</div>
+            <div class="author-title"><a href="https://github.com/daily-endeavors" target="_blank">关于本站</a></div>
             <div class="author-content">
               <div class="author-content-item myInfoAndSayHello">
                 <div class="title1">你好，很高兴认识你👋</div>
