@@ -9,13 +9,13 @@
     <div class="stat-container__divider" />
     <div class="stat-container__footer">
       <div class="stat-container__label">{{ tip }}</div>
-      <div
+      <!-- <div
         class="stat-container__info-text"
         data-balloon-pos="right"
         :data-balloon="detail"
       >
         i
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
