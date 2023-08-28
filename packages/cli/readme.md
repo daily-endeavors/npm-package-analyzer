@@ -1,6 +1,10 @@
 # daily-endeavors-npm-package-analyzer
 
-在任意目录下执行 `npx -y daily-endeavors-npm-package-analyzer@latest`, 输出目录下的 package 依赖关系
+在任意目录下执行 `npx -y daily-endeavors-npm-package-analyzer@latest analyze`, 输出目录下的 package 依赖关系
+
+# 开发者模式
+
+mac 下 => `npm_config_registry=https://registry.npmjs.org npx -y daily-endeavors-npm-package-analyzer@latest analyze`
 
 # 注意
 

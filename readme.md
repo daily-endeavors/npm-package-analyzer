@@ -6,6 +6,10 @@
 
 [cli-gui 数据交换格式定义文件](./docs/demo.d.ts)
 
+# 项目运行
+
+在任意目录下执行 `npx -y daily-endeavors-npm-package-analyzer@latest analyze`, 输出目录下的 package 依赖关系
+
 # 开发说明
 
 默认为 Linux/Mac 开发环境, windows 用户请先安装 WSL 配置为 Linux 开发环境
