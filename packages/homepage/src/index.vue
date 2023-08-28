@@ -16823,7 +16823,7 @@ video.author-content-video {
 
 .author-content-item.interest-language {
   width: 39%;
-  background: url(./images/readbook.jpg) no-repeat top;
+  background: url(./images/readbook.webp) no-repeat top;
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
