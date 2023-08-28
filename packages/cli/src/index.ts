@@ -46,6 +46,7 @@ export async function asyncRunner() {
         fs.appendFileSync(outputUri, '')
       } catch (e) {
         console.error(`没有写入文件${outputUri}的权限, 请检查后再试`)
+        return
       }
     } else {
       // 文件不存在, 尝试是否可以写入
@@ -54,6 +55,7 @@ export async function asyncRunner() {
         fs.writeFileSync(outputUri, '')
       } catch (e) {
         console.error(`没有写入文件${outputUri}的权限, 请检查后再试`)
+        return
       }
     }
   }
@@ -76,6 +78,11 @@ async function dispatchTask(depth: number = 9999, outputUri?: string) {
   const currentDir = process.cwd()
   console.log('待读取目录 => ', currentDir)
   const allIegalRootDirList = await Util.detectLegalRootDirList(currentDir)
+  if (allIegalRootDirList.length === 0) {
+    console.log(`检查完毕, ${currentDir}下没有待分析的文件`)
+    return
+  }
+
   let rawPackageAnaylzeResultList: RecordType.packageAnaylzeResult[] = []
   for (let legalRootDir of allIegalRootDirList) {
     const allIegalDirList = await Util.detectCommonLegalDir(legalRootDir)
