@@ -4,13 +4,9 @@ import * as RecordType from './resource/type/record.js'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as Util from './util.js'
-import * as shelljs from 'shelljs'
-import HttpServer from 'http-server'
 import open from 'open'
 import express from 'express'
-import koa from 'koa'
 import GetPort from 'get-port'
-import { viewDepthKey } from 'vue-router'
 
 export async function asyncRunner(depth: number = 9999, outputUri?: string) {
   // 1. 在路径下, 执行npx cli
@@ -19,9 +15,10 @@ export async function asyncRunner(depth: number = 9999, outputUri?: string) {
   // 2. 执行第二层解析, 获取node_modules下的所有文件夹列表
   // 2.1 向collect函数, 传入每一个合法的文件夹路径, 得到node_modules下的数据
   // 1. 读取根路径下的package.json
-  const targetDir = process.cwd()
-  console.log('待读取目录 => ', targetDir)
-  const allIegalRootDirList = await Util.detectLegalRootDirList(targetDir)
+
+  const currentDir = process.cwd()
+  console.log('待读取目录 => ', currentDir)
+  const allIegalRootDirList = await Util.detectLegalRootDirList(currentDir)
   let rawPackageAnaylzeResultList: RecordType.packageAnaylzeResult[] = []
   for (let legalRootDir of allIegalRootDirList) {
     const allIegalDirList = await Util.detectCommonLegalDir(legalRootDir)
@@ -76,16 +73,21 @@ export async function asyncRunner(depth: number = 9999, outputUri?: string) {
   // 更新多实例检测结果
   await muiltInstanceChecker(rawPackageAnaylzeResultList)
 
-  await output2File(depth, targetDir, rawPackageAnaylzeResultList)
+  await output2File(depth, currentDir, rawPackageAnaylzeResultList, outputUri)
 }
 
 async function output2File(
   depth: number,
-  targetDir: string,
-  rawPackageAnaylzeResultList: RecordType.packageAnaylzeResult[]
+  currentDir: string,
+  rawPackageAnaylzeResultList: RecordType.packageAnaylzeResult[],
+  outputUri?: string
 ) {
-  //输出到最终文件里面infodb.json
-  const directoryPath = path.resolve(targetDir, './dist/')
+  if (outputUri) {
+    //输出到指定文件路径
+    const directoryPath = path.resolve(outputUri, './dist/')
+  }
+  //输出到当前文件夹里面infodb.json
+  const directoryPath = path.resolve(currentDir, './dist/')
   fs.mkdirSync(directoryPath, {
     recursive: true,
   })
@@ -129,6 +131,18 @@ async function output2File(
       new_parseRackageAnaylzeResultList.push(parseRackageAnaylzeResult)
     }
   }
+
+  if (outputUri) {
+    const targetFile = path.join(outputUri, outputFileName)
+    fs.writeFileSync(
+      targetFile,
+      JSON.stringify(new_parseRackageAnaylzeResultList, null, 2)
+    )
+
+    console.log(`将解析结果输出到指定目录中 => ${targetFile}`)
+    return
+  }
+
   fs.writeFileSync(
     path.join(directoryPath, outputFileName),
     JSON.stringify(new_parseRackageAnaylzeResultList, null, 2)
@@ -145,7 +159,6 @@ globalThis.npmPackageAnalyzeResultList = ${JSON.stringify(
     )}
   `
   )
-
   console.log('解析结果输出完毕, 启动本地服务')
 
   const legalPort = await GetPort({
@@ -166,7 +179,6 @@ globalThis.npmPackageAnalyzeResultList = ${JSON.stringify(
   app.listen(legalPort, () => {
     console.log('start')
   })
-
   // 打开url
   open(url)
   console.log('---')
