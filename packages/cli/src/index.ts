@@ -10,6 +10,7 @@ import open from 'open'
 import express from 'express'
 import koa from 'koa'
 import GetPort from 'get-port'
+import { viewDepthKey } from 'vue-router'
 
 export async function asyncRunner(depth: number = 9999, outputUri?: string) {
   // 1. 在路径下, 执行npx cli
@@ -75,10 +76,11 @@ export async function asyncRunner(depth: number = 9999, outputUri?: string) {
   // 更新多实例检测结果
   await muiltInstanceChecker(rawPackageAnaylzeResultList)
 
-  await output2File(targetDir, rawPackageAnaylzeResultList)
+  await output2File(depth, targetDir, rawPackageAnaylzeResultList)
 }
 
 async function output2File(
+  depth: number,
   targetDir: string,
   rawPackageAnaylzeResultList: RecordType.packageAnaylzeResult[]
 ) {
@@ -107,9 +109,29 @@ async function output2File(
       return thinPackageAnaylzeResult
     }
   )
+  //处理解析深度
+  const new_parseRackageAnaylzeResultList: RecordType.packageAnaylzeResult[] =
+    []
+
+  if (depth > 0) {
+    for (let parseRackageAnaylzeResult of parseRackageAnaylzeResultList) {
+      if (parseRackageAnaylzeResult.deepLevel > depth) {
+        continue
+      }
+      const newPackageList = []
+      for (let packageitem of parseRackageAnaylzeResult.packageList) {
+        if (packageitem.deepLevel > depth) {
+          continue
+        }
+        newPackageList.push(packageitem)
+      }
+      parseRackageAnaylzeResult.packageList = newPackageList
+      new_parseRackageAnaylzeResultList.push(parseRackageAnaylzeResult)
+    }
+  }
   fs.writeFileSync(
     path.join(directoryPath, outputFileName),
-    JSON.stringify(parseRackageAnaylzeResultList, null, 2)
+    JSON.stringify(new_parseRackageAnaylzeResultList, null, 2)
   )
 
   console.log(`将解析结果输出到项目运行目录中 => ${Const.cliRuntimeGuiDataUri}`)
@@ -117,7 +139,7 @@ async function output2File(
     Const.cliRuntimeGuiDataUri,
     `
 globalThis.npmPackageAnalyzeResultList = ${JSON.stringify(
-      parseRackageAnaylzeResultList,
+      new_parseRackageAnaylzeResultList,
       null,
       2
     )}
