@@ -11,7 +11,7 @@ import express from 'express'
 import koa from 'koa'
 import GetPort from 'get-port'
 
-export async function asyncRunner() {
+export async function asyncRunner(depth: number = 9999, outputUri?: string) {
   // 1. 在路径下, 执行npx cli
   // ----
   // 1. 执行第一层解析, 向collect函数, 传入根路径, 由collect函数解析该路径下的package.json, 得到结果
@@ -37,18 +37,18 @@ export async function asyncRunner() {
           circularChainListList: [],
           hasCircularDependency: false,
         },
-        "muiltInstance": {
-          "hasMuiltInstance": false,
-          "uuidList": []
+        muiltInstance: {
+          hasMuiltInstance: false,
+          uuidList: [],
         },
-        "dependencyInstallStatus": {
-          "dependencies": {},
-          "devDependencies": {}
+        dependencyInstallStatus: {
+          dependencies: {},
+          devDependencies: {},
         },
-        "dependencyBy": {
-          "dependencies": {},
-          "devDependencies": {}
-        }
+        dependencyBy: {
+          dependencies: {},
+          devDependencies: {},
+        },
       },
     }
 
@@ -67,11 +67,21 @@ export async function asyncRunner() {
 
   // 移除未使用的依赖, 最大递归检测深度为5层
   // 更新包的被依赖信息
-  await removeUnusedPackageAndUpdateDetectInfo(rawPackageAnaylzeResultList, 99999)
+  await removeUnusedPackageAndUpdateDetectInfo(
+    rawPackageAnaylzeResultList,
+    99999
+  )
 
   // 更新多实例检测结果
   await muiltInstanceChecker(rawPackageAnaylzeResultList)
 
+  await output2File(targetDir, rawPackageAnaylzeResultList)
+}
+
+async function output2File(
+  targetDir: string,
+  rawPackageAnaylzeResultList: RecordType.packageAnaylzeResult[]
+) {
   //输出到最终文件里面infodb.json
   const directoryPath = path.resolve(targetDir, './dist/')
   fs.mkdirSync(directoryPath, {
@@ -83,48 +93,61 @@ export async function asyncRunner() {
   const outputFileName = 'parse_result.json' // 解析结果
   // 将installPathObj置为空对象
   // 节约文件体积
-  const parseRackageAnaylzeResultList = rawPackageAnaylzeResultList.map(packageAnaylzeResult => {
-    let thinPackageAnaylzeResult = {
-      ...packageAnaylzeResult,
-      installPathObj: {}
+  const parseRackageAnaylzeResultList = rawPackageAnaylzeResultList.map(
+    (packageAnaylzeResult) => {
+      let thinPackageAnaylzeResult = {
+        ...packageAnaylzeResult,
+        installPathObj: {},
+      }
+      thinPackageAnaylzeResult.packageList =
+        thinPackageAnaylzeResult.packageList.map((item) => {
+          item.installPathObj = {}
+          return item
+        })
+      return thinPackageAnaylzeResult
     }
-    thinPackageAnaylzeResult.packageList = thinPackageAnaylzeResult.packageList.map((item) => {
-      item.installPathObj = {}
-      return item
-    })
-    return thinPackageAnaylzeResult
-  })
-  fs.writeFileSync(path.join(directoryPath, outputFileName), JSON.stringify(parseRackageAnaylzeResultList, null, 2))
+  )
+  fs.writeFileSync(
+    path.join(directoryPath, outputFileName),
+    JSON.stringify(parseRackageAnaylzeResultList, null, 2)
+  )
 
   console.log(`将解析结果输出到项目运行目录中 => ${Const.cliRuntimeGuiDataUri}`)
-  fs.writeFileSync(Const.cliRuntimeGuiDataUri, `
-globalThis.npmPackageAnalyzeResultList = ${JSON.stringify(parseRackageAnaylzeResultList, null, 2)}
-  `)
+  fs.writeFileSync(
+    Const.cliRuntimeGuiDataUri,
+    `
+globalThis.npmPackageAnalyzeResultList = ${JSON.stringify(
+      parseRackageAnaylzeResultList,
+      null,
+      2
+    )}
+  `
+  )
 
   console.log('解析结果输出完毕, 启动本地服务')
 
   const legalPort = await GetPort({
-    host: "127.0.0.1",
+    host: '127.0.0.1',
   })
   const url = `http://127.0.0.1:${legalPort}/npm-package-analyzer`
   console.log(`本地地址 => ${url}`)
   const app = express()
-  console.log("静态服务地址Const.cliRuntimeGuiPath => ", Const.cliRuntimeGuiPath)
-  app.use("/npm-package-analyzer",
-    express.static(Const.cliRuntimeGuiPath)
+  console.log(
+    '静态服务地址Const.cliRuntimeGuiPath => ',
+    Const.cliRuntimeGuiPath
   )
+  app.use('/npm-package-analyzer', express.static(Const.cliRuntimeGuiPath))
   // 以/npm-package-analyzer作为路径
-  app.use("/",
-    async (req, res) => {
-      res.redirect("/npm-package-analyzer")
-    }
-  )
-  app.listen(legalPort, () => {
-    console.log("start")
+  app.use('/', async (req, res) => {
+    res.redirect('/npm-package-analyzer')
   })
+  app.listen(legalPort, () => {
+    console.log('start')
+  })
+
   // 打开url
   open(url)
-  console.log("---")
+  console.log('---')
 }
 
 // 一: muiltInstance，检测同一个 package 是否包含多个版本实例；
@@ -313,7 +336,7 @@ async function circularDependenceChecker(
       )) {
         const packageUuid =
           item.detectInfo.dependencyInstallStatus.dependencies[
-          dependencePackageName
+            dependencePackageName
           ]
         const edge = `${itemUuid}${ConstDependencyArror}${packageUuid}`
         if (edgeSet.has(edge)) {
@@ -368,12 +391,13 @@ async function circularDependenceChecker(
 /**
  * 更新每个包所处的依赖层数 & 更新包的被依赖项(便于后续制作节点梯次展开效果)
  * 确保根package的packageList中的项均为实际dependence的依赖(移除devDependence项)
- * 
- * @param packageAnaylzeResultList 
- * @param maxDepth 
- * @returns 
+ *
+ * @param packageAnaylzeResultList
+ * @param maxDepth
+ * @returns
  */
-async function removeUnusedPackageAndUpdateDetectInfo(packageAnaylzeResultList: RecordType.packageAnaylzeResult[],
+async function removeUnusedPackageAndUpdateDetectInfo(
+  packageAnaylzeResultList: RecordType.packageAnaylzeResult[],
   maxDepth: number = 99999
 ) {
   // 首先初始化出所有的包列表
@@ -386,26 +410,34 @@ async function removeUnusedPackageAndUpdateDetectInfo(packageAnaylzeResultList: 
 
   /**
    * 从根节点出发, 获取所有的uuid类型以及其依赖深度, 递归层数不超过maxDepth
-   * @param rootUuid 
-   * @param usageUuidMap 
-   * @param currentDepth 
-   * @returns 
+   * @param rootUuid
+   * @param usageUuidMap
+   * @param currentDepth
+   * @returns
    */
-  function getUsageUuid(rootUuid: RecordType.item['uuid'], usageUuidMap: Map<RecordType.item['uuid'], number> = new Map(), currentDepth = 1) {
+  function getUsageUuid(
+    rootUuid: RecordType.item['uuid'],
+    usageUuidMap: Map<RecordType.item['uuid'], number> = new Map(),
+    currentDepth = 1
+  ) {
     // 只检查dependence项
     const rootPackageItem = packageMap.get(rootUuid)
     if (rootPackageItem === undefined) {
       return usageUuidMap
     }
 
-    for (let dependenciesPackageUuid of Object.values(rootPackageItem.detectInfo.dependencyInstallStatus.dependencies)) {
-      if (dependenciesPackageUuid === "") {
+    for (let dependenciesPackageUuid of Object.values(
+      rootPackageItem.detectInfo.dependencyInstallStatus.dependencies
+    )) {
+      if (dependenciesPackageUuid === '') {
         continue
       }
       const dependenciesPackageItem = packageMap.get(dependenciesPackageUuid)
       if (dependenciesPackageItem !== undefined) {
         // 更新包的被依赖信息
-        dependenciesPackageItem.detectInfo.dependencyBy.dependencies[rootPackageItem.uuid] = rootPackageItem.packageName
+        dependenciesPackageItem.detectInfo.dependencyBy.dependencies[
+          rootPackageItem.uuid
+        ] = rootPackageItem.packageName
       }
 
       if (usageUuidMap.has(dependenciesPackageUuid)) {
@@ -425,7 +457,6 @@ async function removeUnusedPackageAndUpdateDetectInfo(packageAnaylzeResultList: 
 
   // 然后针对每一个包, 生成新packageList
   for (let packageAnaylzeResult of packageAnaylzeResultList) {
-
     const rootPackage = packageAnaylzeResult.packageList[0]
     let usageUuidMap = new Map()
     usageUuidMap.set(rootPackage.uuid, 0)
@@ -433,7 +464,9 @@ async function removeUnusedPackageAndUpdateDetectInfo(packageAnaylzeResultList: 
     // 剔除根节点
     usageUuidMap.delete(rootPackage.uuid)
 
-    const usagePackageList: RecordType.packageAnaylzeResult['packageList'] = [rootPackage]
+    const usagePackageList: RecordType.packageAnaylzeResult['packageList'] = [
+      rootPackage,
+    ]
     for (let usageUuid of usageUuidMap.keys()) {
       const usageItem = packageMap.get(usageUuid)
       if (usageItem !== undefined) {
