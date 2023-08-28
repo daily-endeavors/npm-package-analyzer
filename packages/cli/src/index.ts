@@ -7,8 +7,65 @@ import * as Util from './util.js'
 import open from 'open'
 import express from 'express'
 import GetPort from 'get-port'
+import minimist from 'minimist'
+import chalk from 'chalk'
 
-export async function asyncRunner(depth: number = 9999, outputUri?: string) {
+export async function asyncRunner() {
+  const argv = minimist(process.argv.slice(2))
+  const commandList = argv._
+  if (commandList.includes('analyze') === false) {
+    // 命令行参数中未包含analyze, 返回帮助语句
+    console.log(chalk.blue('欢迎使用daily-endeavors-npm-package-analyzer'))
+    console.log(
+      chalk.blue(
+        `执行 ${chalk.yellow(
+          'daily-endeavors-npm-package-analyzer analyze'
+        )} 解析当前目录下的文件`
+      )
+    )
+    return
+  }
+  // 有analyze参数
+  const depth = argv['depth'] ?? 99999
+  let outputUri = argv['json']
+  // 校验参数
+  if (outputUri === '') {
+    outputUri = undefined
+  }
+  if (outputUri !== undefined) {
+    outputUri = path.resolve(process.cwd(), outputUri)
+    // 检查权限
+    if (fs.existsSync(outputUri) === true) {
+      // 文件存在, 检查是否是可写入的文件
+      const targetFileStat = fs.statSync(outputUri)
+      if (targetFileStat.isFile() === false) {
+        console.error(`路径${outputUri}不是文件, 无法写入. 请检查后再试`)
+      }
+      // 尝试写入文件以验证权限
+      try {
+        fs.appendFileSync(outputUri, '')
+      } catch (e) {
+        console.error(`没有写入文件${outputUri}的权限, 请检查后再试`)
+      }
+    } else {
+      // 文件不存在, 尝试是否可以写入
+      try {
+        // 尝试写入文件
+        fs.writeFileSync(outputUri, '')
+      } catch (e) {
+        console.error(`没有写入文件${outputUri}的权限, 请检查后再试`)
+      }
+    }
+  }
+  await dispatchTask(depth, outputUri)
+}
+
+/**
+ * 具体任务执行方法
+ * @param depth
+ * @param outputUri
+ */
+async function dispatchTask(depth: number = 9999, outputUri?: string) {
   // 1. 在路径下, 执行npx cli
   // ----
   // 1. 执行第一层解析, 向collect函数, 传入根路径, 由collect函数解析该路径下的package.json, 得到结果
