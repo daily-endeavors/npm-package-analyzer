@@ -13,18 +13,14 @@ import chalk from 'chalk'
 export async function asyncRunner() {
   const argv = minimist(process.argv.slice(2))
   const commandList = argv._
-  if (commandList.includes('analyze') === false) {
-    // 命令行参数中未包含analyze, 返回帮助语句
     console.log(chalk.blue('欢迎使用daily-endeavors-npm-package-analyzer'))
     console.log(
       chalk.blue(
         `执行 ${chalk.yellow(
-          'daily-endeavors-npm-package-analyzer analyze'
+          'npx daily-endeavors-npm-package-analyzer'
         )} 解析当前目录下的文件`
       )
     )
-    return
-  }
   // 有analyze参数
   const depth = argv['depth'] ?? 99999
   let outputUri = argv['json']
@@ -341,8 +337,13 @@ async function dependencyInstallChecker(
   for (let packageAnaylzeResult of packageAnaylzeResultList) {
     for (let packageItem of packageAnaylzeResult.packageList) {
       const realReslovePath = packageItem.reslovePath
-      // 只检查'dependencies'下的依赖
-      for (let dependencyType of ['dependencies'] as const) {
+      // 如果是项目package.json,dependencies和devDependencies都需要检查
+      // 如果非项目package.json(node_modules项目), 只检查'dependencies'下的依赖
+
+      const isProjectRootPackage = packageItem.reslovePath.includes("node_modules") === false
+      const dependencyTypeList = isProjectRootPackage ? ['dependencies', 'devDependencies']  as const : ['dependencies']  as const
+
+      for (let dependencyType of dependencyTypeList) {
         for (let dependencyName of Object.keys(
           packageItem.detectInfo.dependencyInstallStatus[dependencyType]
         )) {
@@ -368,6 +369,10 @@ async function dependencyInstallChecker(
             }
           }
         }
+      }
+      if(isProjectRootPackage === true){
+        console.log( packageItem.packageName, "检查完毕")
+        console.log("---")
       }
     }
   }
@@ -518,15 +523,25 @@ async function removeUnusedPackageAndUpdateDetectInfo(
     usageUuidMap: Map<RecordType.item['uuid'], number> = new Map(),
     currentDepth = 1
   ) {
-    // 只检查dependence项
     const rootPackageItem = packageMap.get(rootUuid)
-    if (rootPackageItem === undefined) {
+    if(rootPackageItem === undefined){
       return usageUuidMap
     }
+    // 如果是项目package.json,dependencies和devDependencies都需要检查
+    // 如果非项目package.json(node_modules项目), 只检查'dependencies'下的依赖
+    const isProjectRootPackage = rootPackageItem.reslovePath.includes("node_modules") === false
+    const dependencyTypeList = isProjectRootPackage ? ['dependencies', 'devDependencies']  as const : ['dependencies']  as const
 
-    for (let dependenciesPackageUuid of Object.values(
-      rootPackageItem.detectInfo.dependencyInstallStatus.dependencies
-    )) {
+    let dependenciesPackageUuidList: RecordType.item['uuid'][] = []
+    for(let dependencyType of dependencyTypeList){
+      let uuidList =  Object.values(rootPackageItem.detectInfo.dependencyInstallStatus[dependencyType])
+      dependenciesPackageUuidList = dependenciesPackageUuidList.concat(uuidList)
+    }
+    // 去重
+    dependenciesPackageUuidList = [...new Set(dependenciesPackageUuidList).values()]
+
+
+    for (let dependenciesPackageUuid of dependenciesPackageUuidList) {
       if (dependenciesPackageUuid === '') {
         continue
       }

@@ -42,6 +42,21 @@ export function getPackageSummary(parseResult: TypePackageRecord.packageAnaylzeR
      */
     let muiltInstancePackageMap: Map<string, string[]> = new Map()
 
+
+    /**
+     * 文本格式的依赖分析结果
+     */
+    const textDependencyAnalyze:Record<string, {
+        name:string,
+        version:string
+    }[]> = {
+        "level-0": [],
+        "level-1": [],
+        "level-2": [],
+        "level-3": [],
+        "level-other": [],
+      }
+
     // 更新信息列表
     for (let item of parseResult.packageList) {
         maxDeepLevel = Math.max(maxDeepLevel, item.deepLevel)
@@ -71,6 +86,62 @@ export function getPackageSummary(parseResult: TypePackageRecord.packageAnaylzeR
         circularPackageNameListList.push(packageNameList)
     }
 
+    // 更新依赖列表
+    for (let item of parseResult.packageList) {
+        switch(item.deepLevel){
+            case 0:
+                textDependencyAnalyze["level-0"].push({
+                    name:`${item.packageName}`,
+                    version:`${item.version}`
+                })
+                break
+            case 1:
+                textDependencyAnalyze["level-1"].push({
+                    name:`${item.packageName}`,
+                    version:`${item.version}`
+                })
+                break
+            case 2:
+                textDependencyAnalyze["level-2"].push({
+                    name:`${item.packageName}`,
+                    version:`${item.version}`
+                })
+                break
+            case 3:
+                textDependencyAnalyze["level-3"].push({
+                    name:`${item.packageName}`,
+                    version:`${item.version}`
+                })
+                break
+            default:
+                textDependencyAnalyze["level-other"].push({
+                    name:`${item.packageName}`,
+                    version:`${item.version}`
+                })
+                break
+        }
+
+        maxDeepLevel = Math.max(maxDeepLevel, item.deepLevel)
+        if (item.detectInfo.muiltInstance.hasMuiltInstance) {
+            const key = [...item.detectInfo.muiltInstance.uuidList].sort().join(",")
+            const muiltInstancePackageList: string[] = []
+            for (let uuid of item.detectInfo.muiltInstance.uuidList) {
+                const instanceItem = uuidMap.get(uuid)
+                if (instanceItem === undefined) {
+                    continue
+                }
+                muiltInstancePackageList.push(`${instanceItem.packageName}@${instanceItem.version}`)
+            }
+            muiltInstancePackageMap.set(key, muiltInstancePackageList)
+        }
+    }
+    // 对textDependencyAnalyze中的每一项值进行排序, 方便比较
+    for(let key of Object.keys(textDependencyAnalyze)){
+        textDependencyAnalyze[key].sort((a,b)=>{
+            return a.name.localeCompare(b.name)
+        })
+    }
+
     packageCount = parseResult.packageList.length
 
     return {
@@ -79,6 +150,7 @@ export function getPackageSummary(parseResult: TypePackageRecord.packageAnaylzeR
         hasCircularDependency: circularPackageNameListList.length > 0,
         circularPackageNameListList,
         hasMuiltInstance: muiltInstancePackageMap.size > 0,
-        muiltInstancePackageListList: [...muiltInstancePackageMap.values()]
+        muiltInstancePackageListList: [...muiltInstancePackageMap.values()],
+        textDependencyAnalyze
     }
 }

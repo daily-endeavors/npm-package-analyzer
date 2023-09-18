@@ -130,6 +130,10 @@ export async function isLegalDir(targetDir: string) {
   if (!fs.existsSync(filepath)) {
     return false
   }
+  // 有package.json的情况下, 只有node_modules文件夹存在也视为合法(存在部分项目, 并没有填写jsonObj.name和jsonObj.version)
+  if (fs.existsSync(path.resolve(targetDir, 'node_modules'))) {
+    return true
+  }
 
   const readContent = fs.readFileSync(filepath).toString()
   try {

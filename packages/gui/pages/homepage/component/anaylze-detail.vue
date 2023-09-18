@@ -23,31 +23,15 @@
                         <div class="size-container">
                           <h3>分析统计</h3>
                           <div class="size-stats">
-                            <Stat
-                              :count="maxDeepLevel"
-                              unit="层"
-                              tip="最大依赖深度"
-                            ></Stat>
-                            <Stat
-                              :count="totalSubPackageCount"
-                              unit="个"
-                              tip="npm包"
-                            ></Stat>
+                            <Stat :count="maxDeepLevel" unit="层" tip="最大依赖深度"></Stat>
+                            <Stat :count="totalSubPackageCount" unit="个" tip="npm包"></Stat>
                           </div>
                         </div>
                         <div class="time-container">
                           <h3>项目概览</h3>
                           <div class="time-stats">
-                            <Stat
-                              :count="muiltInstanceCount"
-                              unit="个"
-                              tip="多重实例"
-                            ></Stat>
-                            <Stat
-                              :count="circularCount"
-                              unit="条"
-                              tip="循环依赖链路数"
-                            ></Stat>
+                            <Stat :count="muiltInstanceCount" unit="个" tip="多重实例"></Stat>
+                            <Stat :count="circularCount" unit="条" tip="循环依赖链路数"></Stat>
                           </div>
                         </div>
                       </div>
@@ -55,9 +39,21 @@
                   </div>
                   <div class="content-split-container">
                     <div class="bar-graph-container">
-                      <DependencyMap
+                      <!-- <DependencyMap
                         :package-anaylze-result="packageAnaylzeResult"
-                      ></DependencyMap>
+                      ></DependencyMap> -->
+                    </div>
+                    <div class="text-dependency">
+                      <!-- <TextDependency level-title="level-0" :package-list="analyzeInfo.textDependencyAnalyze['level-0']">
+                      </TextDependency> -->
+                      <TextDependency level-title="level-1" :package-list="analyzeInfo.textDependencyAnalyze['level-1']">
+                      </TextDependency>
+                      <TextDependency level-title="level-2" :package-list="analyzeInfo.textDependencyAnalyze['level-2']">
+                      </TextDependency>
+                      <TextDependency level-title="level-3" :package-list="analyzeInfo.textDependencyAnalyze['level-3']">
+                      </TextDependency>
+                      <TextDependency level-title=">3" :package-list="analyzeInfo.textDependencyAnalyze['level-other']">
+                      </TextDependency>
                     </div>
                   </div>
                 </div>
@@ -73,6 +69,7 @@
 import Stat from './stat.vue';
 import * as GlobalUtil from '../../../utils';
 import DependencyMap from '../../dependency-map/index.vue';
+import TextDependency from './text-dependency.vue';
 
 const { packageAnaylzeResult } = defineProps<{
   packageAnaylzeResult: ReturnType<
@@ -91,7 +88,13 @@ for (let muiltInstancePackageList of analyzeInfo.muiltInstancePackageListList) {
   muiltInstanceCount = muiltInstancePackageList.length;
 }
 maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
+
 </script>
+<style lang="less" scoped>
+.text-dependency {
+  display: flex;
+}
+</style>
 <style lang="scss" scoped>
 @import 'scss-stylesheets/variables.scss';
 @import 'scss-stylesheets/colors.scss';
@@ -101,8 +104,9 @@ maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
   margin-top: 3vh;
   align-items: flex-start;
 }
+
 .left-info-container {
-  width: 45vw;
+  width: 30vw;
   height: 60vh;
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 10px;
@@ -124,6 +128,7 @@ maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
     padding: $global-spacing * 2;
   }
 }
+
 .autocomplete-input-box {
   border: 1px solid $autocomplete-border-color;
   border-radius: 10px;
@@ -261,7 +266,7 @@ maxDeepLevel = Math.max(maxDeepLevel, analyzeInfo.maxDeepLevel);
     }
   }
 
-  li + li {
+  li+li {
     margin-left: $global-spacing * 2;
   }
 
@@ -495,6 +500,7 @@ h2 {
     padding: 0 $global-spacing * 2;
   }
 }
+
 .ct-series-a .ct-bar {
   stroke: #00b4ae;
   stroke-width: 40px;
@@ -560,11 +566,13 @@ h2 {
   max-height: 100%;
   max-width: 100%;
 }
+
 .treemap__label {
   font-family: $font-family-code;
   max-height: 75%;
   max-width: 100%;
   overflow: hidden;
+
   a {
     color: inherit;
 
